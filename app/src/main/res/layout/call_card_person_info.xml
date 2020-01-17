@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/call_card_person" android:background="@color/bg_white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/ic_call_top_circle_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <View android:id="@id/spacer" android:layout_width="fill_parent" android:layout_height="@dimen/callcard_top_padding_size" />
+        <com.pccw.android.common.widget.CircularImageView android:id="@id/photo" android:layout_width="@dimen/callcard_profile_head_size" android:layout_height="@dimen/callcard_profile_head_size" android:src="@drawable/default_profile_pic" android:layout_below="@id/spacer" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:background="@color/bg_white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <View android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <com.pccw.android.common.widget.TypefacedTextView android:textSize="@dimen/caller_title_text_size" android:textStyle="bold" android:textColor="@color/corp_blue" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/unknown" android:singleLine="true" font:typeface="Roboto-Bold.ttf" />
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-4.0dip">
+            <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceSmall" android:textSize="16.0sp" android:textColor="@color/corp_blue" android:layout_gravity="center_horizontal" android:id="@id/label" android:paddingRight="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" android:singleLine="true" font:typeface="Roboto-Regular.ttf" />
+            <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceSmall" android:textSize="16.0sp" android:textColor="@color/corp_blue" android:layout_gravity="center_horizontal" android:id="@id/phoneNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" font:typeface="Roboto-Regular.ttf" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.0">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="16.0sp" android:textStyle="bold" android:gravity="left" android:id="@id/lowerTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:singleLine="true" />
+        <android.widget.Chronometer android:textAppearance="?android:textAppearanceMedium" android:textSize="16.0sp" android:id="@id/elapsedTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/lowerTitle" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

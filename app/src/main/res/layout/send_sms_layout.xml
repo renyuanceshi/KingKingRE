@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="bottom" android:layout_gravity="bottom" android:background="@drawable/gradient_chat_bottom_bar" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/btn_send" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:src="@drawable/btn_sendmessage_selector" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/messageTextView" android:background="@drawable/chat_field_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_toLeftOf="@id/btn_send" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <com.pccw.sms.emoji.EmojiEditText android:textSize="18.0sp" android:textColor="@color/bg_black" android:layout_gravity="center" android:id="@id/txt_send_msg" android:background="@null" android:paddingRight="4.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginTop="1.0dip" android:layout_marginRight="4.0dip" android:layout_marginBottom="1.0dip" android:maxHeight="@dimen/activity_editbox_height" android:lineSpacingExtra="1.0dip" android:inputType="textMultiLine" android:fadeScrollbars="true">
+            <requestFocus />
+        </com.pccw.sms.emoji.EmojiEditText>
+        <ImageButton android:id="@id/btn_emoji" android:background="@null" android:paddingLeft="2.0dip" android:paddingTop="8.0dip" android:paddingRight="2.0dip" android:paddingBottom="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/selector_emoji_button" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/txt_cont" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-2.0dip" android:layout_alignLeft="@id/btn_send" android:layout_alignRight="@id/btn_send">
+        <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/char_count" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/maxCharCount_en" />
+        <TextView android:textColor="#ffffffff" android:gravity="center" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="/" />
+        <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/concat_count" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" />
+    </LinearLayout>
+</RelativeLayout>

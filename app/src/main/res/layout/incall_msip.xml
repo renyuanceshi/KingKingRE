@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/bg_black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/mainFrame" android:background="@color/bg_white" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentTop="true">
+        <LinearLayout android:orientation="vertical" android:id="@id/inCallPanel" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <org.linphone.CallCard android:id="@id/callCard" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <RelativeLayout android:id="@id/btn_call_swap" android:background="@drawable/clickable_button_background" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <ImageView android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_call_swap" android:scaleType="fitXY" />
+                    <com.pccw.android.common.widget.TypefacedTextView android:textColor="@color/corp_blue" android:id="@id/text_call_swap" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/menu_call_swap" font:typeface="Roboto-Regular.ttf" />
+                </LinearLayout>
+            </RelativeLayout>
+            <org.linphone.CallCardHold android:id="@id/callCardHold" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/inCallButtons" android:background="@color/bg_white" android:paddingLeft="@dimen/callcard_horizontal_margin" android:paddingRight="@dimen/callcard_horizontal_margin" android:paddingBottom="@dimen/callcard_horizontal_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="horizontal" android:background="@drawable/incall_button_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip">
+            <ToggleButton android:textSize="10.0sp" android:id="@id/mergeAddButton" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textOn="@string/menu_add_call" android:textOff="@string/menu_add_call" android:drawableTop="@drawable/ic_add_call" android:layout_weight="1.0" style="@style/CallToggleMergeAddButton" />
+            <ToggleButton android:textSize="10.0sp" android:id="@id/speakerButton" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textOn="@string/menu_speaker" android:textOff="@string/menu_speaker" android:drawableTop="@drawable/ic_speaker_off" android:layout_weight="1.0" style="@style/CallToggleAudioButton" />
+            <ToggleButton android:textSize="10.0sp" android:gravity="center|top" android:id="@id/routeButton" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textOn="@string/menu_speaker" android:textOff="@string/menu_speaker" android:drawableTop="@drawable/ic_bluetooth" android:layout_weight="1.0" style="@style/CallToggleRoutesButton" />
+            <ToggleButton android:textSize="10.0sp" android:id="@id/dialpadButton" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textOn="@string/dtmfDialpadHandleLabel" android:textOff="@string/dtmfDialpadHandleLabel" android:drawableTop="@drawable/ic_tab_keypad" android:layout_weight="1.0" style="@style/CallToggleKeypadButton" />
+            <ToggleButton android:enabled="false" android:textSize="10.0sp" android:textColor="@color/toggle_button_incall_video_text_selector" android:id="@id/startVideoButton" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textOn="@string/menu_video" android:textOff="@string/menu_video" android:drawableTop="@drawable/toggle_button_incall_video_selector" android:layout_weight="1.0" style="@style/CallToggleVideoButton" />
+            <ToggleButton android:textSize="10.0sp" android:id="@id/muteButton" android:layout_width="fill_parent" android:layout_height="fill_parent" android:textOn="@string/menu_mute" android:textOff="@string/menu_mute" android:drawableTop="@drawable/ic_mute_on" android:layout_weight="1.0" style="@style/CallToggleMuteButton" />
+        </LinearLayout>
+        <ImageButton android:id="@id/clearCallButton" android:background="@drawable/selector_endcall_button_background" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_marginBottom="5.0dip" android:src="@drawable/ic_end_call" />
+    </LinearLayout>
+    <com.pccw.android.common.widget.SlidingTab android:id="@id/incomingCallWidget" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="40.0dip" android:layout_alignParentBottom="true" app:orientation="0" xmlns:app="http://schemas.android.com/apk/res-auto" />
+    <include android:id="@id/incall_dtmf" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/inCallButtons" layout="@layout/dtmf_twelve_key_dialer" />
+</RelativeLayout>

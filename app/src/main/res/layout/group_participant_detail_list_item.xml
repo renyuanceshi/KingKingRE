@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.pccw.android.common.widget.CircularImageView android:id="@id/participant_thumbnail" android:layout_width="@dimen/list_item_profile_head_size" android:layout_height="@dimen/list_item_profile_head_size" android:layout_marginLeft="2.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:scaleType="fitCenter" />
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_weight="1.0">
+        <TextView android:textSize="20.0sp" android:id="@id/participant_contact_name" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textSize="15.0sp" android:id="@id/participant_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+    <com.pccw.android.common.widget.ListViewItemImageView android:id="@id/participant_sms_type_btn" android:visibility="gone" android:layout_width="@dimen/contact_button_icon_size" android:layout_height="@dimen/contact_button_icon_size" android:scaleType="fitCenter" />
+    <com.pccw.android.common.widget.ListViewItemImageView android:id="@id/participant_call_btn" android:layout_width="@dimen/contact_button_icon_size" android:layout_height="@dimen/contact_button_icon_size" android:src="@drawable/selector_contact_call_with_native_button" android:scaleType="fitCenter" />
+</LinearLayout>

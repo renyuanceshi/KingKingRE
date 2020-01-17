@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:yourapp="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_search" android:id="@id/action_search" android:title="@string/chat_message_list_search" yourapp:showAsAction="collapseActionView|ifRoom" yourapp:actionViewClass="android.support.v7.widget.SearchView" />
+    <item android:icon="@drawable/ic_menu_add_contact" android:id="@id/action_add_new" android:title="@string/chat_group_create_new_contact" yourapp:showAsAction="collapseActionView|ifRoom" />
+</menu>

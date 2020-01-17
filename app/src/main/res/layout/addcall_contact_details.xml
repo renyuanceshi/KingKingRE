@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/bg_grey" android:paddingTop="@dimen/actionbar_padding_top_height" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.5">
+        <ImageView android:layout_gravity="center" android:id="@id/addcall_contact_photo" android:padding="@dimen/contact_detail_photo_padding" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/default_profile_pic" android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/caller_title_text_size" android:textStyle="bold" android:textColor="@color/corp_blue" android:gravity="left" android:layout_gravity="center_vertical" android:id="@id/addcall_name" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/unknown" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ListView android:id="@id/addcall_phone_list" android:background="@android:color/transparent" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="8.0dip" android:layout_marginBottom="10.0dip" android:listSelector="@drawable/selector_list_item_transparent" android:divider="@android:color/transparent" android:dividerHeight="5.0dip" android:layout_weight="1.0" />
+</LinearLayout>

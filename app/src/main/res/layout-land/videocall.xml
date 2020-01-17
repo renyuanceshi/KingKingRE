@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:id="@id/video_frame" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
+    <org.linphone.mediastream.video.display.GL2JNIView android:id="@id/video_surface" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <SurfaceView android:layout_gravity="bottom|center|left" android:id="@id/video_capture_surface" android:layout_width="88.0dip" android:layout_height="72.0dip" android:layout_margin="15.0dip" />
+    <ImageButton android:layout_gravity="center|left|top" android:id="@id/rotatecambtn" android:background="@null" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0dip" android:src="@drawable/ic_cam_rotate" android:onClick="onButtonClick" />
+    <LinearLayout android:layout_gravity="center|top" android:id="@id/viewStat" android:background="@android:color/black" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/viewStatText" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="right" android:orientation="vertical" android:background="@drawable/video_button_bar_blue_gradient_land" android:layout_width="64.0dip" android:layout_height="fill_parent">
+        <com.pccw.android.common.widget.RelativeButtonLayout android:id="@id/videocall_menu_back_to_dialer" android:background="@drawable/selector_blue_button_background_land" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" font:parentDominant="true" style="@style/VideoCallButtonStyle">
+            <ImageButton android:id="@id/ic_video" android:background="@null" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/toggle_button_video_selector" android:layout_centerInParent="true" />
+        </com.pccw.android.common.widget.RelativeButtonLayout>
+        <com.pccw.android.common.widget.RelativeButtonLayout android:id="@id/videocall_menu_mute" android:background="@drawable/selector_blue_button_background_land" android:descendantFocusability="beforeDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" font:parentDominant="true" style="@style/VideoCallButtonStyle">
+            <ImageButton android:id="@id/ic_mute" android:background="@null" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/toggle_button_mute_selector" android:layout_centerInParent="true" />
+        </com.pccw.android.common.widget.RelativeButtonLayout>
+        <com.pccw.android.common.widget.RelativeButtonLayout android:id="@id/videocall_menu_speaker" android:background="@drawable/selector_blue_button_background_land" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" font:parentDominant="true" style="@style/VideoCallButtonStyle">
+            <ImageButton android:id="@id/ic_speaker" android:background="@null" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_speaker_off" android:layout_centerInParent="true" />
+        </com.pccw.android.common.widget.RelativeButtonLayout>
+        <com.pccw.android.common.widget.RelativeButtonLayout android:id="@id/routeAudioButton" android:background="@drawable/selector_blue_button_background_land" android:visibility="gone" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" font:parentDominant="true" style="@style/VideoCallButtonStyle">
+            <ImageButton android:id="@id/ic_route" android:background="@null" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_bluetooth" android:layout_centerInParent="true" />
+        </com.pccw.android.common.widget.RelativeButtonLayout>
+        <com.pccw.android.common.widget.RelativeButtonLayout android:id="@id/videocall_menu_terminate_call" android:background="@drawable/selector_orange_button_background_land" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" font:parentDominant="true" style="@style/VideoCallButtonStyle">
+            <ImageButton android:id="@id/ic_decline" android:background="@null" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_end_call" android:layout_centerInParent="true" />
+        </com.pccw.android.common.widget.RelativeButtonLayout>
+    </LinearLayout>
+</FrameLayout>

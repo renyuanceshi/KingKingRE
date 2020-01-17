@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/chat_load_more_button_color" />
+            <corners android:radius="7.0dip" />
+        </shape>
+    </item>
+    <item android:left="0.0px" android:top="0.0px" android:right="0.0px" android:bottom="1.0px">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/bg_white" />
+            <corners android:radius="7.0dip" />
+        </shape>
+    </item>
+</layer-list>

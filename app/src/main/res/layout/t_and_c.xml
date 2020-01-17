@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/splash_screen_background_gradient" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/KK_Logo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/ic_logo" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center|left" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/terms_n_conditions_title" android:lines="2" android:layout_toRightOf="@id/KK_Logo" android:layout_alignTop="@id/KK_Logo" android:layout_alignBottom="@id/KK_Logo" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/buttons_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:enabled="false" android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:id="@id/decline_button" android:background="@drawable/selectable_action_background" android:paddingTop="16.0dip" android:paddingBottom="16.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/button_decline" android:layout_weight="1.0" />
+        <Button android:enabled="false" android:textAppearance="?android:textAppearanceMedium" android:textStyle="bold" android:textColor="@color/dark_orange" android:gravity="center" android:id="@id/accept_button" android:background="@drawable/selectable_action_background" android:paddingTop="16.0dip" android:paddingBottom="16.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/button_accept" android:layout_weight="1.0" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/frame_webview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_above="@id/buttons_panel" android:layout_below="@id/KK_Logo">
+        <WebView android:id="@id/tc_content" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</RelativeLayout>

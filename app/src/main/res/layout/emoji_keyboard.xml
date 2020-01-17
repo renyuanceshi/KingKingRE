@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/chat_emoji_keyboard_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v4.view.ViewPager android:id="@id/emoji_pager" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/emojis_tab" android:layout_alignParentTop="true" />
+    <View android:background="#ff8f8f8f" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_above="@id/emojis_tab" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/emojis_tab" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <ImageButton android:id="@id/emojis_tab_0_people" android:background="@drawable/emoji_tab_background" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/selector_orca_emoji_category_people" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/emojis_tab_1_nature" android:background="@drawable/emoji_tab_background" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/selector_orca_emoji_category_nature" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/emojis_tab_2_objects" android:background="@drawable/emoji_tab_background" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/selector_orca_emoji_category_objects" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/emojis_tab_3_cars" android:background="@drawable/emoji_tab_background" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/selector_orca_emoji_category_cars" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/emojis_tab_4_punctuation" android:background="@drawable/emoji_tab_background" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/selector_orca_emoji_category_punctuation" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/emojis_backspace" android:background="@drawable/emoji_tab_dark_background" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/orca_emoji_backspace_back_normal" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/background_gradient_white" android:paddingTop="@dimen/actionbar_padding_top_height" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/calllog_grouped_detail" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true">
+        <com.pccw.android.common.widget.CircularImageView android:id="@id/calllog_grouped_profile_pic" android:layout_width="@dimen/profile_head_profile_view" android:layout_height="@dimen/profile_head_profile_view" android:layout_margin="10.0dip" android:src="@drawable/default_profile_pic" android:layout_alignParentLeft="true" />
+        <com.pccw.android.common.widget.TypefacedTextView android:textSize="18.0sp" android:textColor="@color/corp_blue" android:ellipsize="end" android:id="@id/calllog_grouped_contact_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:singleLine="true" android:layout_toRightOf="@id/calllog_grouped_profile_pic" android:layout_centerVertical="true" font:typeface="Roboto-Bold.ttf" />
+    </RelativeLayout>
+    <View android:id="@id/spacer" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_below="@id/calllog_grouped_detail" />
+    <ListView android:id="@id/calllog_grouped_list" android:fadingEdge="none" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/activity_horizontal_margin" android:layout_marginRight="@dimen/activity_horizontal_margin" android:divider="@null" android:dividerHeight="4.0dip" android:layout_below="@id/spacer" />
+</RelativeLayout>

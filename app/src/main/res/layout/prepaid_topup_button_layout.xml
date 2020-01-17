@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/prepaid_topup_button" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textSize="7.0pt" android:id="@id/prepaid_topup_online" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/prepaid_topup_button_text_online" android:layout_weight="1.0" />
+    <Button android:textSize="7.0pt" android:id="@id/prepaid_topup_calling" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/prepaid_topup_button_text_calling_hello_prepaid" android:layout_weight="1.0" />
+    <Button android:textSize="7.0pt" android:id="@id/prepaid_topup_cancel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@android:string/ok" android:layout_weight="1.0" />
+</LinearLayout>

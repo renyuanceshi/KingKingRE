@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@color/bg_white" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="-1.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/menu_general_category" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/menu_general_catalog" font:typeface="RobotoCondensed-Regular.ttf" style="@style/KKItemTextBar" />
+        <TextView android:id="@id/menu_user_guide" android:background="@drawable/selector_listview_item" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/menu_user_guide" style="@style/KKItemText" />
+        <View android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/KKItemBar" />
+        <TextView android:id="@id/menu_faq" android:background="@drawable/selector_listview_item" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/menu_faq" style="@style/KKItemText" />
+        <View android:id="@id/menu_faq_bar" android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/KKItemBar" />
+        <TextView android:id="@id/menu_facebook_share" android:background="@drawable/selector_listview_item" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/menu_facebook_share" style="@style/KKItemText" />
+        <View android:id="@id/menu_facebook_share_bar" android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/KKItemBar" />
+        <TextView android:textSize="12.0sp" android:gravity="center" android:id="@id/menu_facebook_logout" android:padding="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/menu_facebook_logout" android:textAllCaps="true" style="@style/KKItemText" />
+        <View android:id="@id/menu_facebook_logout_bar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/KKItemBar" />
+        <TextView android:id="@id/menu_sms_invite" android:background="@drawable/selector_listview_item" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/menu_sms_invite" style="@style/KKItemText" />
+        <View android:id="@id/menu_sms_invite_bar" android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/KKItemBar" />
+        <TextView android:id="@id/menu_auto_login" android:background="@drawable/selector_listview_item" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/menu_auto_login" style="@style/KKItemText" />
+        <View android:id="@id/menu_auto_login_bar" android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/KKItemBar" />
+        <TextView android:id="@id/menu_about" android:background="@drawable/selector_listview_item" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/menu_about" style="@style/KKItemText" />
+        <View android:id="@id/menu_about_bar" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/KKItemBar" />
+        <CheckedTextView android:textSize="13.0sp" android:id="@id/menu_screen" android:padding="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:checkMark="?android:listChoiceIndicatorMultiple" android:text="@string/menu_screen" />
+        <View android:id="@id/menu_screen_bar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/KKItemBar" />
+        <CheckedTextView android:textSize="13.0sp" android:id="@id/menu_codec_ilbc" android:padding="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:checkMark="?android:listChoiceIndicatorMultiple" android:text="@string/menu_codec_ilbc" />
+        <View android:id="@id/menu_codec_ilbc_bar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0dip" style="@style/KKItemBar" />
+        <Button android:textSize="13.0sp" android:textColor="@android:color/white" android:id="@id/menu_switch_account" android:background="@drawable/selector_action_button" android:padding="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/menu_switch_account" />
+    </LinearLayout>
+</ScrollView>

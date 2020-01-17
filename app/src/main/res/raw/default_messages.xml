@@ -1,0 +1,920 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roamsavemessage>
+	<response function="login" resultcode="1">
+		<message_en>
+			Your handset model is not compatible with "KingKing".
+		</message_en>
+		<message_ch>
+			您的手機型號未能支援
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="2">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for details. (Error code: L02)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L02)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="3">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for details. (Error code: L03)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L03)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="4">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for assistance. (Error code: L04)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L04)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="5">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for assistance. (Error code: L05)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶).  (錯誤號碼: L05)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="6">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for assistance. (Error code: L06)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L06)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="7">
+		<message_en>
+			Server is busy. Please try again later. (Error code: L07)
+		</message_en>
+		<message_ch>
+			系統繁忙. 請稍後再試. (Error code: L07)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="8">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L08)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L08)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="9">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L09)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L09)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="10">
+		<message_en>
+			"KingKing" is temporarily unavailable in Hong Kong.
+		</message_en>
+		<message_ch>
+			傾King只能在海外使用
+		</message_ch>
+	</response>
+
+	<response function="login" resultcode="11">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L11)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L11)
+		</message_ch>
+	</response>	
+	
+	<response function="login" resultcode="12">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L12)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L12)
+		</message_ch>
+	</response>	
+
+	<response function="login" resultcode="13">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L13)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L13)
+		</message_ch>
+	</response>
+
+	<response function="login" resultcode="14">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L14)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L14)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="15">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L15)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L15)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="16">
+		<message_en>
+			You are not allowed to make/receive calls via "KingKing". Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L16)
+		</message_en>
+		<message_ch>
+			你不能使用傾King撥打/接聽電話。請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L16)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="17">
+		<message_en>
+			"KingKing" is not applicable to the PCCW-HKT mobile service rechargeable SIM. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L17)
+		</message_en>
+		<message_ch>
+			「傾King」服務不適用於PCCW-HKT流動通訊服務之儲值卡. 請聯絡PCCW 24小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L17)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="19">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L19)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L19)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="20">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L20)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L20)
+		</message_ch>
+	</response>
+	
+	<response function="login" resultcode="99">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: L99)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: L99)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="1">
+		<message_en>
+			Your handset model is not compatible with "KingKing".
+		</message_en>
+		<message_ch>
+			您的手機型號未能支援
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="2">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L02)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用. 請聯絡24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L02)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="3">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for details. (Error code: L03)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用. 請聯絡24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L03)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="4">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for assistance. (Error code: L04)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用， 請聯絡24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L04)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="5">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for assistance. (Error code: L05)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用， 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333.  (錯誤號碼: L05)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="6">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for assistance. (Error code: L06)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用， 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L06)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="7">
+		<message_en>
+			Server is busy. Please try again later. (Error code: L07)
+		</message_en>
+		<message_ch>
+			系統繁忙. 請稍後再試. (Error code: L07)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="8">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L08)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L08)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="9">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L09)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L09)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="10">
+		<message_en>
+			"KingKing" is temporarily unavailable in Hong Kong.
+		</message_en>
+		<message_ch>
+			傾King只能在海外使用
+		</message_ch>
+	</response>
+
+	<response function="login_oversea" resultcode="11">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L11)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用， 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L11)
+		</message_ch>
+	</response>	
+	
+	<response function="login_oversea" resultcode="12">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L12)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L12)
+		</message_ch>
+	</response>	
+
+	<response function="login_oversea" resultcode="13">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L13)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L13)
+		</message_ch>
+	</response>
+
+	<response function="login_oversea" resultcode="14">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L14)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L14)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="15">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L15)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L15)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="16">
+		<message_en>
+			You are not allowed to make/receive calls via "KingKing". Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L16)
+		</message_en>
+		<message_ch>
+			你不能使用傾King撥打/接聽電話。請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L16)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="17">
+		<message_en>
+			"KingKing" is not applicable to the PCCW-HKT mobile service rechargeable SIM. Please call our 24-hour international hotline on +852 2888 8333 for details. (Error code: L17)
+		</message_en>
+		<message_ch>
+			「傾King」服務不適用於PCCW-HKT流動通訊服務之儲值卡. 請聯絡24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L17)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="19">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L19)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L19)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="20">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L20)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L20)
+		</message_ch>
+	</response>
+	
+	<response function="login_oversea" resultcode="99">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: L99)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: L99)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="1">
+		<message_en>
+			Your handset model is not compatible with "KingKing".
+		</message_en>
+		<message_ch>
+			您的手機型號未能支援
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="2">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L02)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用. 請聯絡24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L02)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="3">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for details. (Error code: L03)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用. 請聯絡24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L03)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="4">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for assistance. (Error code: L04)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用， 請聯絡24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L04)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="5">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for assistance. (Error code: L05)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用， 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢.  (錯誤號碼: L05)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="6">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for assistance. (Error code: L06)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用， 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L06)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="7">
+		<message_en>
+			Server is busy. Please try again later. (Error code: L07)
+		</message_en>
+		<message_ch>
+			系統繁忙. 請稍後再試. (Error code: L07)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="8">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L08)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L08)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="9">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L09)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L09)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="10">
+		<message_en>
+			"KingKing" is temporarily unavailable in Hong Kong.
+		</message_en>
+		<message_ch>
+			傾King只能在海外使用
+		</message_ch>
+	</response>
+
+	<response function="login_prepaid" resultcode="11">
+		<message_en>
+			傾King is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L11)
+		</message_en>
+		<message_ch>
+			「傾King」 暫時未能使用， 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L11)
+		</message_ch>
+	</response>	
+	
+	<response function="login_prepaid" resultcode="12">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L12)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L12)
+		</message_ch>
+	</response>	
+
+	<response function="login_prepaid" resultcode="13">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L13)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L13)
+		</message_ch>
+	</response>
+
+	<response function="login_prepaid" resultcode="14">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L14)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L14)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="15">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L15)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L15)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="16">
+		<message_en>
+			You are not allowed to make/receive calls via "KingKing". Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L16)
+		</message_en>
+		<message_ch>
+			你不能使用傾King撥打/接聽電話。請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L16)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="17">
+		<message_en>
+			"KingKing" is not applicable to the PCCW-HKT mobile service rechargeable SIM. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for details. (Error code: L17)
+		</message_en>
+		<message_ch>
+			「傾King」服務不適用於PCCW-HKT流動通訊服務之儲值卡. 請聯絡24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L17)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="19">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L19)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L19)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="20">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L20)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L20)
+		</message_ch>
+	</response>
+	
+	<response function="login_prepaid" resultcode="99">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: L99)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: L99)
+		</message_ch>
+	</response>
+
+	<response function="callforward" resultcode="1">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: C01)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: C01)
+		</message_ch>
+	</response>
+	
+	<response function="callforward" resultcode="2">
+		<message_en>
+			No incoming call will be connected via "KingKing" because your mobile number is now being call-forwarded to -fw_number-.
+		</message_en>
+		<message_ch>
+			來電不會以傾King 接駁因你的流動電話號碼現已轉駁至 -fw_number-.
+		</message_ch>
+	</response>
+	
+	<response function="callforward" resultcode="3">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: C03) 
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: C03)
+		</message_ch>
+	</response>
+
+	<response function="callforward" resultcode="6">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: C06)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: C06)
+		</message_ch>
+	</response>	
+	
+	<response function="callforward" resultcode="7">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: C07)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: C07)
+		</message_ch>
+	</response>	
+	
+	<response function="callforward" resultcode="8">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: C08)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: C08)
+		</message_ch>
+	</response>	
+	
+	<response function="callforward" resultcode="99">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: C99)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: C99)
+		</message_ch>
+	</response>
+	
+	<response function="callforward_oversea" resultcode="1">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: C01)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: C01)
+		</message_ch>
+	</response>
+	
+	<response function="callforward_oversea" resultcode="2">
+		<message_en>
+			No incoming call will be connected via "KingKing" because your mobile number is now being call-forwarded to -fw_number-.
+		</message_en>
+		<message_ch>
+			來電不會以傾King 接駁因你的流動電話號碼現已轉駁至 -fw_number-.
+		</message_ch>
+	</response>
+	
+	<response function="callforward_oversea" resultcode="3">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: C03) 
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: C03)
+		</message_ch>
+	</response>
+
+	<response function="callforward_oversea" resultcode="6">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: C06)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: C06)
+		</message_ch>
+	</response>	
+	
+	<response function="callforward_oversea" resultcode="7">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: C07)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: C07)
+		</message_ch>
+	</response>	
+	
+	<response function="callforward_oversea" resultcode="8">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: C08)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: C08)
+		</message_ch>
+	</response>	
+	
+	<response function="callforward_oversea" resultcode="99">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: C99)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333. (錯誤號碼: C99)
+		</message_ch>
+	</response>
+	
+	<response function="callforward_prepaid" resultcode="1">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: C01)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: C01)
+		</message_ch>
+	</response>
+	
+	<response function="callforward_prepaid" resultcode="2">
+		<message_en>
+			No incoming call will be connected via "KingKing" because your mobile number is now being call-forwarded to -fw_number-.
+		</message_en>
+		<message_ch>
+			來電不會以傾King 接駁因你的流動電話號碼現已轉駁至 -fw_number-.
+		</message_ch>
+	</response>
+	
+	<response function="callforward_prepaid" resultcode="3">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: C03) 
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: C03)
+		</message_ch>
+	</response>
+
+	<response function="callforward_prepaid" resultcode="6">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: C06)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: C06)
+		</message_ch>
+	</response>	
+	
+	<response function="callforward_prepaid" resultcode="7">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: C07)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: C07)
+		</message_ch>
+	</response>	
+	
+	<response function="callforward_prepaid" resultcode="8">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: C08)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: C08)
+		</message_ch>
+	</response>	
+	
+	<response function="callforward_prepaid" resultcode="99">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: C99)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: C99)
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info" resultcode="1">
+		<message_en>
+			Your registered mobile number is invalid. Please register again. (Error code: NT00-B)
+		</message_en>
+		<message_ch>
+			你所登記的電話號碼已無效, 請重新登記. (錯誤號碼: NT00-B)
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info" resultcode="2">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: NT02)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: NT02) 
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info" resultcode="3">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: NT03)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: NT03) 
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info" resultcode="4">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: NT04)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: NT04) 
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info" resultcode="99">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call the 24-hour PCCW Service Hotline 1000 (Consumer)/10088 (Business) for  details. (Error code: NT99)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線 1000 (個人客戶) /10088 (商業客戶). (錯誤號碼: NT99) 
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info_oversea" resultcode="1">
+		<message_en>
+			Your registered mobile number is invalid. Please register again. (Error code: NT00-B)
+		</message_en>
+		<message_ch>
+			你所登記的電話號碼已無效, 請重新登記. (錯誤號碼: NT00-B)
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info_oversea" resultcode="2">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: NT02)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333 (錯誤號碼: NT02) 
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info_oversea" resultcode="3">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: NT03)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333 (錯誤號碼: NT03) 
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info_oversea" resultcode="4">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: NT04)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333 (錯誤號碼: NT04) 
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info_oversea" resultcode="99">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour international hotline on +852 2888 8333 for more details. (Error code: NT99)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時環球支援熱線 +852 2888 8333 (錯誤號碼: NT99) 
+		</message_ch>
+	</response>
+	
+		<response function="get_number_info_prepaid" resultcode="1">
+		<message_en>
+			Your registered mobile number is invalid. Please register again. (Error code: NT00-B)
+		</message_en>
+		<message_ch>
+			你所登記的電話號碼已無效, 請重新登記. (錯誤號碼: NT00-B)
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info_prepaid" resultcode="2">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: NT02)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: NT02) 
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info_prepaid" resultcode="3">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: NT03)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: NT03) 
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info_prepaid" resultcode="4">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: NT04)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: NT04) 
+		</message_ch>
+	</response>
+	
+	<response function="get_number_info_prepaid" resultcode="99">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: NT99)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: NT99) 
+		</message_ch>
+	</response>
+	
+	<response function="check_balance" resultcode="1">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: PB01)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: PB01) 
+		</message_ch>
+	</response>
+	
+	<response function="check_balance" resultcode="2">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: PB02)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: PB02) 
+		</message_ch>
+	</response>
+	
+	<response function="check_balance" resultcode="3">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: PB03)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: PB03) 
+		</message_ch>
+	</response>
+	
+	<response function="check_balance" resultcode="4">
+		<message_en>
+			"KingKing" is temporarily unavailable. Please call our 24-hour PCCW-HKT Service Hotline 1833808 (local)/+852 1833808 (overseas) for more details. (Error code: PB04)
+		</message_en>
+		<message_ch>
+			「傾King」暫時未能使用. 請聯絡PCCW 24 小時個人服務熱線1833808 (本地) /+852 1833808 (海外)查詢. (錯誤號碼: PB04) 
+		</message_ch>
+	</response>
+	
+	<response function="check_balance" resultcode="5">
+		<message_en>
+			Account balance cannot be updated. Please try again later.
+		</message_en>
+		<message_ch>
+			暫時未能取得餘額, 請稍後再試.
+		</message_ch>
+	</response>
+	
+	<response function="check_balance" resultcode="99">
+		<message_en>
+			Account balance cannot be updated. Please try again later.
+		</message_en>
+		<message_ch>
+			暫時未能取得餘額, 請稍後再試.
+		</message_ch>
+	</response>
+</roamsavemessage>

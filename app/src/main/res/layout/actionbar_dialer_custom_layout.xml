@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="-6.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/detail_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <com.pccw.android.common.widget.TypefacedTextView android:textColor="@color/bg_white" android:gravity="top" android:id="@id/dialpadBannerText" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/banner_text" android:singleLine="false" font:typeface="Roboto-Regular.ttf" />
+        <LinearLayout android:gravity="bottom" android:id="@id/PreCallQILayout" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.pccw.android.common.widget.TypefacedTextView android:textColor="@color/bg_white" android:id="@id/preCallQIStatusTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pre_call_qi_status_title" font:typeface="Roboto-Regular.ttf" />
+            <com.pccw.android.common.widget.TypefacedTextView android:textColor="@color/bg_white" android:id="@id/PreCallQIStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" font:typeface="RobotoCondensed-Light.ttf" />
+        </LinearLayout>
+    </LinearLayout>
+    <CheckBox android:id="@id/dialpadBannerOnOffButton" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:button="@null" android:drawableRight="@drawable/roamsave_button" android:layout_weight="0.0" />
+</LinearLayout>

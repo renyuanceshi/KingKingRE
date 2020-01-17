@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="top" android:background="@color/bg_grey" android:layout_width="fill_parent" android:layout_height="800.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@color/bg_white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:gravity="right" android:id="@id/com_facebook_picker_share_bar" android:background="@color/bg_white" android:layout_width="fill_parent" android:layout_height="72.0dip" android:layout_alignParentTop="true">
+            <TextView android:textSize="21.0sp" android:textStyle="bold" android:textColor="@color/holo_blue" android:ellipsize="end" android:gravity="center" android:id="@id/com_facebook_picker_title" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:scaleType="center" android:text="@string/facebook_preview_dialog_title" android:singleLine="true" android:shadowColor="#66000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="5.0dip" android:layout_below="@id/com_facebook_picker_share_bar">
+            <ImageView android:id="@id/facebook_share_pic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:src="@drawable/ic_logo" android:scaleType="center" android:layout_alignParentLeft="true" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_toRightOf="@id/facebook_share_pic">
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="18.0sp" android:textColor="#ff0000ff" android:id="@id/facebook_share_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="Medium Text" />
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="18.0sp" android:textColor="#ff808080" android:id="@id/facebook_share_link" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Medium Text" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="18.0dip">
+                    <Button android:id="@id/cancellocation" android:background="@drawable/com_facebook_close" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="29.0dip" android:minHeight="29.0dip" />
+                    <TextView android:textSize="20.0sp" android:textStyle="bold" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/facebook_share_place" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="TextView" android:maxLines="1" android:singleLine="true" />
+                </LinearLayout>
+                <Button android:textSize="18.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/addlocation" android:background="@drawable/background_round_button" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/facebook_preview_dialog_addlocation" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/bottom_button_area" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <Button android:textSize="18.0sp" android:textColor="@color/bg_black" android:id="@id/com_facebook_picker_cancel_button" android:background="@null" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="32.0dip" android:layout_margin="8.0dip" android:minWidth="55.0dip" android:text="@string/facebook_preview_dialog_button_cancel" android:shadowColor="#66000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_weight="1.0" />
+            <View android:background="@color/bg_grey" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+            <Button android:textSize="18.0sp" android:textColor="@color/bg_black" android:id="@id/com_facebook_picker_share_button" android:background="@null" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="32.0dip" android:layout_margin="8.0dip" android:text="@string/facebook_preview_dialog_button_share" android:shadowColor="#66000000" android:shadowDx="1.0" android:shadowDy="1.0" android:shadowRadius="1.0" android:layout_weight="1.0" />
+        </LinearLayout>
+        <View android:background="@color/bg_grey" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_above="@id/bottom_button_area" />
+    </RelativeLayout>
+</FrameLayout>

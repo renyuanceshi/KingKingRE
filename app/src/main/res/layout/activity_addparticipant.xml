@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/layoutParent" android:background="@drawable/background_gradient_white" android:paddingTop="@dimen/actionbar_padding_top_height" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
+    <ListView android:id="@android:id/list" android:visibility="visible" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="1.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="1.0dip" android:listSelector="@drawable/selector_listview_item" android:divider="@android:color/transparent" android:dividerHeight="5.0dip" android:layout_centerHorizontal="true" />
+    <RelativeLayout android:id="@id/emptyData" android:paddingTop="@dimen/actionbar_padding_top_height" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/descImg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_no_user" android:layout_centerHorizontal="true" />
+        <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/corp_blue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/chat_group_add_more_default_msg" android:singleLine="true" android:layout_below="@id/descImg" android:layout_centerHorizontal="true" font:typeface="RobotoCondensed-Regular.ttf" />
+    </RelativeLayout>
+</RelativeLayout>

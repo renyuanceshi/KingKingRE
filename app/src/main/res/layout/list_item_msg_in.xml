@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingTop="@dimen/activity_vertical_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/unreadMessageText" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip">
+        <View android:background="@color/bg_semi_lightblue" android:layout_width="fill_parent" android:layout_height="3.0dip" />
+        <RelativeLayout android:background="@color/bg_light_blue" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/chat_load_more_button_color" android:id="@id/txt_unread_msg" android:paddingTop="8.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" android:text="@string/chat_unread_messages" android:layout_centerInParent="true" font:typeface="RobotoCondensed-Regular.ttf" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/header_date" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="4.0dip">
+        <View android:background="@drawable/chat_date_background" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_centerInParent="true" />
+        <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/corp_blue" android:id="@id/msg_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/layout_system" android:background="@drawable/message_sys_bubble_background" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0dip">
+        <TextView android:textSize="14.0sp" android:textStyle="normal" android:textColor="@color/corp_blue" android:gravity="center" android:id="@id/msg_system" android:paddingLeft="4.0dip" android:paddingTop="8.0dip" android:paddingRight="4.0dip" android:paddingBottom="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center_vertical" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/layout_bubble" android:background="@drawable/message_in_bubble_background" android:paddingLeft="@dimen/chat_bubble_left_padding" android:paddingTop="@dimen/chat_bubble_vertical_padding" android:paddingRight="@dimen/chat_bubble_right_padding" android:paddingBottom="@dimen/chat_bubble_vertical_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="60.0dip">
+            <com.pccw.android.common.widget.TypefacedTextView android:textSize="12.0sp" android:textColor="@color/chat_group_member_name" android:id="@id/txt_name" android:paddingLeft="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" font:typeface="RobotoCondensed-Bold.ttf" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingLeft="@dimen/chat_bubble_vertical_margin" android:paddingTop="@dimen/chat_bubble_vertical_margin" android:paddingRight="@dimen/chat_bubble_horizontal_margin" android:paddingBottom="@dimen/chat_bubble_vertical_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/txt_name" android:layout_centerVertical="true">
+                <ImageView android:id="@id/callimg" android:background="@null" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_incoming_call" />
+                <com.pccw.sms.emoji.EmojiTextView android:textSize="16.0sp" android:textColor="@android:color/black" android:id="@id/txt_msg_in" android:paddingLeft="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout android:gravity="right" android:orientation="vertical" android:id="@id/msg_data" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-56.0dip" android:layout_toRightOf="@id/layout_bubble" android:layout_centerVertical="true">
+            <com.pccw.android.common.widget.TypefacedTextView android:textSize="10.0sp" android:textColor="@color/bg_darkgrey" android:id="@id/txt_time" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/chat_demo_time" font:typeface="RobotoCondensed-Bold.ttf" />
+            <ImageView android:id="@id/image_msg_status" android:layout_width="@dimen/chat_msg_status_icon_size" android:layout_height="@dimen/chat_msg_status_icon_size" android:src="@drawable/ic_msg_delievered" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="14.0sp" android:id="@id/menu_general_category" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/auto_login_dialog_title_description" style="@style/CustomDialogTextView" />
+    <RelativeLayout android:id="@id/add_ssid_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+            <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/contactName" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/auto_login_dialog_current_ssid" style="@style/CustomDialogTextView" />
+            <com.pccw.android.common.widget.TypefacedTextView android:textSize="16.0sp" android:id="@id/current_ssid" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="Not connected" font:typeface="RobotoCondensed-Regular.ttf" style="@style/CustomDialogTextView" />
+        </LinearLayout>
+        <ImageButton android:id="@id/add_ssid_button" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/ic_menu_add" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+    <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/current_version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/auto_login_dialog_subtitle" style="@style/CustomDialogTextView" />
+    <ListView android:id="@id/auto_login_ssid_list" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="2.0dip" />
+</LinearLayout>

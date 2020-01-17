@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_handle_outcall_keys">
+        <item>off</item>
+        <item>ask_for_outcall_interception</item>
+        <item>alway_intercept_out_call</item>
+    </string-array>
+    <string-array name="pref_handle_outcall_values">
+        <item>Off</item>
+        <item>On demand</item>
+        <item>Always</item>
+    </string-array>
+    <string-array name="pref_tunnel_modes">
+        <item>@string/pref_tunnel_mode_production_long</item>
+        <item>@string/pref_tunnel_mode_always_on_long</item>
+        <item>@string/pref_tunnel_mode_always_off_long</item>
+        <item>@string/pref_tunnel_mode_autodetect_long</item>
+    </string-array>
+    <string-array name="pref_tunnel_modes_values">
+        <item>@string/pref_tunnel_mode_production</item>
+        <item>@string/pref_tunnel_mode_always_on</item>
+        <item>@string/pref_tunnel_mode_always_off</item>
+        <item>@string/pref_tunnel_mode_autodetect</item>
+    </string-array>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="actionbar_height">144.0dip</dimen>
+    <dimen name="actionbar_padding_top_height">140.0dip</dimen>
+    <dimen name="callcard_call_waiting_hold_caller_name_text_size">24.0sp</dimen>
+    <dimen name="callcard_call_waiting_hold_caller_title_text_size">16.0sp</dimen>
+    <dimen name="callcard_call_waiting_hold_card_size">120.0dip</dimen>
+    <dimen name="callcard_call_waiting_hold_profile_head_size">80.0dip</dimen>
+    <dimen name="callcard_call_waiting_profile_head_size">144.0dip</dimen>
+    <dimen name="callcard_call_waiting_top_padding_size">120.0dip</dimen>
+    <dimen name="callcard_horizontal_margin">50.0dip</dimen>
+    <dimen name="callcard_profile_head_size">192.0dip</dimen>
+    <dimen name="callcard_top_padding_size">200.0dip</dimen>
+    <dimen name="caller_title_text_size">32.0sp</dimen>
+    <dimen name="contact_detail_photo_padding">30.0dip</dimen>
+    <dimen name="incall_dialer_key_vertical_padding">36.0dip</dimen>
+    <dimen name="incall_dialer_margin_top">164.0dip</dimen>
+    <dimen name="incall_dialer_text_size">48.0sp</dimen>
+    <dimen name="incall_logo_size">84.0dip</dimen>
+    <dimen name="incall_min_callcard_height">500.0dip</dimen>
+    <dimen name="upper_title_text_size">48.0sp</dimen>
+    <dimen name="horizontal_margin">16.0dip</dimen>
+</resources>

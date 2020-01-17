@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:background="@color/bottom_bar_deep_blue" android:layout_width="fill_parent" android:layout_height="fill_parent" android:baselineAligned="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="18.0dip" android:paddingTop="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/kk_logo" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/incall_kk_logo" />
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="@dimen/upper_title_text_size" android:textColor="@color/bg_white" android:layout_gravity="center_vertical" android:id="@id/incoming_call_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/slider_margin" android:text="@string/card_title_incoming_call" android:singleLine="true" />
+    </LinearLayout>
+    <View android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <com.pccw.android.common.widget.CircularImageView android:layout_gravity="center_horizontal" android:id="@id/incoming_caller_profile_pic" android:layout_width="@dimen/callcard_profile_head_size" android:layout_height="@dimen/callcard_profile_head_size" android:src="@drawable/default_profile_pic" />
+    <View android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="@dimen/caller_title_text_size" android:textStyle="bold" android:textColor="@color/bg_white" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/incoming_caller_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/unknown" android:singleLine="true" />
+    <View android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/incoming_caller_number_view" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:textSize="16.0sp" android:textStyle="normal" android:textColor="@color/bg_white" android:id="@id/incoming_label" android:paddingRight="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:textSize="16.0sp" android:textStyle="normal" android:textColor="@color/bg_white" android:id="@id/incoming_phone_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+    <View android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="15.0dip" />
+    <Button android:textSize="16.0sp" android:textStyle="bold" android:textColor="@android:color/white" android:layout_gravity="center_horizontal" android:id="@id/incoming_answer_button" android:background="@drawable/selector_incall_waiting_accept_button_background" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:text="@string/incoming_call_dialog_hold_and_accept" />
+    <View android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="5.0dip" />
+    <Button android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/dark_blue" android:layout_gravity="center_horizontal" android:id="@id/incoming_answer_end_button" android:background="@drawable/selector_incall_waiting_accept_end_button_background" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:text="@string/incoming_call_dialog_end_and_accept" />
+    <View android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="1.0dip" />
+    <ImageButton android:layout_gravity="center_horizontal" android:id="@id/incoming_reject_button" android:background="@drawable/selector_incall_waiting_reject_button_background" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_margin="15.0dip" android:src="@drawable/ic_end_call" />
+</LinearLayout>

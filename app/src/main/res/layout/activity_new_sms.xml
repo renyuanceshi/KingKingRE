@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pccw.sms.emoji.EmojiLinearLayout android:id="@id/layoutParent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/layoutSecond" android:background="@color/chat_top_dark_blue" android:paddingTop="@dimen/actionbar_padding_top_height" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <View android:id="@id/view1" android:layout_width="fill_parent" android:layout_height="12.0dip" />
+        <com.pccw.android.common.widget.AddRecipientsScrollView android:id="@id/recipientScroll" android:background="@color/chat_top_dark_blue" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:id="@id/recipientLayout" android:background="@color/chat_top_dark_blue" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="#ffffffff" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/new_sms_to" />
+                <com.pccw.sms.emoji.EmojiFlowLayout android:id="@id/recipient" android:background="@color/chat_top_dark_blue" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginRight="2.0dip" />
+            </LinearLayout>
+        </com.pccw.android.common.widget.AddRecipientsScrollView>
+        <RelativeLayout android:id="@id/top_bar" android:background="@drawable/gradient_chat_top_bar" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageButton android:id="@id/btn_add" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_marginRight="2.0dip" android:src="@drawable/sym_call_add_call" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/search_layout" android:background="@drawable/chat_field_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginTop="1.0dip" android:layout_marginRight="8.0dip" android:layout_marginBottom="1.0dip" android:singleLine="true" android:layout_toLeftOf="@id/btn_add" android:layout_centerVertical="true">
+                <com.pccw.sms.emoji.EmojiEditText android:textSize="18.0sp" android:textColor="@color/bg_black" android:layout_gravity="center" android:id="@id/txt_add_msg" android:background="@null" android:paddingRight="4.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_marginLeft="4.0dip" android:layout_marginTop="1.0dip" android:layout_marginRight="4.0dip" android:layout_marginBottom="1.0dip" android:maxHeight="@dimen/activity_editbox_height" android:hint="@string/new_sms_enter_recipient_text" android:ems="1" android:singleLine="true" android:lineSpacingExtra="1.0dip" android:imeOptions="actionNone" android:fadeScrollbars="true" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:background="@color/bg_grey" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="bottom" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+                <View android:id="@id/link_view" android:background="@color/dark_blue" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                <include android:id="@id/included_send_sms_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/send_sms_layout" />
+            </LinearLayout>
+            <ListView android:scrollbarStyle="insideOverlay" android:id="@id/listview_contact" android:background="@color/bg_grey" android:scrollbars="vertical" android:fadingEdge="none" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@android:color/transparent" android:fadeScrollbars="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</com.pccw.sms.emoji.EmojiLinearLayout>
