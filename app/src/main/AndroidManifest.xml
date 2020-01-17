@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="224" android:versionName="2.1.14" package="com.pccw.mobile.sip02" platformBuildVersionCode="27" platformBuildVersionName="8.1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-sdk android:minSdkVersion="20" android:targetSdkVersion="27" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pccw.mobile.sip02">
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -17,7 +17,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+<!--    <uses-permission android:name="android.permission.WRITE_SETTINGS" />-->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
@@ -28,36 +28,84 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-    <permission android:name="com.pccw.mobile.sip02.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+
+    <permission
+        android:name="com.pccw.mobile.sip02.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
     <uses-permission android:name="com.pccw.mobile.sip02.permission.C2D_MESSAGE" />
-    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
-    <uses-feature android:name="android.hardware.telephony" android:required="false" />
-    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" />
-    <meta-data android:name="android.support.VERSION" android:value="25.3.1" />
-    <application android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:allowBackup="true" android:logo="@drawable/logo" android:largeHeap="true" android:supportsRtl="true">
-        <activity android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name" android:name="com.pccw.mobile.sip.CheckVersionActivity" android:screenOrientation="portrait">
+
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.1" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:logo="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name="com.pccw.mobile.sip.CheckVersionActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name" android:name="com.pccw.mobile.sip.TAndCActivity" android:launchMode="singleInstance" android:screenOrientation="portrait" />
-        <activity android:theme="@style/AppTheme" android:label="@string/app_name" android:name="org.linphone.LinphoneActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="locale" android:windowSoftInputMode="stateAlwaysHidden">
+        <activity
+            android:name="com.pccw.mobile.sip.TAndCActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="org.linphone.LinphoneActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="com.pccw.mobile.sip.service.intent.dial" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="tel" />
             </intent-filter>
         </activity>
-        <activity android:name="org.linphone.LinphonePreferencesActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <provider android:name="com.facebook.FacebookContentProvider" android:exported="true" android:authorities="com.facebook.app.FacebookContentProvider180005625483366" />
+<!--        <activity android:name="org.linphone.LinphonePreferencesActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider180005625483366"
+            android:exported="true" />
         <service android:name="org.linphone.LinphoneService" />
+
         <receiver android:name="org.linphone.NetworkManager">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
@@ -68,49 +116,98 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
         <activity android:name="org.linphone.DailPadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="com.pccw.mobile.sip.CallLogActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        </activity>
-        <activity android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name" android:name="com.pccw.mobile.sip.WebViewActivity" android:excludeFromRecents="true" android:screenOrientation="portrait" />
+<!--        <activity android:name="com.pccw.mobile.sip.CallLogActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity
+            android:name="com.pccw.mobile.sip.WebViewActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name="com.pccw.mobile.sip.MoreActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name" android:name="org.linphone.InCallScreen" android:taskAffinity="" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait" />
-        <activity android:theme="@style/AppTheme" android:label="@string/app_name" android:name="com.pccw.mobile.sip.AddCallActivity" android:launchMode="singleTask" android:screenOrientation="portrait" android:configChanges="locale" android:windowSoftInputMode="stateAlwaysHidden" android:parentActivityName="org.linphone.LinphoneActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.linphone.LinphoneActivity" />
+        <activity
+            android:name="org.linphone.InCallScreen"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.pccw.mobile.sip.AddCallActivity"
+            android:configChanges="locale"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:parentActivityName="org.linphone.LinphoneActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.linphone.LinphoneActivity" />
         </activity>
-        <activity android:theme="@android:style/Theme.NoTitleBar" android:name="com.pccw.mobile.sip.RegistrationActivity" android:launchMode="singleInstance" android:screenOrientation="portrait" />
-        <activity android:theme="@style/AppTheme_Contact" android:name="com.pccw.sms.ChatPageActivity" android:launchMode="singleTop" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize" android:parentActivityName="org.linphone.LinphoneActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.linphone.LinphoneActivity" />
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="vnd.android.cursor.item/com.pccw.im.android.profile" />
-            </intent-filter>
-        </activity>
-        <activity android:theme="@style/AppTheme_Profile" android:name="com.pccw.sms.GroupInfoActivity" android:screenOrientation="portrait" />
+<!--        <activity-->
+<!--            android:name="com.pccw.mobile.sip.RegistrationActivity"-->
+<!--            android:launchMode="singleInstance"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:theme="@android:style/Theme.NoTitleBar" />-->
+<!--        <activity-->
+<!--            android:name="com.pccw.sms.ChatPageActivity"-->
+<!--            android:launchMode="singleTop"-->
+<!--            android:parentActivityName="org.linphone.LinphoneActivity"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:theme="@style/AppTheme_Contact"-->
+<!--            android:windowSoftInputMode="adjustResize">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.PARENT_ACTIVITY"-->
+<!--                android:value="org.linphone.LinphoneActivity" />-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <data android:mimeType="vnd.android.cursor.item/com.pccw.im.android.profile" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity
+            android:name="com.pccw.sms.GroupInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Profile" />
+
         <receiver android:name="com.pccw.mobile.sip.RetryAlarmReceiver" />
         <receiver android:name="com.pccw.mobile.sip.HeartBeatAlarmReceiver" />
-        <receiver android:name="com.pccw.mobile.sip.service.PostUpgradeHandler" android:enabled="true">
+        <receiver
+            android:name="com.pccw.mobile.sip.service.PostUpgradeHandler"
+            android:enabled="true">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
                 <data android:scheme="package" />
                 <data android:path="com.pccw.mobile.sip" />
             </intent-filter>
         </receiver>
-        <activity android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:name="org.linphone.VideoCallActivity" />
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id" />
-        <activity android:name="com.facebook.LoginActivity" />
-        <activity android:name="com.pccw.mobile.sip.PickerActivity" />
+
+        <activity
+            android:name="org.linphone.VideoCallActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+<!--        <activity android:name="com.facebook.LoginActivity" />-->
+<!--        <activity android:name="com.pccw.mobile.sip.PickerActivity" />-->
+
         <receiver android:name="org.linphone.BluetoothManager">
             <intent-filter>
                 <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
@@ -119,28 +216,76 @@
                 <action android:name="android.bluetooth.headset.profile.action.AUDIO_STATE_CHANGED" />
             </intent-filter>
         </receiver>
+
         <activity android:name="com.pccw.mobile.sip.UserGuidePager" />
-        <activity android:name="com.pccw.mobile.sip.EnhancedPrepaidRegistrationActivity" android:launchMode="singleInstance" android:screenOrientation="portrait" />
+        <activity
+            android:name="com.pccw.mobile.sip.EnhancedPrepaidRegistrationActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" />
         <activity android:name="com.pccw.mobile.sip.ConfirmRegistrationActivity" />
-        <activity android:theme="@style/AppTheme_Contact" android:name="com.pccw.mobile.sip.ContactDetailsActivity" android:screenOrientation="portrait" android:parentActivityName="org.linphone.LinphoneActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.linphone.LinphoneActivity" />
+        <activity
+            android:name="com.pccw.mobile.sip.ContactDetailsActivity"
+            android:parentActivityName="org.linphone.LinphoneActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_Contact">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.linphone.LinphoneActivity" />
         </activity>
-        <activity android:theme="@style/AppTheme_Contact" android:name="com.pccw.mobile.sip.AddCallContactDetailsActivity" android:screenOrientation="portrait" android:parentActivityName="org.linphone.AddCallActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.linphone.AddCallActivity" />
+<!--        <activity-->
+<!--            android:name="com.pccw.mobile.sip.AddCallContactDetailsActivity"-->
+<!--            android:parentActivityName="org.linphone.AddCallActivity"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:theme="@style/AppTheme_Contact">-->
+<!--            <meta-data-->
+<!--                android:name="android.support.PARENT_ACTIVITY"-->
+<!--                android:value="org.linphone.AddCallActivity" />-->
+<!--        </activity>-->
+        <activity
+            android:name="com.pccw.mobile.sip.CallLogGroupedActivity"
+            android:theme="@style/AppTheme_Contact">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.linphone.LinphoneActivity" />
         </activity>
-        <activity android:theme="@style/AppTheme_Contact" android:name="com.pccw.mobile.sip.CallLogGroupedActivity">
-            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.linphone.LinphoneActivity" />
-        </activity>
-        <activity android:theme="@style/AppTheme_Contact" android:name="com.pccw.sms.NewSMSActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize" />
-        <activity android:name="com.pccw.contacticon.ContactsSyncAccountActivity" />
-        <activity android:theme="@style/AppTheme_Contact" android:name="com.pccw.sms.BlockedUserListActivity" android:screenOrientation="portrait" />
-        <activity android:theme="@style/AppTheme_Contact" android:name="com.pccw.sms.BlockUserActivity" android:screenOrientation="portrait" />
-        <service android:name="com.pccw.sms.service.ResendAddQueueService" />
-        <provider android:name="com.pccw.mobile.provider.KingKingContentProvider" android:enabled="true" android:exported="true" android:authorities="kingking" />
-        <activity android:theme="@android:style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false" />
-        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-        <activity android:theme="@style/com_facebook_activity_theme" android:name="com.facebook.FacebookActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" />
-        <activity android:name="com.facebook.CustomTabMainActivity" />
-        <provider android:name="com.facebook.internal.FacebookInitProvider" android:exported="false" android:authorities="com.pccw.mobile.sip02.FacebookInitProvider" />
+<!--        <activity-->
+<!--            android:name="com.pccw.sms.NewSMSActivity"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:theme="@style/AppTheme_Contact"-->
+<!--            android:windowSoftInputMode="adjustResize" />-->
+<!--        <activity android:name="com.pccw.contacticon.ContactsSyncAccountActivity" />-->
+<!--        <activity-->
+<!--            android:name="com.pccw.sms.BlockedUserListActivity"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:theme="@style/AppTheme_Contact" />-->
+<!--        <activity-->
+<!--            android:name="com.pccw.sms.BlockUserActivity"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:theme="@style/AppTheme_Contact" />-->
+
+<!--        <service android:name="com.pccw.sms.service.ResendAddQueueService" />-->
+        <provider
+            android:name="com.pccw.mobile.provider.KingKingContentProvider"
+            android:authorities="kingking"
+            android:enabled="true"
+            android:exported="true" />
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+<!--        <activity-->
+<!--            android:name="com.facebook.FacebookActivity"-->
+<!--            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"-->
+<!--            android:theme="@style/com_facebook_activity_theme" />-->
+<!--        <activity android:name="com.facebook.CustomTabMainActivity" />-->
+
+<!--        <provider-->
+<!--            android:name="com.facebook.internal.FacebookInitProvider"-->
+<!--            android:authorities="com.pccw.mobile.sip02.FacebookInitProvider"-->
+<!--            android:exported="false" />-->
     </application>
 </manifest>

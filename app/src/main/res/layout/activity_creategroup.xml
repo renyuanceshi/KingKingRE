@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/layoutParent" android:background="@drawable/background_gradient_white" android:paddingTop="@dimen/actionbar_padding_top_height" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListView android:id="@android:id/list" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="1.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="1.0dip" android:listSelector="@drawable/selector_listview_item" android:divider="@android:color/transparent" android:dividerHeight="5.0dip" android:layout_above="@id/btnShowCheckedItems" android:layout_centerHorizontal="true" />
-    <Button android:textSize="14.0sp" android:textStyle="bold" android:textColor="@android:color/white" android:id="@id/btnShowCheckedItems" android:background="@drawable/selector_action_button" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="4.0dip" android:text="@string/group_profile_update" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:textAllCaps="true" />
-</RelativeLayout>
