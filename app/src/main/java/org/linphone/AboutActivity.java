@@ -4,7 +4,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.TextView;
 import com.pccw.mobile.sip.BaseActivity;
-import com.pccw.mobile.sip02.R;
+
 import org.linphone.core.Log;
 
 public class AboutActivity extends BaseActivity {

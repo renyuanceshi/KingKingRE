@@ -25,7 +25,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.pccw.mobile.sip.service.MobileSipService;
-import com.pccw.mobile.sip02.R;
 import com.pccw.mobile.util.UserPhotoUtil;
 import com.pccw.sms.service.ConversationParticipantItemService;
 import com.pccw.sms.service.PhoneListService;
@@ -85,7 +84,7 @@ public class AddCallContactDetailsActivity extends BaseActionBarActivity impleme
                 textView2.setText(cursor.getString(3));
             }
             textView.setText(string);
-            imageView.setVisibility(8);
+            imageView.setVisibility(View.GONE);
             view.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     Uri fromParts = Uri.fromParts("tel", string, (String) null);
@@ -95,7 +94,7 @@ public class AddCallContactDetailsActivity extends BaseActionBarActivity impleme
                     AddCallContactDetailsActivity.this.startActivity(intent);
                 }
             });
-            linearLayout.setVisibility(8);
+            linearLayout.setVisibility(View.GONE);
             imageView3.setVisibility(4);
         }
 

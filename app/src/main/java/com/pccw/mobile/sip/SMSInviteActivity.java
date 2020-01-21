@@ -16,9 +16,7 @@ import android.widget.ExpandableListView;
 import android.widget.SimpleCursorTreeAdapter;
 import android.widget.TextView;
 import com.facebook.share.internal.ShareConstants;
-import com.pccw.mobile.sip.AddCallContactFragment;
 import com.pccw.mobile.sip.service.MobileSipService;
-import com.pccw.mobile.sip02.R;
 import com.pccw.mobile.util.MobileNumberUtil;
 import java.io.IOException;
 import java.net.URL;
@@ -158,7 +156,7 @@ public class SMSInviteActivity extends DialogFragment {
     /* access modifiers changed from: private */
     public void showNoWifiDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage(getActivity().getString(R.string.ask_wifi)).setCancelable(false).setNeutralButton(getActivity().getString(17039360), new DialogInterface.OnClickListener() {
+        builder.setMessage(getActivity().getString(R.string.ask_wifi)).setCancelable(false).setNeutralButton(getActivity().getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
             }
@@ -192,7 +190,7 @@ public class SMSInviteActivity extends DialogFragment {
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(2131165290);
+        builder.setTitle(R.string.app_name);
         builder.setIcon(R.drawable.ic_logo);
         builder.setMessage(getString(R.string.sms_confirm_dialog_message) + str + "?\n\n" + this.displayMessage + "\n\n" + getString(R.string.sms_confirm_dialog_remark));
         builder.setPositiveButton(R.string.sms_confirm_dialog_ok, new DialogInterface.OnClickListener() {
@@ -311,7 +309,7 @@ public class SMSInviteActivity extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         if (z) {
             builder.setIcon(R.drawable.ic_logo);
-            builder.setTitle(getActivity().getString(2131165290));
+            builder.setTitle(getActivity().getString(R.string.app_name));
             builder.setMessage(getActivity().getString(R.string.sms_invite_success));
         } else {
             builder.setTitle(getActivity().getString(R.string.error_dialog_title));

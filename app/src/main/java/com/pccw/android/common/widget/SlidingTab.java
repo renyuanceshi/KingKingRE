@@ -1,10 +1,12 @@
 package com.pccw.android.common.widget;
 
+import android.app.Service;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Vibrator;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -16,7 +18,9 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.pccw.mobile.sip02.R;
+
 import org.linphone.BandwidthManager;
 import org.linphone.LinphoneService;
 
@@ -107,7 +111,7 @@ public class SlidingTab extends ViewGroup {
             this.target.setImageResource(i3);
             this.target.setScaleType(ImageView.ScaleType.CENTER);
             this.target.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
-            this.target.setVisibility(4);
+            this.target.setVisibility(INVISIBLE);
             viewGroup.addView(this.target);
             viewGroup.addView(this.tab);
             viewGroup.addView(this.arrow);
@@ -135,12 +139,12 @@ public class SlidingTab extends ViewGroup {
             translateAnimation.setFillAfter(true);
             this.tab.startAnimation(translateAnimation);
             this.text.startAnimation(translateAnimation);
-            this.target.setVisibility(4);
+            this.target.setVisibility(INVISIBLE);
         }
 
         public void hideTarget() {
             this.target.clearAnimation();
-            this.target.setVisibility(4);
+            this.target.setVisibility(INVISIBLE);
         }
 
         /* access modifiers changed from: package-private */
@@ -196,19 +200,19 @@ public class SlidingTab extends ViewGroup {
         }
 
         public void measure() {
-            this.tab.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
-            this.arrow.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
-            this.text.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
+            this.tab.measure(View.MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+            this.arrow.measure(View.MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+            this.text.measure(View.MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
         }
 
         /* access modifiers changed from: package-private */
         public void reset(boolean z) {
             setState(0);
-            this.text.setVisibility(0);
+            this.text.setVisibility(View.VISIBLE);
             this.text.setTextAppearance(this.text.getContext(), R.style.TextAppearance_SlidingTabNormal);
-            this.tab.setVisibility(0);
-            this.arrow.setVisibility(0);
-            this.target.setVisibility(4);
+            this.tab.setVisibility(View.VISIBLE);
+            this.arrow.setVisibility(View.VISIBLE);
+            this.target.setVisibility(INVISIBLE);
             boolean z2 = this.alignment != 0 ? this.alignment == 1 : true;
             int left = z2 ? this.alignment == 0 ? this.alignment_value - this.tab.getLeft() : this.alignment_value - this.tab.getRight() : 0;
             int top = z2 ? 0 : this.alignment == 2 ? this.alignment_value - this.tab.getTop() : this.alignment_value - this.tab.getBottom();
@@ -291,9 +295,9 @@ public class SlidingTab extends ViewGroup {
         /* access modifiers changed from: package-private */
         public void show(boolean z) {
             int i = 0;
-            this.text.setVisibility(0);
-            this.tab.setVisibility(0);
-            this.arrow.setVisibility(0);
+            this.text.setVisibility(View.VISIBLE);
+            this.tab.setVisibility(View.VISIBLE);
+            this.arrow.setVisibility(View.VISIBLE);
             if (z) {
                 boolean z2 = this.alignment != 0 ? this.alignment == 1 : true;
                 int width = z2 ? this.alignment == 0 ? this.tab.getWidth() : -this.tab.getWidth() : 0;
@@ -313,7 +317,7 @@ public class SlidingTab extends ViewGroup {
             AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
             alphaAnimation.setDuration(500);
             this.target.startAnimation(alphaAnimation);
-            this.target.setVisibility(0);
+            this.target.setVisibility(View.VISIBLE);
         }
 
         public void startAnimation(Animation animation, Animation animation2) {
@@ -350,7 +354,7 @@ public class SlidingTab extends ViewGroup {
         };
         this.mTmpRect = new Rect();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.SlidingDrawerEx);
-        this.mOrientation = obtainStyledAttributes.getInt(0, 0);
+        this.mOrientation = obtainStyledAttributes.getInt(R.styleable.SlidingDrawerEx_Orientation, HORIZONTAL);
         obtainStyledAttributes.recycle();
         this.mDensity = getResources().getDisplayMetrics().density;
         this.mLeftSlider = new Slider(this, R.drawable.jog_tab_left_generic, R.drawable.jog_tab_bar_left_generic, R.drawable.jog_tab_target_gray, R.drawable.btn_accept_call_animation);
@@ -419,7 +423,7 @@ public class SlidingTab extends ViewGroup {
     private void vibrate(long j) {
         synchronized (this) {
             if (this.mVibrator == null) {
-                this.mVibrator = (Vibrator) getContext().getSystemService("vibrator");
+                this.mVibrator = (Vibrator) getContext().getSystemService(Service.VIBRATOR_SERVICE);
             }
             this.mVibrator.vibrate(j);
         }

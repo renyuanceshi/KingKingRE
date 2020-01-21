@@ -41,7 +41,6 @@ import com.pccw.database.helper.DBHelper;
 import com.pccw.mobile.sip.AddCallActivity;
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip.util.NumberMappingUtil;
-import com.pccw.mobile.sip02.R;
 import com.pccw.mobile.ui.dialog.KKAlertDialogFragment;
 import org.linphone.core.LinphoneCall;
 import org.linphone.core.LinphoneCore;
@@ -202,11 +201,11 @@ public class DailPadActivityForAddCall extends Fragment implements View.OnClickL
                 final CheckBox checkBox = new CheckBox(this.activity);
                 checkBox.setChecked(false);
                 checkBox.setText(R.string.do_not_show_this_again);
-                new AlertDialog.Builder(this.activity).setIcon(R.drawable.ic_logo).setTitle(2131165290).setMessage(R.string.idd_charge_message).setView(checkBox).setNegativeButton(17039360, new DialogInterface.OnClickListener() {
+                new AlertDialog.Builder(this.activity).setIcon(R.drawable.ic_logo).setTitle(R.string.app_name).setMessage(R.string.idd_charge_message).setView(checkBox).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
                     }
-                }).setPositiveButton(17039370, new DialogInterface.OnClickListener() {
+                }).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (checkBox.isChecked()) {
                             PreferenceManager.getDefaultSharedPreferences(DailPadActivityForAddCall.this.ctx).edit().putBoolean(DailPadActivityForAddCall.SHOW_IDD_CHARGE_MESSAGE, false).commit();
@@ -262,7 +261,7 @@ public class DailPadActivityForAddCall extends Fragment implements View.OnClickL
                 newInstance.setTargetFragment(this, 1);
                 newInstance.setMessage(getString(R.string.ask_wifi));
                 newInstance.setPositiveButton(getString(R.string.go_to_wifi_setting));
-                newInstance.setNegativeButton(getString(17039360));
+                newInstance.setNegativeButton(getString(android.R.string.cancel));
                 newInstance.setCancelable(false);
                 newInstance.show(this.fragmentManager, "dialog");
                 return;
@@ -521,7 +520,7 @@ public class DailPadActivityForAddCall extends Fragment implements View.OnClickL
     /* access modifiers changed from: package-private */
     public void playTone(int i) {
         int ringerMode;
-        if (this.mDTMFToneEnabled && (ringerMode = ((AudioManager) this.ctx.getSystemService("audio")).getRingerMode()) != 0 && ringerMode != 1) {
+        if (this.mDTMFToneEnabled && (ringerMode = ((AudioManager) this.ctx.getSystemService(AUDIO_SERVICE)).getRingerMode()) != 0 && ringerMode != 1) {
             synchronized (this.mToneGeneratorLock) {
                 if (this.mToneGenerator != null) {
                     this.mToneGenerator.startTone(i);

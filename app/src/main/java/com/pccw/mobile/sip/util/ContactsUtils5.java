@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 import com.pccw.mobile.sip.service.MobileSipService;
 import java.io.InputStream;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils
 
 public class ContactsUtils5 extends ContactsUtils {
     public Contact queryByPhoneNumber(Context context, String str) {

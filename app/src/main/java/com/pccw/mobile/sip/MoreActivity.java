@@ -13,17 +13,18 @@ import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.TextView;
-import com.facebook.internal.AnalyticsEvents;
+
 import com.pccw.mobile.fragment.AutoLoginListFragment;
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip02.R;
+
 import org.apache.commons.lang3.StringUtils;
 
 public class MoreActivity extends Fragment implements View.OnClickListener {
@@ -57,19 +58,21 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
 
     private static String getVersion(Context context) {
         if (context == null) {
-            return AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+            //return AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+            return new String();
         }
         try {
             return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
         } catch (PackageManager.NameNotFoundException e) {
-            return AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+//            return AnalyticsEvents.PARAMETER_DIALOG_OUTCOME_VALUE_UNKNOWN;
+            return new String();
         }
     }
 
     private void showAlertDialog(String str) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this.activity);
-        builder.setIcon(R.drawable.ic_logo).setTitle(2131165290);
-        builder.setMessage(str).setCancelable(false).setNeutralButton(this.ctx.getString(17039370), new DialogInterface.OnClickListener() {
+        builder.setIcon(R.drawable.ic_logo).setTitle(R.string.app_name);
+        builder.setMessage(str).setCancelable(false).setNeutralButton(this.ctx.getString(android.R.string.ok), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
             }
@@ -84,7 +87,7 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
                 DlgAbout.cancel();
             }
             View inflate = LayoutInflater.from(this.ctx).inflate(R.layout.morefragment_about_dialog, (ViewGroup) null);
-            DlgAbout = new AlertDialog.Builder(this.activity).setView(inflate).setTitle(getString(R.string.menu_about)).setPositiveButton(getString(17039370), (DialogInterface.OnClickListener) null).setCancelable(true).show();
+            DlgAbout = new AlertDialog.Builder(this.activity).setView(inflate).setTitle(getString(R.string.menu_about)).setPositiveButton(getString(android.R.string.ok), (DialogInterface.OnClickListener) null).setCancelable(true).show();
             ((TextView) inflate.findViewById(R.id.current_version)).setText(getString(R.string.about).replace("\\n", StringUtils.LF).replace("${VERSION}", getVersion(this.ctx)));
         } else if (view == this.userGuideTextView) {
             if (noWiFiDialog != null && noWiFiDialog.isShowing()) {
@@ -114,7 +117,8 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
                 noWiFiDialog = (AlertDialog) onCreateNoWiFiDialog();
                 noWiFiDialog.show();
             }
-        } else if (view == this.screenCheckedTextView) {
+        }
+        else if (view == this.screenCheckedTextView) {
             this.screenCheckedTextView.toggle();
             PreferenceManager.getDefaultSharedPreferences(this.ctx).edit().putBoolean(PREF_SCREEN, this.screenCheckedTextView.isChecked()).commit();
         } else if (view == this.ilbcCodecsCheckedTextView) {
@@ -127,7 +131,7 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
             }
             instance.enableDisableAudioCodec(context, R.string.pref_codec_pcmu_key, z);
         } else if (view == this.switchAccountButton) {
-            new AlertDialog.Builder(this.ctx).setIcon(R.drawable.ic_logo).setTitle(2131165290).setMessage(R.string.confirm_switch_account).setCancelable(true).setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+            new AlertDialog.Builder(this.ctx).setIcon(R.drawable.ic_logo).setTitle(R.string.app_name).setMessage(R.string.confirm_switch_account).setCancelable(true).setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
                     if (MobileSipService.getInstance().loginStatus == 0) {
@@ -142,20 +146,22 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
                     dialogInterface.dismiss();
                 }
             }).show();
-        } else if (view == this.facebookShareTextView) {
-            if (noWiFiDialog != null && noWiFiDialog.isShowing()) {
-                noWiFiDialog.cancel();
-            }
-            if (MobileSipService.getInstance().isNetworkAvailable(this.ctx)) {
-                new FacebookShareActivity().promptShareToFacebookDialog(this.activity.getSupportFragmentManager());
-            } else if (noWiFiDialog != null) {
-                noWiFiDialog.show();
-            } else {
-                noWiFiDialog = (AlertDialog) onCreateNoWiFiDialog();
-                noWiFiDialog.show();
-            }
-        } else if (view == this.facebookLogoutTextView) {
-        } else {
+        }
+//        else if (view == this.facebookShareTextView) {
+//            if (noWiFiDialog != null && noWiFiDialog.isShowing()) {
+//                noWiFiDialog.cancel();
+//            }
+//            if (MobileSipService.getInstance().isNetworkAvailable(this.ctx)) {
+//                new FacebookShareActivity().promptShareToFacebookDialog(this.activity.getSupportFragmentManager());
+//            } else if (noWiFiDialog != null) {
+//                noWiFiDialog.show();
+//            } else {
+//                noWiFiDialog = (AlertDialog) onCreateNoWiFiDialog();
+//                noWiFiDialog.show();
+//            }
+//        } else if (view == this.facebookLogoutTextView) {
+//        }
+        else {
             if (view == this.smsInviteTextView) {
                 if (noWiFiDialog != null && noWiFiDialog.isShowing()) {
                     noWiFiDialog.cancel();
@@ -212,7 +218,7 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
     /* access modifiers changed from: protected */
     public Dialog onCreateNoContactDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this.activity);
-        builder.setMessage(R.string.sms_notice_nocontacts).setCancelable(false).setNeutralButton(this.ctx.getString(17039370), new DialogInterface.OnClickListener() {
+        builder.setMessage(R.string.sms_notice_nocontacts).setCancelable(false).setNeutralButton(this.ctx.getString(android.R.string.ok), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
             }
@@ -223,7 +229,7 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
     /* access modifiers changed from: protected */
     public Dialog onCreateNoWiFiDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this.activity);
-        builder.setMessage(this.ctx.getString(R.string.ask_wifi)).setCancelable(false).setNeutralButton(this.ctx.getString(17039360), new DialogInterface.OnClickListener() {
+        builder.setMessage(this.ctx.getString(R.string.ask_wifi)).setCancelable(false).setNeutralButton(this.ctx.getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
             }
@@ -236,7 +242,7 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        ActionBar supportActionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
+        ActionBar supportActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         supportActionBar.setDisplayOptions(8, 24);
         supportActionBar.setTitle((CharSequence) getString(R.string.actionbar_tab_title_more));
         View inflate = ClientStateManager.isRegisteredPrepaid(this.ctx) ? layoutInflater.inflate(R.layout.more_msip_prepaid, viewGroup, false) : layoutInflater.inflate(R.layout.more_msip_postpaid, viewGroup, false);
@@ -280,10 +286,10 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
             this.topupByCallingTextView.setOnClickListener(this);
         }
         if (ClientStateManager.isCSL(this.ctx)) {
-            this.facebookShareTextView.setVisibility(8);
-            this.smsInviteTextView.setVisibility(8);
-            this.facebookShareBar.setVisibility(8);
-            this.smsInviteBar.setVisibility(8);
+            this.facebookShareTextView.setVisibility(View.GONE);
+            this.smsInviteTextView.setVisibility(View.GONE);
+            this.facebookShareBar.setVisibility(View.GONE);
+            this.smsInviteBar.setVisibility(View.GONE);
         } else {
             this.facebookShareTextView.setOnClickListener(this);
             this.smsInviteTextView.setOnClickListener(this);
@@ -294,15 +300,15 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
 
     public void onResume() {
         super.onResume();
-        this.facebookLogoutTextView.setVisibility(8);
+        this.facebookLogoutTextView.setVisibility(View.GONE);
         this.screenCheckedTextView.setChecked(PreferenceManager.getDefaultSharedPreferences(this.ctx).getBoolean(PREF_SCREEN, false));
         this.ilbcCodecsCheckedTextView.setChecked(PreferenceManager.getDefaultSharedPreferences(this.ctx).getBoolean(getString(R.string.pref_codec_ilbc_key), false));
         if (MobileSipService.getInstance().isAutoCodecSelection()) {
-            this.ilbcCodecsCheckedTextView.setVisibility(8);
-            this.ilbcCodecsBar.setVisibility(8);
+            this.ilbcCodecsCheckedTextView.setVisibility(View.GONE);
+            this.ilbcCodecsBar.setVisibility(View.GONE);
         } else {
-            this.ilbcCodecsCheckedTextView.setVisibility(0);
-            this.ilbcCodecsBar.setVisibility(0);
+            this.ilbcCodecsCheckedTextView.setVisibility(View.VISIBLE);
+            this.ilbcCodecsBar.setVisibility(View.VISIBLE);
         }
         if (MobileSipService.getInstance().isLoginRunning() || MobileSipService.getInstance().isDisconnecting() || MobileSipService.getInstance().loginStatus != -100) {
             this.ilbcCodecsCheckedTextView.setEnabled(false);
@@ -311,7 +317,7 @@ public class MoreActivity extends Fragment implements View.OnClickListener {
             this.ilbcCodecsCheckedTextView.setEnabled(true);
             this.ilbcCodecsCheckedTextView.setClickable(true);
         }
-        this.switchAccountButton.setVisibility(8);
+        this.switchAccountButton.setVisibility(View.GONE);
         if (ClientStateManager.isRegisteredPrepaid(this.ctx)) {
             this.mobileNumberTextView.setText(ClientStateManager.getRegisteredNumber(this.ctx));
         }

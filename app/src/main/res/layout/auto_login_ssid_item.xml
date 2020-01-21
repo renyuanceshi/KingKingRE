@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
-    <com.pccw.android.common.widget.TypefacedTextView android:textSize="16.0sp" android:id="@id/record_ssid" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="&quot;SSID&quot;" android:layout_alignParentLeft="true" android:layout_centerVertical="true" font:typeface="RobotoCondensed-Regular.ttf" style="@style/CustomDialogTextView" />
-    <ImageButton android:id="@id/remove_ssid_button" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/ic_menu_delete" android:layout_alignParentRight="true" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.pccw.android.common.widget.TypefacedTextView
+        android:id="@id/record_ssid"
+        style="@style/CustomDialogTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10.0dip"
+        android:text="&quot;SSID&quot;"
+        android:textSize="16.0sp"
+        android:fontFamily="robotoCondensed_regular.ttf" />
+
+    <ImageButton
+        android:id="@id/remove_ssid_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10.0dip"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_menu_delete" />
 </RelativeLayout>

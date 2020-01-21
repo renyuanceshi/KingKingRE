@@ -14,7 +14,7 @@
             </RelativeLayout>
             <ImageView android:id="@id/upperTitleIcon" android:layout_width="@dimen/incall_logo_size" android:layout_height="@dimen/incall_logo_size" android:layout_marginRight="10.0dip" android:src="@drawable/incall_kk_logo" android:layout_weight="0.0" />
         </LinearLayout>
-        <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceLarge" android:textSize="@dimen/upper_title_text_size" android:textColor="@color/bg_white" android:id="@id/upperTitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/slider_margin" android:layout_marginTop="4.0dip" android:text="@string/card_title_incoming_call" android:singleLine="false" font:typeface="Roboto-Regular.ttf" />
+        <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceLarge" android:textSize="@dimen/upper_title_text_size" android:textColor="@color/bg_white" android:id="@id/upperTitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/slider_margin" android:layout_marginTop="4.0dip" android:text="@string/card_title_incoming_call" android:singleLine="false" android:fontFamily="roboto_regular.ttf" />
         <ImageView android:id="@id/iconVideo" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/icon_margin" android:src="@drawable/indicator_video_call" android:layout_below="@id/upperTitle" />
     </RelativeLayout>
 </LinearLayout>

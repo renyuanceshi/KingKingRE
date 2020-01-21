@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import com.pccw.mobile.sip.service.MobileSipService;
-import com.pccw.mobile.sip02.R;
 
 public class BootReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {

@@ -18,14 +18,14 @@
             android:id="@id/dialpadBannerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
             android:gravity="top"
             android:paddingLeft="4.0dip"
             android:paddingRight="4.0dip"
             android:singleLine="false"
             android:text="@string/banner_text"
             android:textColor="@color/bg_white"
-            android:visibility="invisible"
-            font:typeface="Roboto-Regular.ttf" />
+            android:visibility="invisible" />
 
         <LinearLayout
             android:id="@id/PreCallQILayout"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/pre_call_qi_status_title"
                 android:textColor="@color/bg_white"
-                font:typeface="Roboto-Regular.ttf" />
+                android:fontFamily="roboto_regular.ttf" />
 
             <com.pccw.android.common.widget.TypefacedTextView
                 android:id="@id/PreCallQIStatus"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4.0dip"
                 android:textColor="@color/bg_white"
-                font:typeface="RobotoCondensed-Light.ttf" />
+                android:fontFamily="robotoCondensed_light.ttf" />
         </LinearLayout>
     </LinearLayout>
 

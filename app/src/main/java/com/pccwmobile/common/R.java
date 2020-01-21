@@ -740,7 +740,7 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 2131165200;
         public static final int abc_shareactionprovider_share_with_application = 2131165201;
         public static final int abc_toolbar_collapse_description = 2131165202;
-        public static final int app_name = 2131165290;
+        public static final int app_name = R.string.app_name;
         public static final int search_menu_title = 2131165244;
         public static final int status_bar_notification_info_overflow = 2131165245;
     }

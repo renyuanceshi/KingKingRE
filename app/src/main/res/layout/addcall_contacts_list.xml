@@ -1,11 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/bg_grey" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:orientation="vertical" android:background="@drawable/contact_list_background_gradient" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/addcall_contact_select_linearlayout" android:background="@drawable/contact_filter_all_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="24.0dip" android:layout_marginBottom="4.0dip">
-            <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/corp_blue" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/addcall_contact_all_textview" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/contact_filter_all" android:layout_weight="1.0" android:textAllCaps="true" font:typeface="RobotoCondensed-Bold.ttf" />
-            <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/bg_white" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/addcall_contact_kk_textview" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/contact_filter_kingking" android:layout_weight="1.0" android:textAllCaps="true" font:typeface="RobotoCondensed-Bold.ttf" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_grey"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/contact_list_background_gradient"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@id/addcall_contact_select_linearlayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="24.0dip"
+            android:layout_marginTop="4.0dip"
+            android:layout_marginRight="24.0dip"
+            android:layout_marginBottom="4.0dip"
+            android:background="@drawable/contact_filter_all_background"
+            android:orientation="horizontal">
+
+            <com.pccw.android.common.widget.TypefacedTextView
+                android:id="@id/addcall_contact_all_textview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:clickable="true"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_filter_all"
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/corp_blue"
+                android:fontFamily="robotocondensed_bold.ttf" />
+
+            <com.pccw.android.common.widget.TypefacedTextView
+                android:id="@id/addcall_contact_kk_textview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:clickable="true"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_filter_kingking"
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/bg_white"
+                android:fontFamily="robotocondensed_bold.ttf" />
         </LinearLayout>
     </LinearLayout>
-    <ListView android:id="@android:id/list" android:fadingEdge="none" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="2.0dip" android:divider="@android:color/transparent" android:dividerHeight="2.0dip" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="2.0dip"
+        android:clickable="true"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="2.0dip"
+        android:fadingEdge="none" />
 </LinearLayout>

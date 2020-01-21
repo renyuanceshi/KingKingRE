@@ -191,25 +191,25 @@
 <!--        <item name="android:layout_marginTop">2.0dip</item>-->
 <!--        <item name="android:layout_marginBottom">1.0dip</item>-->
 <!--    </style>-->
-<!--    <style name="CustomDialog" parent="@style/Theme.AppCompat.Light">-->
-<!--        <item name="android:windowBackground">@null</item>-->
-<!--        <item name="android:windowIsFloating">true</item>-->
-<!--    </style>-->
-<!--    <style name="CustomDialogTextView">-->
-<!--        <item name="android:textColor">@color/bg_white</item>-->
-<!--    </style>-->
-<!--    <style name="KKItemBar">-->
-<!--        <item name="android:background">@color/greyish_white</item>-->
-<!--    </style>-->
-<!--    <style name="KKItemText">-->
-<!--        <item name="android:textSize">16.0dip</item>-->
-<!--        <item name="android:textColor">@color/corp_blue</item>-->
-<!--        <item name="android:padding">10.0dip</item>-->
-<!--    </style>-->
-<!--    <style name="KKItemTextBar">-->
-<!--        <item name="android:textColor">@color/bg_white</item>-->
-<!--        <item name="android:background">@drawable/splash_screen_background_gradient</item>-->
-<!--    </style>-->
+    <style name="CustomDialog" parent="@style/Theme.AppCompat.Light">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="CustomDialogTextView">
+        <item name="android:textColor">@color/bg_white</item>
+    </style>
+    <style name="KKItemBar">
+        <item name="android:background">@color/greyish_white</item>
+    </style>
+    <style name="KKItemText">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:textColor">@color/corp_blue</item>
+        <item name="android:padding">10.0dip</item>
+    </style>
+    <style name="KKItemTextBar">
+        <item name="android:textColor">@color/bg_white</item>
+        <item name="android:background">@drawable/splash_screen_background_gradient</item>
+    </style>
 <!--    <style name="MyDialog" parent="@android:style/Theme.Dialog">-->
 <!--        <item name="android:textColor">@color/bg_white</item>-->
 <!--    </style>-->
@@ -1359,16 +1359,16 @@
 <!--    <style name="TextAppearance.Widget.AppCompat.ExpandedMenu.Item" parent="@style/Base.TextAppearance.Widget.AppCompat.ExpandedMenu.Item" />-->
 <!--    <style name="TextAppearance.Widget.AppCompat.Toolbar.Subtitle" parent="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle" />-->
 <!--    <style name="TextAppearance.Widget.AppCompat.Toolbar.Title" parent="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Title" />-->
-<!--    <style name="TextAppearance_SlidingTabActive" parent="@android:style/TextAppearance">-->
-<!--        <item name="android:textSize">30.0sp</item>-->
-<!--        <item name="android:textStyle">bold</item>-->
-<!--        <item name="android:textColor">#ff333333</item>-->
-<!--    </style>-->
-<!--    <style name="TextAppearance_SlidingTabNormal" parent="@android:style/TextAppearance">-->
-<!--        <item name="android:textSize">30.0dip</item>-->
-<!--        <item name="android:textStyle">bold</item>-->
-<!--        <item name="android:textColor">#ff333333</item>-->
-<!--    </style>-->
+    <style name="TextAppearance_SlidingTabActive" parent="@android:style/TextAppearance">
+        <item name="android:textSize">30.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff333333</item>
+    </style>
+    <style name="TextAppearance_SlidingTabNormal" parent="@android:style/TextAppearance">
+        <item name="android:textSize">30.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff333333</item>
+    </style>
 <!--    <style name="Theme.AppCompat" parent="@style/Base.Theme.AppCompat" />-->
 <!--    <style name="Theme.AppCompat.CompactMenu" parent="@style/Base.Theme.AppCompat.CompactMenu" />-->
 <!--    <style name="Theme.AppCompat.Dialog" parent="@style/Base.Theme.AppCompat.Dialog" />-->

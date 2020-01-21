@@ -13,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import com.pccw.mobile.sip02.R;
+
 import org.linphone.LinphoneActivity;
 
 public class UserGuidePager extends BaseFragmentActivity {

@@ -20,6 +20,6 @@ public class AddRecipientsScrollView extends ScrollView {
 
     /* access modifiers changed from: protected */
     public void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(200, Integer.MIN_VALUE));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(200, MeasureSpec.EXACTLY));
     }
 }

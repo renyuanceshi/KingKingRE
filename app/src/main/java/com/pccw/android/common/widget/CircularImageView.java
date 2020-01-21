@@ -14,11 +14,10 @@ import android.net.Uri;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.ImageView;
-import com.pccw.android.common.widget.CrossFadeAnimation;
+
 import com.pccw.mobile.sip02.R;
 
-public class CircularImageView extends ImageView implements CrossFadeAnimation.CrossFadeAnimationListener {
+public class CircularImageView extends android.support.v7.widget.AppCompatImageView implements CrossFadeAnimation.CrossFadeAnimationListener {
     private int borderWidth = 2;
     private CrossFadeAnimation crossFadeAnimation;
     private Bitmap image;
@@ -44,7 +43,7 @@ public class CircularImageView extends ImageView implements CrossFadeAnimation.C
         super(context, attributeSet, i);
         if (!isInEditMode()) {
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.CircularImageView);
-            int i2 = obtainStyledAttributes.getInt(0, this.borderWidth);
+            int i2 = obtainStyledAttributes.getInt(R.styleable.CircularImageView_borderWidth, this.borderWidth);
             obtainStyledAttributes.recycle();
             this.borderWidth = i2;
             setup();
@@ -68,7 +67,7 @@ public class CircularImageView extends ImageView implements CrossFadeAnimation.C
     }
 
     private int measureWidth(int i) {
-        return View.MeasureSpec.getMode(i) == 1073741824 ? View.MeasureSpec.getSize(i) : this.viewWidth;
+        return View.MeasureSpec.getMode(i) == MeasureSpec.EXACTLY ? View.MeasureSpec.getSize(i) : this.viewWidth;
     }
 
     @SuppressLint({"NewApi"})

@@ -1,6 +1,7 @@
 package com.pccw.mobile.sip;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -78,8 +79,8 @@ public class EnhancedPrepaidRegistrationActivity extends BaseActivity implements
             runOnUiThread(new Runnable() {
                 public void run() {
                     AlertDialog.Builder builder = new AlertDialog.Builder(EnhancedPrepaidRegistrationActivity.this);
-                    builder.setIcon(R.drawable.ic_logo).setTitle(2131165290).setMessage(str);
-                    builder.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+                    builder.setIcon(R.drawable.ic_logo).setTitle(R.string.app_name).setMessage(str);
+                    builder.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
                     builder.create().show();
                     EnhancedPrepaidRegistrationActivity.this.mPhone.setEnabled(true);
                     EnhancedPrepaidRegistrationActivity.this.mSubmit.setEnabled(true);
@@ -199,9 +200,9 @@ public class EnhancedPrepaidRegistrationActivity extends BaseActivity implements
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.enhanced_prepaid_registration_submit_button /*2131624251*/:
-                ((InputMethodManager) getSystemService("input_method")).hideSoftInputFromWindow(this.mPhone.getWindowToken(), 0);
+                ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(this.mPhone.getWindowToken(), 0);
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle(getString(2131165290));
+                builder.setTitle(getString(R.string.app_name));
                 builder.setIcon(R.drawable.ic_logo);
                 builder.setMessage(getString(R.string.loading));
                 this.loadingDialog = builder.create();
@@ -232,14 +233,14 @@ public class EnhancedPrepaidRegistrationActivity extends BaseActivity implements
         this.mSubmit.setOnClickListener(this);
         this.mCancel = (Button) findViewById(R.id.enhanced_prepaid_registration_cancel_button);
         this.mCancel.setOnClickListener(this);
-        this.mCancel.setVisibility(8);
+        this.mCancel.setVisibility(View.GONE);
         this.messageController = MobileSipService.getInstance().messageController;
         this.mPhone.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (i != 0 || keyEvent.getKeyCode() != 66) {
                     return false;
                 }
-                ((InputMethodManager) EnhancedPrepaidRegistrationActivity.this.getSystemService("input_method")).hideSoftInputFromWindow(EnhancedPrepaidRegistrationActivity.this.mPhone.getApplicationWindowToken(), 0);
+                ((InputMethodManager) EnhancedPrepaidRegistrationActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(EnhancedPrepaidRegistrationActivity.this.mPhone.getApplicationWindowToken(), 0);
                 return true;
             }
         });
@@ -250,7 +251,7 @@ public class EnhancedPrepaidRegistrationActivity extends BaseActivity implements
         if (this.loadingDialog != null && this.loadingDialog.isShowing()) {
             this.loadingDialog.dismiss();
         }
-        ((InputMethodManager) getSystemService("input_method")).hideSoftInputFromWindow(this.mPhone.getWindowToken(), 0);
+        ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(this.mPhone.getWindowToken(), 0);
     }
 
     public void onResume() {

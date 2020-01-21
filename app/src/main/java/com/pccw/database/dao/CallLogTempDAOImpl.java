@@ -12,7 +12,7 @@ import com.pccw.mobile.util.FormatUtil;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils
 
 public class CallLogTempDAOImpl implements GenericDAO<CallLogTemp, Integer> {
     protected String[] CALLLOGTEMP_TABLE_COLUMNS = {DBHelper.CALLLOGTEMP_KEY_CHATNUMBER, DBHelper.CALLLOGTEMP_KEY_CALLDATE, DBHelper.CALLLOGTEMP_KEY_CALLTYPE, DBHelper.CALLLOGTEMP_KEY_DURATION, DBHelper.CALLLOGTEMP_KEY_CONTACTNUMBER};

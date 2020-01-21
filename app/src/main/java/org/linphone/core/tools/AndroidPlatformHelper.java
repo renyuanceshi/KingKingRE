@@ -36,7 +36,7 @@ public class AndroidPlatformHelper {
     public AndroidPlatformHelper(Object obj) {
         this.mContext = (Context) obj;
         MediastreamerAndroidContext.setContext(this.mContext);
-        WifiManager wifiManager = (WifiManager) this.mContext.getSystemService("wifi");
+        WifiManager wifiManager = (WifiManager) this.mContext.getSystemService(Context.WIFI_SERVICE);
         this.mPowerManager = (PowerManager) this.mContext.getSystemService("power");
         this.mConnectivityManager = (ConnectivityManager) this.mContext.getSystemService("connectivity");
         this.mWakeLock = this.mPowerManager.newWakeLock(1, "AndroidPlatformHelper");

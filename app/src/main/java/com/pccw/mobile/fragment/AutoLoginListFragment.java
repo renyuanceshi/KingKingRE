@@ -21,7 +21,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.facebook.share.internal.ShareConstants;
 import com.pccw.mobile.sip.service.MobileSipService;
-import com.pccw.mobile.sip02.R;
 import com.pccw.mobile.util.SSIDUtil;
 import com.pccw.pref.SSIDList;
 import java.util.ArrayList;
@@ -169,10 +168,10 @@ public class AutoLoginListFragment extends DialogFragment {
         this.addSSIDBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(AutoLoginListFragment.this.getActivity());
-                builder.setTitle(AutoLoginListFragment.this.getActivity().getString(2131165290));
+                builder.setTitle(AutoLoginListFragment.this.getActivity().getString(R.string.app_name));
                 builder.setIcon(R.drawable.ic_logo);
                 builder.setMessage(String.format(AutoLoginListFragment.this.getString(R.string.auto_login_dialog_confirm_dialog_message), new Object[]{AutoLoginListFragment.this.currentSSIDText.getText().toString()}));
-                builder.setPositiveButton(17039370, new DialogInterface.OnClickListener() {
+                builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String charSequence = AutoLoginListFragment.this.currentSSIDText.getText().toString();
                         if (charSequence.equals("")) {
@@ -196,7 +195,7 @@ public class AutoLoginListFragment extends DialogFragment {
                         }
                     }
                 });
-                builder.setNegativeButton(17039360, (DialogInterface.OnClickListener) null);
+                builder.setNegativeButton(android.R.string.cancel, (DialogInterface.OnClickListener) null);
                 builder.create().show();
             }
         });
@@ -220,9 +219,9 @@ public class AutoLoginListFragment extends DialogFragment {
 
     public void updateAddSSIDLayout(String str) {
         if (MobileSipService.getInstance().loginStatus != 0 || str.equals("") || isForbidAutoLoginSSID(str)) {
-            this.addSSIDLayout.setVisibility(8);
+            this.addSSIDLayout.setVisibility(View.GONE);
         } else {
-            this.addSSIDLayout.setVisibility(0);
+            this.addSSIDLayout.setVisibility(View.VISIBLE);
         }
     }
 

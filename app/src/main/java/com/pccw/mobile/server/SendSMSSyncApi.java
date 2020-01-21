@@ -16,7 +16,7 @@ import com.pccw.sms.util.SMSFormatUtil;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils
 
 public class SendSMSSyncApi extends SyncApiServerConnection {
     private Context context;

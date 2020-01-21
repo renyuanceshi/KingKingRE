@@ -168,11 +168,11 @@ public class CallLogGroupedActivity extends BaseActionBarActivity implements Loa
                 final CheckBox checkBox = new CheckBox(getApplicationContext());
                 checkBox.setChecked(false);
                 checkBox.setText(R.string.do_not_show_this_again);
-                new AlertDialog.Builder(getApplicationContext()).setIcon(R.drawable.ic_logo).setTitle(2131165290).setMessage(R.string.idd_charge_message).setView(checkBox).setNegativeButton(17039360, new DialogInterface.OnClickListener() {
+                new AlertDialog.Builder(getApplicationContext()).setIcon(R.drawable.ic_logo).setTitle(R.string.app_name).setMessage(R.string.idd_charge_message).setView(checkBox).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
                     }
-                }).setPositiveButton(17039370, new DialogInterface.OnClickListener() {
+                }).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (checkBox.isChecked()) {
                             PreferenceManager.getDefaultSharedPreferences(CallLogGroupedActivity.this.getApplicationContext()).edit().putBoolean(CallLogGroupedActivity.SHOW_IDD_CHARGE_MESSAGE, false).commit();
@@ -200,7 +200,7 @@ public class CallLogGroupedActivity extends BaseActionBarActivity implements Loa
 
     /* access modifiers changed from: private */
     public void setCallTypeLabel(CallLogGroupedItemViews callLogGroupedItemViews, int i) {
-        callLogGroupedItemViews.callTypeImageView.setVisibility(0);
+        callLogGroupedItemViews.callTypeImageView.setVisibility(View.VISIBLE);
         switch (i) {
             case 1:
                 callLogGroupedItemViews.callTypeTextView.setText(R.string.call_log_grouped_incoming_call);
@@ -216,7 +216,7 @@ public class CallLogGroupedActivity extends BaseActionBarActivity implements Loa
                 return;
             default:
                 callLogGroupedItemViews.callTypeTextView.setText(R.string.call_log_grouped_unknown_call);
-                callLogGroupedItemViews.callTypeImageView.setVisibility(8);
+                callLogGroupedItemViews.callTypeImageView.setVisibility(View.GONE);
                 return;
         }
     }

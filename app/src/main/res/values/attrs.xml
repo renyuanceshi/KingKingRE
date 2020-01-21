@@ -370,4 +370,24 @@
 <!--        <enum name="small" value="-2" />-->
 <!--    </attr>-->
 <!--    <attr name="com_facebook_is_cropped" format="boolean" />-->
+    <declare-styleable name="TypefacedTextView">
+        <attr name="text" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="FilledWidthRoundCorneredImageView">
+        <attr name="radius" format="float"/>
+        <attr name="isFilled" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="SlidingDrawerEx">
+        <attr name="Orientation" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="RelativeButtonLayout">
+        <attr name="handledByParent" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="EditTextViewWithNumberCount">
+        <attr name="maxWordCount" format="integer"/>
+        <attr name="isMultiLined" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="CircularImageView">
+        <attr name="borderWidth" format="integer"/>
+    </declare-styleable>
 </resources>

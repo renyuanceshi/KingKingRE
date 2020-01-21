@@ -35,7 +35,7 @@
                     android:textAllCaps="true"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/corp_blue"
-                    font:typeface="RobotoCondensed-Bold.ttf" />
+                    android:fontFamily="@font/robotocondensed_bold.ttf" />
 
                 <com.pccw.android.common.widget.TypefacedTextView
                     android:id="@id/addcall_contact_detail_item_phone_number"
@@ -44,7 +44,7 @@
                     android:singleLine="true"
                     android:textAppearance="?android:textAppearanceLarge"
                     android:textColor="@color/corp_blue"
-                    font:typeface="Roboto-Regular.ttf" />
+                    android:fontFamily="@font/roboto_regular" />
             </LinearLayout>
 
             <ImageView
@@ -89,7 +89,7 @@
             android:text="@string/contact_detail_default_status"
             android:textColor="@color/shade_orange"
             android:textSize="16.0sp"
-            font:typeface="Roboto-Regular.ttf" />
+            android:fontFamily="roboto_regular.ttf" />
 
         <com.pccw.android.common.widget.TypefacedTextView
             android:id="@id/addcall_contact_detail_item_im_last_online_time"
@@ -100,6 +100,6 @@
             android:text="@string/contact_detail_last_online"
             android:textColor="@color/bg_black"
             android:textSize="10.0sp"
-            font:typeface="Roboto-Regular.ttf" />
+            android:fontFamily="roboto_regular.ttf" />
     </LinearLayout>
 </LinearLayout>

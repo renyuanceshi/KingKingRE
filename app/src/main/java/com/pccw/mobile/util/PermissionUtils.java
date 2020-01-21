@@ -160,7 +160,7 @@ public class PermissionUtils {
 
     public static void toAppSetting(Context context) {
         Intent intent = new Intent();
-        intent.addFlags(268435456);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         if (Build.VERSION.SDK_INT >= 9) {
             intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(Uri.fromParts("package", context.getPackageName(), (String) null));

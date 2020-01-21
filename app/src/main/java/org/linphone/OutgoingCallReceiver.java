@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import com.pccw.mobile.sip02.R;
 
 public class OutgoingCallReceiver extends BroadcastReceiver {
     public static String TAG = ";0000000";

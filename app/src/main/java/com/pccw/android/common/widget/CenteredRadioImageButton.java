@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatRadioButton;
 import android.util.AttributeSet;
+
 import com.pccw.mobile.sip02.R;
 
 public class CenteredRadioImageButton extends AppCompatRadioButton {
@@ -17,9 +18,9 @@ public class CenteredRadioImageButton extends AppCompatRadioButton {
         if (!isInEditMode()) {
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.CompoundButton, 0, 0);
             this.image = obtainStyledAttributes.getDrawable(1);
-            setButtonDrawable(17170445);
+            setButtonDrawable(android.R.color.transparent);
             obtainStyledAttributes.recycle();
-            setTypeface(Typeface.createFromAsset(context.getAssets(), "RobotoCondensed-Bold.ttf"));
+            setTypeface(Typeface.createFromAsset(context.getAssets(), "font/robotocondensed_bold.ttf"));
         }
     }
 

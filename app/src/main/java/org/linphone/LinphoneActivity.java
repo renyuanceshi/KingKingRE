@@ -30,22 +30,23 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+
 import com.pccw.android.common.widget.ActionBarUtils;
 import com.pccw.mobile.sip.BaseActionBarActivity;
-import com.pccw.mobile.sip.CallLogFragment;
 import com.pccw.mobile.sip.CheckVersionActivity;
 import com.pccw.mobile.sip.ClientStateManager;
 import com.pccw.mobile.sip.Constants;
-import com.pccw.mobile.sip.ContactFragment;
 import com.pccw.mobile.sip.MoreActivity;
 import com.pccw.mobile.sip.ServerMessageController;
 import com.pccw.mobile.sip.TAndCActivity;
 import com.pccw.mobile.sip.service.Codec;
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip02.R;
-import java.util.List;
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 import org.linphone.core.LinphoneCall;
+
+import java.util.List;
 
 public class LinphoneActivity extends BaseActionBarActivity {
     private static final String BAR_TAG_CONTACT = "CONTACT";
@@ -108,7 +109,7 @@ public class LinphoneActivity extends BaseActionBarActivity {
                                         LinphoneActivity.this.startActivity(new Intent("android.settings.WIFI_SETTINGS"));
                                     }
                                 });
-                                builder.setNeutralButton(17039360, (DialogInterface.OnClickListener) null);
+                                builder.setNeutralButton(android.R.string.cancel, (DialogInterface.OnClickListener) null);
                                 try {
                                     builder.setTitle(R.string.regfailed).setIcon(R.drawable.ic_logo).setMessage(string2).setCancelable(true).show();
                                 } catch (Exception e) {
@@ -119,19 +120,19 @@ public class LinphoneActivity extends BaseActionBarActivity {
                                         LinphoneActivity.this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://www.pccw-hkt.com/kk")));
                                     }
                                 });
-                                builder.setNegativeButton(LinphoneActivity.this.getString(17039360), (DialogInterface.OnClickListener) null);
+                                builder.setNegativeButton(LinphoneActivity.this.getString(android.R.string.cancel), (DialogInterface.OnClickListener) null);
                                 try {
                                     builder.setTitle(R.string.regfailed).setIcon(R.drawable.ic_logo).setMessage(string).setCancelable(true).show();
                                 } catch (Exception e2) {
                                 }
                             } else if (!z) {
-                                builder.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+                                builder.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
                                 try {
                                     builder.setTitle(R.string.regfailed).setIcon(R.drawable.ic_logo).setMessage(string).setCancelable(true).show();
                                 } catch (Exception e3) {
                                 }
                             } else {
-                                builder.setNegativeButton(17039360, (DialogInterface.OnClickListener) null);
+                                builder.setNegativeButton(android.R.string.cancel, (DialogInterface.OnClickListener) null);
                                 builder.setPositiveButton(LinphoneActivity.this.getString(R.string.oversea_message_dialog_callnow_button), (DialogInterface.OnClickListener) null);
                                 builder.setNeutralButton(LinphoneActivity.this.getString(R.string.oversea_message_dialog_dialing_fixedline_button), (DialogInterface.OnClickListener) null);
                                 final AlertDialog create = builder.setTitle(R.string.regfailed).setIcon(R.drawable.ic_logo).setMessage(string).setCancelable(true).create();
@@ -156,13 +157,13 @@ public class LinphoneActivity extends BaseActionBarActivity {
                                 button.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
                                 button2.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
                                 button3.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
-                                ((LinearLayout) button.getParent()).setOrientation(1);
+                                ((LinearLayout) button.getParent()).setOrientation(LinearLayout.VERTICAL);
                             }
                         } else if (Constants.INTENT_ALERT_LOGIN_WARNING.equals(intent.getAction())) {
                             String string3 = intent.getExtras().getString(ServerMessageController.MESSAGE_INTENT_MESSAGE);
                             if (string3 != null) {
                                 try {
-                                    new AlertDialog.Builder(LinphoneActivity.this).setTitle(2131165290).setIcon(R.drawable.ic_logo).setMessage(string3).setCancelable(true).setNeutralButton(17039370, (DialogInterface.OnClickListener) null).show();
+                                    new AlertDialog.Builder(LinphoneActivity.this).setTitle(R.string.app_name).setIcon(R.drawable.ic_logo).setMessage(string3).setCancelable(true).setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null).show();
                                 } catch (Exception e4) {
                                 }
                             }
@@ -170,7 +171,7 @@ public class LinphoneActivity extends BaseActionBarActivity {
                             if (intent.getBooleanExtra(Constants.INTENT_ALERT_LOGIN_DISCONNECTED_EXTRA_NEED_SHOW_MESSAGE, true)) {
                                 try {
                                     AlertDialog.Builder builder2 = new AlertDialog.Builder(LinphoneActivity.this);
-                                    builder2.setMessage(LinphoneActivity.this.getString(R.string.disconnected)).setCancelable(true).setNeutralButton(LinphoneActivity.this.getString(17039370), (DialogInterface.OnClickListener) null);
+                                    builder2.setMessage(LinphoneActivity.this.getString(R.string.disconnected)).setCancelable(true).setNeutralButton(LinphoneActivity.this.getString(android.R.string.ok), (DialogInterface.OnClickListener) null);
                                     builder2.create().show();
                                 } catch (Exception e5) {
                                 }
@@ -183,7 +184,7 @@ public class LinphoneActivity extends BaseActionBarActivity {
                                 if (Build.VERSION.SDK_INT <= 11) {
                                     checkBox.setTextColor(LinphoneActivity.this.getResources().getColor(R.color.bg_white));
                                 }
-                                new AlertDialog.Builder(LinphoneActivity.this).setTitle(2131165290).setIcon(R.drawable.ic_logo).setCancelable(true).setView(inflate).setPositiveButton(17039370, new DialogInterface.OnClickListener() {
+                                new AlertDialog.Builder(LinphoneActivity.this).setTitle(R.string.app_name).setIcon(R.drawable.ic_logo).setCancelable(true).setView(inflate).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         if (checkBox.isChecked()) {
                                             PreferenceManager.getDefaultSharedPreferences(context).edit().putBoolean(Constants.SHOW_DAYPASS_MESSAGE, false).commit();
@@ -191,7 +192,7 @@ public class LinphoneActivity extends BaseActionBarActivity {
                                         MobileSipService.getInstance().dayPassAlertOKClicked = true;
                                         DailPadActivity.getDailPad().contTurnOnRS();
                                     }
-                                }).setNeutralButton(17039360, (DialogInterface.OnClickListener) null).show();
+                                }).setNeutralButton(android.R.string.cancel, (DialogInterface.OnClickListener) null).show();
                             } catch (Exception e6) {
                             }
                         }
@@ -300,7 +301,7 @@ public class LinphoneActivity extends BaseActionBarActivity {
 
     private void showCallHotlineDialog(final String str) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Do you want to call the following number: " + str.substring(4)).setCancelable(true).setNegativeButton(getString(17039360), (DialogInterface.OnClickListener) null).setPositiveButton(getString(17039370), new DialogInterface.OnClickListener() {
+        builder.setMessage("Do you want to call the following number: " + str.substring(4)).setCancelable(true).setNegativeButton(getString(android.R.string.cancel), (DialogInterface.OnClickListener) null).setPositiveButton(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
                 try {
                     Intent intent = new Intent("android.intent.action.CALL");
@@ -316,7 +317,7 @@ public class LinphoneActivity extends BaseActionBarActivity {
     /* access modifiers changed from: private */
     public void showCallTollFreeDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(getString(R.string.toll_free_dialog_message)).setCancelable(true).setNegativeButton(getString(17039360), (DialogInterface.OnClickListener) null).setPositiveButton(getString(R.string.toll_free_dialog_ok_button), new DialogInterface.OnClickListener() {
+        builder.setMessage(getString(R.string.toll_free_dialog_message)).setCancelable(true).setNegativeButton(getString(android.R.string.cancel), (DialogInterface.OnClickListener) null).setPositiveButton(getString(R.string.toll_free_dialog_ok_button), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
                 try {
                     Intent intent = new Intent("android.intent.action.CALL");
@@ -336,7 +337,7 @@ public class LinphoneActivity extends BaseActionBarActivity {
         WebView webView = new WebView(this);
         webView.loadUrl(getString(R.string.system_current_language).equals("zh") ? Constants.HKT_HOTLINE_HTML_URL_CH : Constants.HKT_HOTLINE_HTML_URL_EN);
         builder.setView(webView);
-        builder.setNegativeButton(17039360, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
             }
         });
@@ -375,17 +376,17 @@ public class LinphoneActivity extends BaseActionBarActivity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView((int) R.layout.main_tab);
-        this.mSensorManager = (SensorManager) getSystemService("sensor");
+        this.mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         theLinphoneActivity = this;
         this.mMainFrame = (FrameLayout) findViewById(R.id.main_frame);
-        this.mAudioManager = (AudioManager) getSystemService("audio");
+        this.mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         this.actionBar = getSupportActionBar();
         this.actionBar.setNavigationMode(2);
         this.actionBar.setDisplayShowTitleEnabled(false);
         ActionBarUtils.setHasEmbeddedTabs(this.actionBar, false);
         this.actionBar.addTab(this.actionBar.newTab().setIcon((int) R.drawable.ic_tab_keypad).setTag(BAR_TAG_DAILPAD).setTabListener(new TabListener(this, BAR_TAG_DAILPAD, DailPadActivity.class)));
-        this.actionBar.addTab(this.actionBar.newTab().setIcon((int) R.drawable.ic_tab_contact).setTag(BAR_TAG_CONTACT).setTabListener(new TabListener(this, BAR_TAG_CONTACT, ContactFragment.class)));
-        this.actionBar.addTab(this.actionBar.newTab().setIcon((int) R.drawable.ic_tab_history).setTag(BAR_TAG_HISTORY).setTabListener(new TabListener(this, BAR_TAG_HISTORY, CallLogFragment.class)));
+//        this.actionBar.addTab(this.actionBar.newTab().setIcon((int) R.drawable.ic_tab_contact).setTag(BAR_TAG_CONTACT).setTabListener(new TabListener(this, BAR_TAG_CONTACT, ContactFragment.class)));
+//        this.actionBar.addTab(this.actionBar.newTab().setIcon((int) R.drawable.ic_tab_history).setTag(BAR_TAG_HISTORY).setTabListener(new TabListener(this, BAR_TAG_HISTORY, CallLogFragment.class)));
         this.actionBar.addTab(this.actionBar.newTab().setIcon((int) R.drawable.ic_tab_settings).setTag(BAR_TAG_MORE).setTabListener(new TabListener(this, BAR_TAG_MORE, MoreActivity.class)));
         if (bundle != null) {
             this.actionBar.setSelectedNavigationItem(bundle.getInt("tab", 0));
@@ -472,7 +473,7 @@ public class LinphoneActivity extends BaseActionBarActivity {
     /* access modifiers changed from: protected */
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        if (this.mMainFrame.getVisibility() == 4) {
+        if (this.mMainFrame.getVisibility() == View.INVISIBLE) {
             bundle.putBoolean(SCREEN_IS_HIDDEN, true);
         } else {
             bundle.putBoolean(SCREEN_IS_HIDDEN, false);

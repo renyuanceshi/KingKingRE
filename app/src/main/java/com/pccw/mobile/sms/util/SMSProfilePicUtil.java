@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.provider.ContactsContract;
 import android.util.Log;
 import com.pccw.database.helper.DBHelper;
-import com.pccw.mobile.sip02.R;
 import com.pccw.mobile.sms.helper.ContactsHelper;
 
 public class SMSProfilePicUtil {

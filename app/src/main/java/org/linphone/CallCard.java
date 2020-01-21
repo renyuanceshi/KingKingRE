@@ -13,10 +13,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.pccw.mobile.sip.service.MobileSipService;
-import com.pccw.mobile.sip02.R;
-import org.apache.commons.lang.StringUtils;
-import org.linphone.CallerInfoAsyncQuery;
-import org.linphone.ContactsAsyncHelper;
+
+import org.apache.commons.lang3.StringUtils
 import org.linphone.core.LinphoneCall;
 
 public class CallCard extends FrameLayout implements CallerInfoAsyncQuery.OnQueryCompleteListener, ContactsAsyncHelper.OnImageLoadCompleteListener {
@@ -129,24 +127,24 @@ public class CallCard extends FrameLayout implements CallerInfoAsyncQuery.OnQuer
 
     private static final void showImage(ImageView imageView, int i) {
         imageView.setImageResource(i);
-        imageView.setVisibility(0);
+        imageView.setVisibility(View.VISIBLE);
     }
 
     private static final void showImage(ImageView imageView, Drawable drawable) {
         imageView.setImageDrawable(drawable);
-        imageView.setVisibility(0);
+        imageView.setVisibility(View.VISIBLE);
     }
 
     private void updateCallWaitingMainCardTitleWidgets(LinphoneCall.State state, int i) {
         if (state == LinphoneCall.State.IncomingReceived) {
-            this.mElapsedTimeCallWaitingMain.setVisibility(8);
+            this.mElapsedTimeCallWaitingMain.setVisibility(View.GONE);
         } else if (state == LinphoneCall.State.StreamsRunning || state == LinphoneCall.State.Connected || state == LinphoneCall.State.Resuming || state == LinphoneCall.State.Paused || state == LinphoneCall.State.PausedByRemote || state == LinphoneCall.State.Pausing) {
             this.mElapsedTimeCallWaitingMain.setTextColor(this.mTextColorOnHold);
             this.mElapsedTimeCallWaitingMain.setBase(SystemClock.elapsedRealtime() - ((long) (i * 1000)));
             this.mElapsedTimeCallWaitingMain.start();
-            this.mElapsedTimeCallWaitingMain.setVisibility(0);
+            this.mElapsedTimeCallWaitingMain.setVisibility(View.VISIBLE);
         } else if (state == LinphoneCall.State.OutgoingEarlyMedia || state == LinphoneCall.State.OutgoingInit || state == LinphoneCall.State.OutgoingProgress || state == LinphoneCall.State.OutgoingRinging) {
-            this.mElapsedTimeCallWaitingMain.setVisibility(8);
+            this.mElapsedTimeCallWaitingMain.setVisibility(View.GONE);
         } else if (state == LinphoneCall.State.CallEnd || state == LinphoneCall.State.Error) {
             this.mElapsedTimeCallWaitingMain.setTextColor(this.mTextColorEnded);
             this.mElapsedTimeCallWaitingMain.stop();
@@ -155,14 +153,14 @@ public class CallCard extends FrameLayout implements CallerInfoAsyncQuery.OnQuer
 
     private void updateMainCardTitleWidgets(LinphoneCall.State state, int i) {
         if (state == LinphoneCall.State.IncomingReceived) {
-            this.mElapsedTime.setVisibility(8);
+            this.mElapsedTime.setVisibility(View.GONE);
         } else if (state == LinphoneCall.State.StreamsRunning || state == LinphoneCall.State.Connected) {
             this.mElapsedTime.setTextColor(this.mTextColorConnected);
             this.mElapsedTime.setBase(SystemClock.elapsedRealtime() - ((long) (i * 1000)));
             this.mElapsedTime.start();
-            this.mElapsedTime.setVisibility(0);
+            this.mElapsedTime.setVisibility(View.VISIBLE);
         } else if (state == LinphoneCall.State.OutgoingEarlyMedia || state == LinphoneCall.State.OutgoingInit || state == LinphoneCall.State.OutgoingProgress || state == LinphoneCall.State.OutgoingRinging) {
-            this.mElapsedTime.setVisibility(8);
+            this.mElapsedTime.setVisibility(View.GONE);
         } else if (state == LinphoneCall.State.CallEnd || state == LinphoneCall.State.Error) {
             this.mElapsedTime.setTextColor(this.mTextColorEnded);
             this.mElapsedTime.stop();
@@ -178,47 +176,47 @@ public class CallCard extends FrameLayout implements CallerInfoAsyncQuery.OnQuer
     }
 
     public void displayCallWaitingLayout() {
-        this.singleCallCard.setVisibility(8);
-        this.callWaitingCallCard.setVisibility(0);
+        this.singleCallCard.setVisibility(View.GONE);
+        this.callWaitingCallCard.setVisibility(View.VISIBLE);
     }
 
     public void displayMainCallLayout() {
-        this.singleCallCard.setVisibility(0);
-        this.callWaitingCallCard.setVisibility(8);
+        this.singleCallCard.setVisibility(View.VISIBLE);
+        this.callWaitingCallCard.setVisibility(View.GONE);
     }
 
     public void displayMainCallStatus(LinphoneCall.State state, int i, boolean z) {
         String titleForCallCard = getTitleForCallCard(state);
         if (state == LinphoneCall.State.OutgoingInit || state == LinphoneCall.State.OutgoingRinging || state == LinphoneCall.State.OutgoingEarlyMedia) {
             this.mQualityIndiLayout.setVisibility(4);
-            this.mUpperTitle.setVisibility(8);
+            this.mUpperTitle.setVisibility(View.GONE);
             this.mUpperTitle.setText("");
             this.mLowerTitle.setText(titleForCallCard);
             this.mLowerTitle.setTextColor(this.mTextColorDialing);
         } else if (state == LinphoneCall.State.OutgoingProgress) {
             this.mQualityIndiLayout.setVisibility(4);
-            this.mUpperTitle.setVisibility(0);
+            this.mUpperTitle.setVisibility(View.VISIBLE);
             this.mUpperTitle.setText(titleForCallCard);
             this.mLowerTitle.setText("");
         } else if (state == LinphoneCall.State.IncomingReceived) {
             this.mQualityIndiLayout.setVisibility(4);
-            this.mUpperTitle.setVisibility(0);
+            this.mUpperTitle.setVisibility(View.VISIBLE);
             this.mUpperTitle.setText(titleForCallCard);
         } else if (state == LinphoneCall.State.StreamsRunning || state == LinphoneCall.State.Connected) {
-            this.mQualityIndiLayout.setVisibility(0);
+            this.mQualityIndiLayout.setVisibility(View.VISIBLE);
             this.mLowerTitle.setText(titleForCallCard);
             this.mLowerTitle.setTextColor(this.mTextColorConnected);
-            this.mUpperTitle.setVisibility(8);
+            this.mUpperTitle.setVisibility(View.GONE);
             this.mUpperTitle.setText("");
         } else if (state == LinphoneCall.State.CallEnd || state == LinphoneCall.State.Error) {
             this.mQualityIndiLayout.setVisibility(4);
             this.mLowerTitle.setText(titleForCallCard);
             this.mLowerTitle.setTextColor(this.mTextColorEnded);
-            this.mUpperTitle.setVisibility(8);
+            this.mUpperTitle.setVisibility(View.GONE);
             this.mUpperTitle.setText("");
         } else {
             this.mQualityIndiLayout.setVisibility(4);
-            this.mUpperTitle.setVisibility(0);
+            this.mUpperTitle.setVisibility(View.VISIBLE);
             this.mUpperTitle.setText(titleForCallCard);
             this.mLowerTitle.setText("");
         }
@@ -247,7 +245,7 @@ public class CallCard extends FrameLayout implements CallerInfoAsyncQuery.OnQuer
         this.mPhoneNumber = (TextView) findViewById(R.id.phoneNumber);
         this.mLabel = (TextView) findViewById(R.id.label);
         this.mVideoIcon = (ImageView) findViewById(R.id.iconVideo);
-        this.mVideoIcon.setVisibility(8);
+        this.mVideoIcon.setVisibility(View.GONE);
         this.mQualityIndiLayout = (RelativeLayout) findViewById(R.id.quality_indi_layout);
         this.mQualityIndiImage = (ImageView) findViewById(R.id.quality_indi_status_img);
         this.mQualityIndiLabel = (TextView) findViewById(R.id.quality_indi_label);
@@ -300,19 +298,19 @@ public class CallCard extends FrameLayout implements CallerInfoAsyncQuery.OnQuer
         }
         if (StringUtils.isNotBlank(str3)) {
             this.mLabel.setText(str3);
-            this.mLabel.setVisibility(0);
+            this.mLabel.setVisibility(View.VISIBLE);
         } else {
             this.mLabel.setText("");
         }
         if (drawable != null) {
             this.mPhoto.setImageDrawable(drawable);
-            this.mPhoto.setVisibility(0);
+            this.mPhoto.setVisibility(View.VISIBLE);
         } else if (str.equals(CallerInfo.CONFERENCE_NUMBER)) {
             this.mPhoto.setImageResource(R.drawable.default_conference_pic);
-            this.mPhoto.setVisibility(0);
+            this.mPhoto.setVisibility(View.VISIBLE);
         } else {
             this.mPhoto.setImageResource(R.drawable.default_profile_pic);
-            this.mPhoto.setVisibility(0);
+            this.mPhoto.setVisibility(View.VISIBLE);
         }
     }
 
@@ -338,19 +336,19 @@ public class CallCard extends FrameLayout implements CallerInfoAsyncQuery.OnQuer
         }
         if (StringUtils.isNotBlank(str3)) {
             this.mLabelCallWaitingMain.setText(str3);
-            this.mLabelCallWaitingMain.setVisibility(0);
+            this.mLabelCallWaitingMain.setVisibility(View.VISIBLE);
         } else {
             this.mLabelCallWaitingMain.setText("");
         }
         if (drawable != null) {
             this.mPhotoCallWaitingMain.setImageDrawable(drawable);
-            this.mPhotoCallWaitingMain.setVisibility(0);
+            this.mPhotoCallWaitingMain.setVisibility(View.VISIBLE);
         } else if (str.equals(CallerInfo.CONFERENCE_NUMBER)) {
             this.mPhotoCallWaitingMain.setImageResource(R.drawable.default_conference_pic);
-            this.mPhotoCallWaitingMain.setVisibility(0);
+            this.mPhotoCallWaitingMain.setVisibility(View.VISIBLE);
         } else {
             this.mPhotoCallWaitingMain.setImageResource(R.drawable.default_profile_pic);
-            this.mPhotoCallWaitingMain.setVisibility(0);
+            this.mPhotoCallWaitingMain.setVisibility(View.VISIBLE);
         }
     }
 
@@ -379,9 +377,9 @@ public class CallCard extends FrameLayout implements CallerInfoAsyncQuery.OnQuer
                 string = getResources().getString(R.string.quality_status_bad);
                 str = getResources().getString(R.string.quality_status_description_bad);
             }
-            this.mQualityIndiLabel.setVisibility(0);
-            this.mQualityIndiImage.setVisibility(0);
-            this.mQualityIndiStatus.setVisibility(0);
+            this.mQualityIndiLabel.setVisibility(View.VISIBLE);
+            this.mQualityIndiImage.setVisibility(View.VISIBLE);
+            this.mQualityIndiStatus.setVisibility(View.VISIBLE);
         } else {
             this.mQualityIndiLabel.setVisibility(4);
             this.mQualityIndiImage.setVisibility(4);

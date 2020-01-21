@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.RelativeLayout;
+
 import com.pccw.mobile.sip02.R;
 
 public class RelativeButtonLayout extends RelativeLayout {
@@ -17,7 +18,7 @@ public class RelativeButtonLayout extends RelativeLayout {
     public RelativeButtonLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.RelativeButtonLayout);
-        this.handledByParent = obtainStyledAttributes.getBoolean(0, false);
+        this.handledByParent = obtainStyledAttributes.getBoolean(R.styleable.RelativeButtonLayout_handledByParent, false);
         obtainStyledAttributes.recycle();
     }
 

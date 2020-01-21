@@ -35,7 +35,7 @@ public class KKAlertDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle bundle) {
         final int i = getArguments().getInt(KEY_DIALOG_ID);
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(2131165290);
+        builder.setTitle(R.string.app_name);
         builder.setMessage(this.msg);
         if (this.positiveBtnText != null) {
             builder.setPositiveButton(this.positiveBtnText, new DialogInterface.OnClickListener() {

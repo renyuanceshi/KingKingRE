@@ -5,10 +5,10 @@ public class KKDialogBuilder {
         switch (enumKKDialogType) {
             case AlertKKisOffDialog:
                 return new AlertKKisOffDialog();
-            case AlertNoWifiDialog:
-                return new AlertNoWifiDialog();
-            case AlertSMSConsumeDialog:
-                return new AlertSMSConsumeDialog();
+//            case AlertNoWifiDialog:
+//                return new AlertNoWifiDialog();
+//            case AlertSMSConsumeDialog:
+//                return new AlertSMSConsumeDialog();
             default:
                 return null;
         }

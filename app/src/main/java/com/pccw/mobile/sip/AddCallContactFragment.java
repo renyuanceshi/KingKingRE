@@ -31,7 +31,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.pccw.mobile.sip.service.MobileSipService;
-import com.pccw.mobile.sip02.R;
 import com.pccw.mobile.util.UserPhotoUtil;
 import com.pccw.sms.bean.ConversationParticipantItem;
 import com.pccw.sms.service.ConversationParticipantItemService;
@@ -411,7 +410,7 @@ public class AddCallContactFragment extends ListFragment implements LoaderManage
         supportActionBar.setDisplayOptions(8, 24);
         supportActionBar.setTitle((CharSequence) getString(R.string.actionbar_tab_addcall_title_contacts));
         View inflate = layoutInflater.inflate(R.layout.addcall_contacts_list, viewGroup, false);
-        this.inputMethodManager = (InputMethodManager) this.ctx.getSystemService("input_method");
+        this.inputMethodManager = (InputMethodManager) this.ctx.getSystemService(Context.INPUT_METHOD_SERVICE);
         this.activity.getWindow().setSoftInputMode(3);
         this.contactSelectLayout = (LinearLayout) inflate.findViewById(R.id.addcall_contact_select_linearlayout);
         this.allTextView = (TextView) inflate.findViewById(R.id.addcall_contact_all_textview);
@@ -464,7 +463,7 @@ public class AddCallContactFragment extends ListFragment implements LoaderManage
 
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        this.contactSelectLayout.setVisibility(8);
+        this.contactSelectLayout.setVisibility(View.GONE);
         this.mContactAdapter = new ContactAdapter(this.ctx, R.layout.addcall_contacts_list_item, (Cursor) null, ContactAllQuery.PROJECTION, new int[]{2131624108}, 2);
         selectContactLayout(0);
     }

@@ -6,16 +6,17 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Chronometer;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip02.R;
-import org.apache.commons.lang.StringUtils;
-import org.linphone.CallerInfoAsyncQuery;
-import org.linphone.ContactsAsyncHelper;
+
+import org.apache.commons.lang3.StringUtils;
 import org.linphone.core.LinphoneCall;
 
 public class CallCardHold extends FrameLayout implements CallerInfoAsyncQuery.OnQueryCompleteListener, ContactsAsyncHelper.OnImageLoadCompleteListener {
@@ -66,12 +67,12 @@ public class CallCardHold extends FrameLayout implements CallerInfoAsyncQuery.On
 
     private static final void showImage(ImageView imageView, int i) {
         imageView.setImageResource(i);
-        imageView.setVisibility(0);
+        imageView.setVisibility(View.VISIBLE);
     }
 
     private static final void showImage(ImageView imageView, Drawable drawable) {
         imageView.setImageDrawable(drawable);
-        imageView.setVisibility(0);
+        imageView.setVisibility(View.VISIBLE);
     }
 
     private void updateCallWaitingHoldCardTitleWidgets(LinphoneCall.State state, int i) {
@@ -79,16 +80,16 @@ public class CallCardHold extends FrameLayout implements CallerInfoAsyncQuery.On
             this.mElapsedTimeCallWaitingOnHold.setTextColor(this.mTextColorOnHold);
             this.mElapsedTimeCallWaitingOnHold.setBase(SystemClock.elapsedRealtime() - ((long) (i * 1000)));
             this.mElapsedTimeCallWaitingOnHold.start();
-            this.mElapsedTimeCallWaitingOnHold.setVisibility(0);
+            this.mElapsedTimeCallWaitingOnHold.setVisibility(View.VISIBLE);
         } else if (state == LinphoneCall.State.IncomingReceived) {
-            this.mElapsedTimeCallWaitingOnHold.setVisibility(8);
+            this.mElapsedTimeCallWaitingOnHold.setVisibility(View.GONE);
         } else if (state == LinphoneCall.State.StreamsRunning || state == LinphoneCall.State.Connected) {
             this.mElapsedTimeCallWaitingOnHold.setTextColor(this.mTextColorConnected);
             this.mElapsedTimeCallWaitingOnHold.setBase(SystemClock.elapsedRealtime() - ((long) (i * 1000)));
             this.mElapsedTimeCallWaitingOnHold.start();
-            this.mElapsedTimeCallWaitingOnHold.setVisibility(0);
+            this.mElapsedTimeCallWaitingOnHold.setVisibility(View.VISIBLE);
         } else if (state == LinphoneCall.State.OutgoingEarlyMedia || state == LinphoneCall.State.OutgoingInit || state == LinphoneCall.State.OutgoingProgress || state == LinphoneCall.State.OutgoingRinging) {
-            this.mElapsedTimeCallWaitingOnHold.setVisibility(8);
+            this.mElapsedTimeCallWaitingOnHold.setVisibility(View.GONE);
         } else if (state == LinphoneCall.State.CallEnd || state == LinphoneCall.State.Error) {
             this.mElapsedTimeCallWaitingOnHold.setTextColor(this.mTextColorEnded);
             this.mElapsedTimeCallWaitingOnHold.stop();
@@ -108,11 +109,11 @@ public class CallCardHold extends FrameLayout implements CallerInfoAsyncQuery.On
     }
 
     public void displayCallWaitingLayout() {
-        this.callWaitingCallCard.setVisibility(0);
+        this.callWaitingCallCard.setVisibility(View.VISIBLE);
     }
 
     public void displayMainCallLayout() {
-        this.callWaitingCallCard.setVisibility(8);
+        this.callWaitingCallCard.setVisibility(View.GONE);
     }
 
     /* access modifiers changed from: protected */
@@ -169,20 +170,20 @@ public class CallCardHold extends FrameLayout implements CallerInfoAsyncQuery.On
         }
         if (StringUtils.isNotBlank(str3)) {
             this.mLabelCallWaitingOnHold.setText(str3);
-            this.mLabelCallWaitingOnHold.setVisibility(0);
+            this.mLabelCallWaitingOnHold.setVisibility(View.VISIBLE);
         } else {
             this.mLabelCallWaitingOnHold.setText("");
-            this.mLabelCallWaitingOnHold.setVisibility(8);
+            this.mLabelCallWaitingOnHold.setVisibility(View.GONE);
         }
         if (drawable != null) {
             this.mPhotoCallWaitingOnHold.setImageDrawable(drawable);
-            this.mPhotoCallWaitingOnHold.setVisibility(0);
+            this.mPhotoCallWaitingOnHold.setVisibility(View.VISIBLE);
         } else if (str.equals(CallerInfo.CONFERENCE_NUMBER)) {
             this.mPhotoCallWaitingOnHold.setImageResource(R.drawable.default_conference_pic);
-            this.mPhotoCallWaitingOnHold.setVisibility(0);
+            this.mPhotoCallWaitingOnHold.setVisibility(View.VISIBLE);
         } else {
             this.mPhotoCallWaitingOnHold.setImageResource(R.drawable.default_profile_pic);
-            this.mPhotoCallWaitingOnHold.setVisibility(0);
+            this.mPhotoCallWaitingOnHold.setVisibility(View.VISIBLE);
         }
     }
 }

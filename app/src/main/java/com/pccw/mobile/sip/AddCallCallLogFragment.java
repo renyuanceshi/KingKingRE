@@ -34,7 +34,7 @@ import android.widget.TextView;
 import com.pccw.database.helper.DBHelper;
 import com.pccw.mobile.provider.KingKingContentProvider;
 import com.pccw.mobile.sip.service.MobileSipService;
-import com.pccw.mobile.sip02.R;
+
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.LinkedList;

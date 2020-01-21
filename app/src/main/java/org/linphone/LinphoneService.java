@@ -1,5 +1,6 @@
 package org.linphone;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -40,6 +41,7 @@ import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip.util.Contact;
 import com.pccw.mobile.sip.util.ContactsUtils;
 import com.pccw.mobile.sip02.R;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -49,8 +51,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
-import org.apache.commons.lang.StringUtils;
-import org.linphone.LinphoneSimpleListener;
+import org.apache.commons.lang3.StringUtils;
 import org.linphone.core.CallDirection;
 import org.linphone.core.Hacks;
 import org.linphone.core.LinphoneAddress;
@@ -176,7 +177,7 @@ public class LinphoneService extends Service implements LinphoneCoreListener {
     }
 
     public static void cancelNotification(Context context, int i) {
-        ((NotificationManager) context.getSystemService("notification")).cancel(i);
+        ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE)).cancel(i);
     }
 
     private void copyAssetsFromPackage(Context context) throws IOException {
@@ -263,9 +264,10 @@ public class LinphoneService extends Service implements LinphoneCoreListener {
     }
 
     /* access modifiers changed from: private */
+    @SuppressLint("InvalidWakeLockTag")
     public void enterIncallMode(LinphoneCore linphoneCore) {
         if (this.mWakeLock == null) {
-            this.mWakeLock = ((PowerManager) getSystemService("power")).newWakeLock(268435462, "Linphone");
+            this.mWakeLock = ((PowerManager) getSystemService(Context.POWER_SERVICE)).newWakeLock(268435462, "Linphone");
         }
         if (this.mWakeLock != null && !this.mWakeLock.isHeld()) {
             this.mWakeLock.acquire();
@@ -316,15 +318,15 @@ public class LinphoneService extends Service implements LinphoneCoreListener {
 
     public static void makeNotification(Context context, int i, int i2, String str) {
         Notification notification = null;
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         if (i == 0) {
             Notification.Builder builder = new Notification.Builder(context);
-            builder.setSmallIcon(17301631);
+            builder.setSmallIcon(android.R.drawable.sym_def_app_icon);//17301631
             builder.setDefaults(16);
             Intent intent = new Intent("android.intent.action.VIEW", (Uri) null);
             intent.setType("vnd.android.cursor.dir/calls");
             builder.setContentIntent(PendingIntent.getActivity(context, 0, intent, 0));
-            builder.setContentTitle(context.getString(2131165290));
+            builder.setContentTitle(context.getString(R.string.app_name));
             if (str == null || StringUtils.isEmpty(str)) {
                 str = context.getString(R.string.unknown);
             }
@@ -348,7 +350,7 @@ public class LinphoneService extends Service implements LinphoneCoreListener {
                 }
             }
             builder2.setContentText(str);
-            builder2.setContentTitle(context.getString(2131165290));
+            builder2.setContentTitle(context.getString(R.string.app_name));
             builder2.setDefaults(34);
             if (Build.VERSION.SDK_INT >= 16) {
                 notification = builder2.build();
@@ -524,7 +526,7 @@ public class LinphoneService extends Service implements LinphoneCoreListener {
                     }
                 } else if (state2 == LinphoneCall.State.Error) {
                     if (InCallScreen.getDialer() == null) {
-                        Toast.makeText(LinphoneService.this, String.format(LinphoneService.this.getString(R.string.call_error), new Object[]{str2}), 1).show();
+                        Toast.makeText(LinphoneService.this, String.format(LinphoneService.this.getString(R.string.call_error), new Object[]{str2}), Toast.LENGTH_LONG).show();
                     }
                     LinphoneService.this.callLog(linphoneCall2);
                     if (linphoneCore2.getCallsNb() < 1) {
@@ -559,7 +561,7 @@ public class LinphoneService extends Service implements LinphoneCoreListener {
         if (state == LinphoneCall.State.IncomingReceived) {
             if (linphoneCore.getCallsNb() <= 1 || linphoneCore.getCurrentCall() == null || linphoneCore.getCurrentCall().getCurrentParamsCopy() == null || !linphoneCore.getCurrentCall().getCurrentParamsCopy().getVideoEnabled()) {
                 Intent intent = new Intent();
-                intent.addFlags(268435456);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                 intent.setClass(this, InCallScreen.class);
                 startActivity(intent);
                 if (linphoneCore.getCallsNb() == 1) {
@@ -622,14 +624,14 @@ public class LinphoneService extends Service implements LinphoneCoreListener {
         } else if (ecCalibratorStatus == LinphoneCore.EcCalibratorStatus.Done) {
             this.mHandler.post(new Runnable() {
                 public void run() {
-                    Toast.makeText(LinphoneService.this, "Calibration done,delay_ms=" + i, 0).show();
+                    Toast.makeText(LinphoneService.this, "Calibration done,delay_ms=" + i, Toast.LENGTH_SHORT).show();
                 }
             });
             this.echoCalibrationDone = true;
         } else if (ecCalibratorStatus == LinphoneCore.EcCalibratorStatus.Failed) {
             this.mHandler.post(new Runnable() {
                 public void run() {
-                    Toast.makeText(LinphoneService.this, "Calibration failed", 0).show();
+                    Toast.makeText(LinphoneService.this, "Calibration failed", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -787,7 +789,7 @@ public class LinphoneService extends Service implements LinphoneCoreListener {
                     defaultProxyConfig2.setRoute((String) null);
                 }
             }
-            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService("connectivity");
+            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
             this.mLinphoneCore.setNetworkReachable(connectivityManager.getActiveNetworkInfo() != null ? connectivityManager.getActiveNetworkInfo().getState() == NetworkInfo.State.CONNECTED : false);
             if (ClientStateManager.isPrepaid(getApplicationContext())) {
                 this.mLinphoneCore.setMaxCalls(1);
@@ -852,8 +854,8 @@ public class LinphoneService extends Service implements LinphoneCoreListener {
         Hacks.dumpDeviceInformation();
         cancelNotification(this, 1);
         this.mPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        this.mAudioManager = (AudioManager) getSystemService("audio");
-        this.mVibrator = (Vibrator) getSystemService("vibrator");
+        this.mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+        this.mVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         try {
             String absolutePath = getFilesDir().getAbsolutePath();
             this.linphoneInitialConfigFile = absolutePath + "/linphonerc";
@@ -913,13 +915,13 @@ public class LinphoneService extends Service implements LinphoneCoreListener {
 
     public int onStartCommand(Intent intent, int i, int i2) {
         if (intent != null && !intent.getBooleanExtra("do_init", false)) {
-            return 2;
+            return Service.START_NOT_STICKY;
         }
         try {
             initFromConf();
-            return 2;
+            return Service.START_NOT_STICKY;
         } catch (LinphoneException e) {
-            return 2;
+            return Service.START_NOT_STICKY;
         }
     }
 

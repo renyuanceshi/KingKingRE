@@ -2154,7 +2154,7 @@ class LinphoneCoreImpl implements LinphoneCore {
     public void setContext(Object obj) {
         this.mContext = (Context) obj;
         reloadMsPlugins(this.mContext.getApplicationInfo().nativeLibraryDir);
-        this.mAudioManager = (AudioManager) this.mContext.getSystemService("audio");
+        this.mAudioManager = (AudioManager) this.mContext.getSystemService(AUDIO_SERVICE);
     }
 
     public void setCpuCount(int i) {

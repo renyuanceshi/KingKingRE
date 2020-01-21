@@ -39,7 +39,7 @@ import com.facebook.internal.ServerProtocol;
 import com.pccw.camera.ui.RotateDialogController;
 import com.pccw.mobile.sip.BaseActivity;
 import com.pccw.mobile.sip.service.MobileSipService;
-import com.pccw.mobile.sip02.R;
+
 import java.util.Timer;
 import java.util.TimerTask;
 import org.linphone.core.AndroidCameraRecordManager;
@@ -286,8 +286,8 @@ public class VideoCallActivity extends BaseActivity implements View.OnClickListe
         this.mHandler.post(new Runnable() {
             public void run() {
                 if (LinphoneService.instance().isBluetoothScoConnected) {
-                    VideoCallActivity.this.MenuRouteAudio.setVisibility(0);
-                    VideoCallActivity.this.MenuSpeaker.setVisibility(8);
+                    VideoCallActivity.this.MenuRouteAudio.setVisibility(View.VISIBLE);
+                    VideoCallActivity.this.MenuSpeaker.setVisibility(View.GONE);
                     if (!z) {
                         try {
                             Thread.sleep(3000);
@@ -296,8 +296,8 @@ public class VideoCallActivity extends BaseActivity implements View.OnClickListe
                     }
                     VideoCallActivity.this.routeAudioToBluetooth();
                 } else {
-                    VideoCallActivity.this.MenuRouteAudio.setVisibility(8);
-                    VideoCallActivity.this.MenuSpeaker.setVisibility(0);
+                    VideoCallActivity.this.MenuRouteAudio.setVisibility(View.GONE);
+                    VideoCallActivity.this.MenuSpeaker.setVisibility(View.VISIBLE);
                     VideoCallActivity.this.routeAudioToReceiver();
                 }
                 VideoCallActivity.this.changeIconBackground();
@@ -447,7 +447,7 @@ public class VideoCallActivity extends BaseActivity implements View.OnClickListe
                     });
                     break;
                 } else {
-                    this.mRotateDialog.showAlertDialog(getString(2131165290), getString(R.string.dynamic_back_to_dial_asking), getString(R.string.dynamic_back_to_dial_deny), (Runnable) null, getString(R.string.dynamic_back_to_dial_accept), this.runDialAccept);
+                    this.mRotateDialog.showAlertDialog(getString(R.string.app_name), getString(R.string.dynamic_back_to_dial_asking), getString(R.string.dynamic_back_to_dial_deny), (Runnable) null, getString(R.string.dynamic_back_to_dial_accept), this.runDialAccept);
                     break;
                 }
         }
@@ -467,7 +467,7 @@ public class VideoCallActivity extends BaseActivity implements View.OnClickListe
         if (shouldUseOrientationMode == 1) {
             this.needExtraRotation = false;
         }
-        this.mAudioManager = (AudioManager) getSystemService("audio");
+        this.mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         resetCameraFromPreferences();
         if (getOrientationMode() == 1) {
             setRequestedOrientation(1);
@@ -565,7 +565,7 @@ public class VideoCallActivity extends BaseActivity implements View.OnClickListe
         registerReceiver(this.intentReceiver, new IntentFilter("android.intent.action.HEADSET_PLUG"));
         lc.setVideoPolicy(false, true);
         this.viewStat = (LinearLayout) findViewById(R.id.viewStat);
-        this.viewStat.setVisibility(8);
+        this.viewStat.setVisibility(View.GONE);
         this.showViewStat = false;
     }
 
@@ -644,12 +644,12 @@ public class VideoCallActivity extends BaseActivity implements View.OnClickListe
         switch (menuItem.getItemId()) {
             case 1001:
                 if (!this.showViewStat) {
-                    this.viewStat.setVisibility(0);
+                    this.viewStat.setVisibility(View.VISIBLE);
                     initCallStatsRefresher();
                     this.showViewStat = true;
                     break;
                 } else {
-                    this.viewStat.setVisibility(8);
+                    this.viewStat.setVisibility(View.GONE);
                     disableCallStatsView();
                     this.showViewStat = false;
                     break;
@@ -817,8 +817,8 @@ public class VideoCallActivity extends BaseActivity implements View.OnClickListe
         this.mHandler.post(new Runnable() {
             public void run() {
                 if (LinphoneService.instance().isBluetoothScoConnected) {
-                    VideoCallActivity.this.MenuRouteAudio.setVisibility(0);
-                    VideoCallActivity.this.MenuSpeaker.setVisibility(8);
+                    VideoCallActivity.this.MenuRouteAudio.setVisibility(View.VISIBLE);
+                    VideoCallActivity.this.MenuSpeaker.setVisibility(View.GONE);
                     if (!z) {
                         try {
                             Thread.sleep(3000);
@@ -827,8 +827,8 @@ public class VideoCallActivity extends BaseActivity implements View.OnClickListe
                     }
                     VideoCallActivity.this.routeAudioToBluetooth();
                 } else {
-                    VideoCallActivity.this.MenuRouteAudio.setVisibility(8);
-                    VideoCallActivity.this.MenuSpeaker.setVisibility(0);
+                    VideoCallActivity.this.MenuRouteAudio.setVisibility(View.GONE);
+                    VideoCallActivity.this.MenuSpeaker.setVisibility(View.VISIBLE);
                     if (VideoCallActivity.this.mAudioManager.isWiredHeadsetOn()) {
                         VideoCallActivity.this.routeAudioToReceiver();
                     } else {
@@ -869,7 +869,7 @@ public class VideoCallActivity extends BaseActivity implements View.OnClickListe
     public void updatePreview(boolean z) {
         this.mVideoCaptureViewReady = null;
         if (z) {
-            findViewById(R.id.video_capture_surface).setVisibility(0);
+            findViewById(R.id.video_capture_surface).setVisibility(View.VISIBLE);
         } else {
             findViewById(R.id.video_capture_surface).setVisibility(4);
         }

@@ -1,5 +1,6 @@
 package com.pccw.mobile.sip.service;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
@@ -47,7 +48,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimerTask;
 import javax.xml.parsers.SAXParserFactory;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.linphone.CallManager;
 import org.linphone.CallerInfo;
 import org.linphone.DailPadActivity;
@@ -1105,25 +1106,25 @@ public class MobileSipService {
 
     private void planAutologin(Context context) {
         long j = this.loginRetryCount == 0 ? 5000 : 30000;
-        AlarmManager alarmManager = (AlarmManager) context.getSystemService("alarm");
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         PendingIntent broadcast = PendingIntent.getBroadcast(context, 100, new Intent(context, RetryAlarmReceiver.class), 0);
         alarmManager.cancel(broadcast);
-        alarmManager.set(2, j + SystemClock.elapsedRealtime(), broadcast);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, j + SystemClock.elapsedRealtime(), broadcast);
     }
 
     private void planHeartBeat(Context context, long j) {
-        AlarmManager alarmManager = (AlarmManager) context.getSystemService("alarm");
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         PendingIntent broadcast = PendingIntent.getBroadcast(context, 0, new Intent(context, HeartBeatAlarmReceiver.class), 0);
         alarmManager.cancel(broadcast);
-        alarmManager.set(2, SystemClock.elapsedRealtime() + j, broadcast);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + j, broadcast);
     }
 
     private void planRelogin(Context context) {
         long j = this.loginRetryCount == 0 ? 5000 : 30000;
-        AlarmManager alarmManager = (AlarmManager) context.getSystemService("alarm");
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         PendingIntent broadcast = PendingIntent.getBroadcast(context, 100, new Intent(context, RetryAlarmReceiver.class), 0);
         alarmManager.cancel(broadcast);
-        alarmManager.set(2, j + SystemClock.elapsedRealtime(), broadcast);
+        alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, j + SystemClock.elapsedRealtime(), broadcast);
     }
 
     private void resetCameraFromPreferences() {
@@ -1142,7 +1143,7 @@ public class MobileSipService {
         if (LinphoneService.isready()) {
             try {
                 LinphoneService.instance().initFromConf();
-            } catch (LinphoneConfigException | LinphoneException e) {
+            } catch (LinphoneException e) {
             }
         } else {
             Intent intent = new Intent("android.intent.action.MAIN");
@@ -1234,7 +1235,7 @@ public class MobileSipService {
         this.isAutoLoginRunning = false;
         this.shouldAutologin = false;
         close(context);
-        ((AlarmManager) context.getSystemService("alarm")).cancel(PendingIntent.getBroadcast(context, 100, new Intent(context, RetryAlarmReceiver.class), 0));
+        ((AlarmManager) context.getSystemService(Context.ALARM_SERVICE)).cancel(PendingIntent.getBroadcast(context, 100, new Intent(context, RetryAlarmReceiver.class), 0));
     }
 
     /* access modifiers changed from: private */
@@ -1246,12 +1247,12 @@ public class MobileSipService {
 
     /* access modifiers changed from: private */
     public void stopHeartbeat(Context context) {
-        ((AlarmManager) context.getSystemService("alarm")).cancel(PendingIntent.getBroadcast(context, 0, new Intent(context, HeartBeatAlarmReceiver.class), 0));
+        ((AlarmManager) context.getSystemService(Context.ALARM_SERVICE)).cancel(PendingIntent.getBroadcast(context, 0, new Intent(context, HeartBeatAlarmReceiver.class), 0));
     }
 
     /* access modifiers changed from: private */
     public void stopReLogin(Context context) {
-        ((AlarmManager) context.getSystemService("alarm")).cancel(PendingIntent.getBroadcast(context, 100, new Intent(context, RetryAlarmReceiver.class), 0));
+        ((AlarmManager) context.getSystemService(Context.ALARM_SERVICE)).cancel(PendingIntent.getBroadcast(context, 100, new Intent(context, RetryAlarmReceiver.class), 0));
     }
 
     public void activateCallForward(final boolean z, final Context context) {
@@ -1750,7 +1751,7 @@ public class MobileSipService {
                             Context applicationContext = context.getApplicationContext();
                             try {
                                 mediaPlayer.setDataSource(applicationContext, defaultUri);
-                                if (((AudioManager) applicationContext.getSystemService("audio")).getStreamVolume(2) != 0) {
+                                if (((AudioManager) applicationContext.getSystemService(Context.AUDIO_SERVICE)).getStreamVolume(2) != 0) {
                                     mediaPlayer.setAudioStreamType(2);
                                     mediaPlayer.setLooping(false);
                                     mediaPlayer.prepare();
@@ -1758,7 +1759,7 @@ public class MobileSipService {
                                 }
                             } catch (Exception e) {
                             }
-                            Toast.makeText(applicationContext, applicationContext.getString(R.string.disconnected), 1).show();
+                            Toast.makeText(applicationContext, applicationContext.getString(R.string.disconnected), Toast.LENGTH_LONG).show();
                         }
                         DailPadActivity.on(context, false);
                         if (MobileSipService.this.callForwardingState == 0) {
@@ -2032,13 +2033,14 @@ public class MobileSipService {
         }
     }
 
+    @SuppressLint("InvalidWakeLockTag")
     public void handleSipRegisterSuccess(Context context) {
         this.sipRegistrationFailCount = 0;
         if (!this.isFirstSipRegisterSuccessHanled && this.loginStatus == 0 && !this.isDisconnecting) {
             this.shouldRelogin = !this.shouldAutologin;
             if (this.shouldAutologin && !LinphoneActivity.isInstanced()) {
                 Intent intent = new Intent(context, LinphoneActivity.class);
-                intent.addFlags(268435456);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
             this.isAutoLoginRunning = false;
@@ -2048,19 +2050,19 @@ public class MobileSipService {
             resetLoginRetryCount();
             this.isFirstSipRegisterSuccessHanled = true;
             if (wifiLock == null) {
-                wifiLock = ((WifiManager) context.getSystemService("wifi")).createWifiLock("RoamSaveOn");
+                wifiLock = ((WifiManager) context.getSystemService(Context.WIFI_SERVICE)).createWifiLock("RoamSaveOn");
             }
             if (!wifiLock.isHeld()) {
                 wifiLock.acquire();
             }
             if (wakeLock == null) {
-                wakeLock = ((PowerManager) context.getSystemService("power")).newWakeLock(1, "RoamSaveOn");
+                wakeLock = ((PowerManager) context.getSystemService(Context.POWER_SERVICE)).newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "RoamSaveOn");
             }
             if (!wakeLock.isHeld()) {
                 wakeLock.acquire();
             }
             if (brightWakeLock == null) {
-                brightWakeLock = ((PowerManager) context.getSystemService("power")).newWakeLock(268435482, "RoamSaveFullWake");
+                brightWakeLock = ((PowerManager) context.getSystemService(Context.POWER_SERVICE)).newWakeLock(268435482, "RoamSaveFullWake");
             }
             if (!brightWakeLock.isHeld()) {
                 brightWakeLock.acquire(10000);
@@ -2153,18 +2155,14 @@ public class MobileSipService {
             String replace = str.contains(OutgoingCallReceiver.TAG) ? str.replace(OutgoingCallReceiver.TAG, "") : str;
             LinphoneCore linphoneCore = LinphoneService.instance().getLinphoneCore();
             if (linphoneCore.getCallsNb() > 1) {
-                Toast.makeText(context, context.getString(R.string.warning_already_incall), 1).show();
+                Toast.makeText(context, context.getString(R.string.warning_already_incall), Toast.LENGTH_LONG).show();
             } else {
                 try {
-                    try {
-                        CallManager.getInstance().inviteAddress(linphoneCore.interpretUrl(replace), z);
-                        getInstance().openIncallScreen(context);
-                        z2 = true;
-                    } catch (LinphoneCoreException e) {
-                        Toast.makeText(context, String.format(context.getString(R.string.error_cannot_get_call_parameters), new Object[]{str}), 1).show();
-                    }
-                } catch (LinphoneCoreException e2) {
-                    Toast.makeText(context, String.format(context.getString(R.string.warning_wrong_destination_address), new Object[]{str}), 1).show();
+                    CallManager.getInstance().inviteAddress(linphoneCore.interpretUrl(replace), z);
+                    getInstance().openIncallScreen(context);
+                    z2 = true;
+                } catch (LinphoneCoreException e) {
+                    Toast.makeText(context, context.getString(R.string.error_cannot_get_call_parameters), Toast.LENGTH_LONG).show();
                 }
             }
         }
@@ -2174,14 +2172,14 @@ public class MobileSipService {
     public void openIncallScreen(Context context) {
         Intent intent = new Intent();
         intent.setClass(context, InCallScreen.class);
-        intent.setFlags(268435456);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         context.startActivity(intent);
     }
 
     public void openIncallScreen(Context context, String str) {
         Intent intent = new Intent();
         intent.setClass(context, InCallScreen.class);
-        intent.setFlags(268435456);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );//268435456
         intent.putExtra("message", str);
         context.startActivity(intent);
     }
@@ -2189,7 +2187,7 @@ public class MobileSipService {
     public void openVideoCallScreen(Context context) {
         Intent intent = new Intent();
         intent.setClass(context, VideoCallActivity.class);
-        intent.setFlags(268435456);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         context.startActivity(intent);
     }
 
@@ -2258,7 +2256,7 @@ public class MobileSipService {
     public void startAutoLogin(Context context) {
         synchronized (this) {
             stopEngine(context);
-            WifiManager wifiManager = (WifiManager) context.getSystemService("wifi");
+            WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
             if (!SSIDList.containsSSID(context, SSIDUtil.getCurrentSSID(context)) || !wifiManager.isWifiEnabled()) {
                 stopAutoLogin(context);
             } else {
@@ -2277,15 +2275,15 @@ public class MobileSipService {
 
     public boolean startCallChecking(String str, Context context) {
         if (str.length() == 0) {
-            new AlertDialog.Builder(context).setMessage(R.string.empty).setTitle(2131165290).setIcon(R.drawable.logo).setPositiveButton(17039370, (DialogInterface.OnClickListener) null).setCancelable(true).show();
+            new AlertDialog.Builder(context).setMessage(R.string.empty).setTitle(R.string.app_name).setIcon(R.drawable.logo).setPositiveButton(android.R.string.ok, (DialogInterface.OnClickListener) null).setCancelable(true).show();
             return false;
         } else if (NumberMappingUtil.shouldBarPhoneNumber(str, context)) {
-            Toast.makeText(context, context.getResources().getString(R.string.bar_phone_no), 0).show();
+            Toast.makeText(context, context.getResources().getString(R.string.bar_phone_no), Toast.LENGTH_SHORT).show();
             return false;
         } else if (isPhoneCallReady() && LinphoneService.isready()) {
             return true;
         } else {
-            new AlertDialog.Builder(context).setMessage(R.string.notfast).setTitle(2131165290).setIcon(R.drawable.logo).setPositiveButton(17039370, (DialogInterface.OnClickListener) null).setCancelable(true).show();
+            new AlertDialog.Builder(context).setMessage(R.string.notfast).setTitle(R.string.app_name).setIcon(R.drawable.logo).setPositiveButton(android.R.string.ok, (DialogInterface.OnClickListener) null).setCancelable(true).show();
             return false;
         }
     }

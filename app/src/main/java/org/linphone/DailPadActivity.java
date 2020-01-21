@@ -3,6 +3,7 @@ package org.linphone;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,7 +18,6 @@ import android.media.ToneGenerator;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -32,7 +32,7 @@ import android.support.v4.internal.view.SupportMenu;
 import android.support.v4.view.InputDeviceCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.telephony.PhoneNumberUtils;
 import android.text.Editable;
@@ -51,26 +51,27 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.pccw.database.helper.DBHelper;
-import com.pccw.mobile.provider.KingKingContentProvider;
 import com.pccw.mobile.server.CheckPrepaidBalanceApi;
 import com.pccw.mobile.server.api.ApiResponse;
 import com.pccw.mobile.server.api.ApiResponseListener;
 import com.pccw.mobile.server.response.CheckPrepaidBalanceResponse;
 import com.pccw.mobile.sip.ClientStateManager;
 import com.pccw.mobile.sip.Constants;
-import com.pccw.mobile.sip.FacebookShareActivity;
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip.util.NumberMappingUtil;
 import com.pccw.mobile.sip02.R;
 import com.pccw.mobile.ui.dialog.KKAlertDialogFragment;
 import com.pccw.mobile.util.PreCallQualityIndicator;
 import com.pccw.sms.bean.SMSConstants;
-import java.util.concurrent.ExecutionException;
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 import org.linphone.core.LinphoneCall;
 import org.linphone.core.LinphoneCore;
 import org.linphone.mediastream.video.capture.hwconf.AndroidCameraConfiguration;
+
+import java.util.concurrent.ExecutionException;
 
 public class DailPadActivity extends Fragment implements View.OnClickListener, View.OnLongClickListener, View.OnKeyListener, KKAlertDialogFragment.KKDialogResponses {
     private static final int DIAL_TONE_STREAM_TYPE = 3;
@@ -206,7 +207,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
                     public void run() {
                         DailPadActivity.this.setRoamSaveButtonReAutoconnecting();
                         DailPadActivity.this.mBannerText.setText(DailPadActivity.this.getString(R.string.reg_reconnecting));
-                        DailPadActivity.this.mBannerText.setVisibility(0);
+                        DailPadActivity.this.mBannerText.setVisibility(View.VISIBLE);
                         DailPadActivity.this.stopPreCallQI();
                     }
                 });
@@ -215,7 +216,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
                     public void run() {
                         DailPadActivity.this.setRoamSaveButtonReAutoconnecting();
                         DailPadActivity.this.mBannerText.setText(DailPadActivity.this.getString(R.string.reg_autoconnecting));
-                        DailPadActivity.this.mBannerText.setVisibility(0);
+                        DailPadActivity.this.mBannerText.setVisibility(View.VISIBLE);
                         DailPadActivity.this.stopPreCallQI();
                     }
                 });
@@ -230,6 +231,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
         }
 
         /* access modifiers changed from: protected */
+        @SuppressLint("WrongThread")
         public CheckPrepaidBalanceResponse doInBackground(Void... voidArr) {
             try {
                 new CheckPrepaidBalanceApi(new ApiResponseListener() {
@@ -269,7 +271,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
             String registeredNumber = ClientStateManager.getRegisteredNumber(DailPadActivity.this.ctx);
             String str = checkPrepaidBalanceResponse2.balance;
             builder.setMessage(DailPadActivity.this.getString(R.string.prepaid_topup_reminder_message).replaceAll("MSISDN_VALUE", registeredNumber).replaceAll("BALANCE_VALUE", "10"));
-            builder.setIcon(R.drawable.ic_logo).setTitle(2131165290);
+            builder.setIcon(R.drawable.ic_logo).setTitle(R.string.app_name);
             builder.setView(inflate);
             Button button = (Button) inflate.findViewById(R.id.prepaid_topup_calling);
             if (ClientStateManager.isCSLPrepaid(DailPadActivity.this.ctx)) {
@@ -282,7 +284,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
             button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     if (MobileSipService.getInstance().loginStatus != 0) {
-                        Toast.makeText(DailPadActivity.this.ctx, DailPadActivity.this.ctx.getString(R.string.no_network), 1).show();
+                        Toast.makeText(DailPadActivity.this.ctx, DailPadActivity.this.ctx.getString(R.string.no_network), Toast.LENGTH_LONG).show();
                     } else {
                         String str = "";
                         if (ClientStateManager.isHelloPrepaid(DailPadActivity.this.ctx)) {
@@ -309,7 +311,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
             ((Button) inflate.findViewById(R.id.prepaid_topup_online)).setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     if (!MobileSipService.getInstance().isNetworkAvailable(DailPadActivity.this.ctx)) {
-                        Toast.makeText(DailPadActivity.this.ctx, DailPadActivity.this.ctx.getString(R.string.ask_wifi), 1).show();
+                        Toast.makeText(DailPadActivity.this.ctx, DailPadActivity.this.ctx.getString(R.string.ask_wifi), Toast.LENGTH_LONG).show();
                     } else {
                         DailPadActivity.this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(MobileSipService.getInstance().generateTopupURL(DailPadActivity.this.ctx))));
                     }
@@ -336,10 +338,10 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
             synchronized (this) {
                 DailPadActivity.this.setRoamSaveButtonClickable(false);
                 if (((CheckBox) view).isChecked()) {
-                    WifiManager wifiManager = (WifiManager) DailPadActivity.this.getContext().getApplicationContext().getSystemService("wifi");
+                    WifiManager wifiManager = (WifiManager) DailPadActivity.this.getContext().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
                     if (!wifiManager.isWifiEnabled()) {
                         wifiManager.setWifiEnabled(true);
-                        DailPadActivity.this.mBannerText.setVisibility(0);
+                        DailPadActivity.this.mBannerText.setVisibility(View.VISIBLE);
                         DailPadActivity.this.mBannerText.setText(DailPadActivity.this.ctx.getString(R.string.connecting) + "...");
                         Thread unused = DailPadActivity.this.waitingWifiThr = new Thread(new Runnable() {
                             public void run() {
@@ -368,8 +370,8 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
                         DailPadActivity.this.contTurnOnRS();
                     }
                 } else {
-                    DailPadActivity.this.mBannerText.setVisibility(4);
-                    DailPadActivity.this.mPreCallQILayout.setVisibility(4);
+                    DailPadActivity.this.mBannerText.setVisibility(View.INVISIBLE);
+                    DailPadActivity.this.mPreCallQILayout.setVisibility(View.INVISIBLE);
                     DailPadActivity.on(DailPadActivity.this.ctx, false);
                     MobileSipService.getInstance().close(DailPadActivity.this.ctx);
                 }
@@ -389,7 +391,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
             this.m_AlertDlg.cancel();
         }
         if (!MobileSipService.getInstance().isPhoneCallReady() || !LinphoneService.isready()) {
-            new AlertDialog.Builder(this.activity).setMessage(R.string.notfast).setTitle(2131165290).setIcon(R.drawable.ic_logo).setPositiveButton(getString(17039370), (DialogInterface.OnClickListener) null).setCancelable(true).show();
+            new AlertDialog.Builder(this.activity).setMessage(R.string.notfast).setTitle(R.string.app_name).setIcon(R.drawable.ic_logo).setPositiveButton(getString(android.R.string.ok), (DialogInterface.OnClickListener) null).setCancelable(true).show();
         } else {
             call("*988");
         }
@@ -404,38 +406,38 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
         return theDailPad;
     }
 
-    public static String getLastOutgoingCall(Context context) {
-        Cursor cursor;
-        String str;
-        try {
-            cursor = context.getContentResolver().query(KingKingContentProvider.CALL_LOG_URI, new String[]{DBHelper.NUMBER}, "type = 2", (String[]) null, "date DESC LIMIT 1");
-            if (cursor != null) {
-                try {
-                    if (cursor.moveToFirst()) {
-                        str = cursor.getString(0);
-                        if (cursor != null) {
-                            cursor.close();
-                        }
-                        return str;
-                    }
-                } catch (Throwable th) {
-                    th = th;
-                }
-            }
-            str = "";
-            if (cursor != null) {
-                cursor.close();
-            }
-            return str;
-        } catch (Throwable th2) {
-            th = th2;
-            cursor = null;
-        }
-        if (cursor != null) {
-            cursor.close();
-        }
-        throw th;
-    }
+//    public static String getLastOutgoingCall(Context context) {
+//        Cursor cursor;
+//        String str;
+//        try {
+//            cursor = context.getContentResolver().query(KingKingContentProvider.CALL_LOG_URI, new String[]{DBHelper.NUMBER}, "type = 2", (String[]) null, "date DESC LIMIT 1");
+//            if (cursor != null) {
+//                try {
+//                    if (cursor.moveToFirst()) {
+//                        str = cursor.getString(0);
+//                        if (cursor != null) {
+//                            cursor.close();
+//                        }
+//                        return str;
+//                    }
+//                } catch (Throwable th) {
+//                    th = th;
+//                }
+//            }
+//            str = "";
+//            if (cursor != null) {
+//                cursor.close();
+//            }
+//            return str;
+//        } catch (Throwable th2) {
+//            th = th2;
+//            cursor = null;
+//        }
+//        if (cursor != null) {
+//            cursor.close();
+//        }
+//        throw th;
+//    }
 
     /* JADX WARNING: Removed duplicated region for block: B:11:0x0030  */
     /* JADX WARNING: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
@@ -558,11 +560,11 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
                 final CheckBox checkBox = new CheckBox(this.activity);
                 checkBox.setChecked(false);
                 checkBox.setText(R.string.do_not_show_this_again);
-                new AlertDialog.Builder(this.activity).setIcon(R.drawable.ic_logo).setTitle(2131165290).setMessage(R.string.idd_charge_message).setView(checkBox).setNegativeButton(17039360, new DialogInterface.OnClickListener() {
+                new AlertDialog.Builder(this.activity).setIcon(R.drawable.ic_logo).setTitle(R.string.app_name).setMessage(R.string.idd_charge_message).setView(checkBox).setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
                     }
-                }).setPositiveButton(17039370, new DialogInterface.OnClickListener() {
+                }).setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (checkBox.isChecked()) {
                             PreferenceManager.getDefaultSharedPreferences(DailPadActivity.this.ctx).edit().putBoolean(DailPadActivity.SHOW_IDD_CHARGE_MESSAGE, false).commit();
@@ -619,27 +621,27 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
         }
     }
 
-    private void runFacebookShareChecking() {
-        if (Build.VERSION.SDK_INT >= 9 && shouldRunFacebookShareChecking) {
-            final FacebookShareActivity facebookShareActivity = new FacebookShareActivity();
-            if (facebookShareActivity.runFacebookShareChecking(this.ctx, this.fragmentManager, shouldCleanCallCount)) {
-                new AlertDialog.Builder(this.activity).setIcon(R.drawable.ic_logo).setTitle(2131165290).setMessage(R.string.facebook_dialog_message).setPositiveButton(R.string.facebook_dialog_button_ok, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        if (DailPadActivity.this.isWifiAvailable()) {
-                            facebookShareActivity.promptShareToFacebookDialog(DailPadActivity.this.fragmentManager);
-                        } else {
-                            DailPadActivity.this.showDialog(1);
-                        }
-                    }
-                }).setNegativeButton(R.string.facebook_dialog_button_never, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        DailPadActivity.this.ctx.getSharedPreferences(DailPadActivity.SHARE_PREF_TAG, 0).edit().putBoolean(DailPadActivity.NEVER_FACEBOOK_SHARE, true).commit();
-                    }
-                }).setNeutralButton(R.string.facebook_dialog_button_cancel, (DialogInterface.OnClickListener) null).create().show();
-            }
-        }
-        shouldRunFacebookShareChecking = false;
-    }
+//    private void runFacebookShareChecking() {
+//        if (Build.VERSION.SDK_INT >= 9 && shouldRunFacebookShareChecking) {
+//            final FacebookShareActivity facebookShareActivity = new FacebookShareActivity();
+//            if (facebookShareActivity.runFacebookShareChecking(this.ctx, this.fragmentManager, shouldCleanCallCount)) {
+//                new AlertDialog.Builder(this.activity).setIcon(R.drawable.ic_logo).setTitle(R.string.app_name).setMessage(R.string.facebook_dialog_message).setPositiveButton(R.string.facebook_dialog_button_ok, new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        if (DailPadActivity.this.isWifiAvailable()) {
+//                            facebookShareActivity.promptShareToFacebookDialog(DailPadActivity.this.fragmentManager);
+//                        } else {
+//                            DailPadActivity.this.showDialog(1);
+//                        }
+//                    }
+//                }).setNegativeButton(R.string.facebook_dialog_button_never, new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        DailPadActivity.this.ctx.getSharedPreferences(DailPadActivity.SHARE_PREF_TAG, 0).edit().putBoolean(DailPadActivity.NEVER_FACEBOOK_SHARE, true).commit();
+//                    }
+//                }).setNeutralButton(R.string.facebook_dialog_button_cancel, (DialogInterface.OnClickListener) null).create().show();
+//            }
+//        }
+//        shouldRunFacebookShareChecking = false;
+//    }
 
     private void setDialer(Uri uri) {
         setFormattedDigits(uri.getSchemeSpecificPart());
@@ -656,7 +658,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
     /* access modifiers changed from: private */
     public void setRoamSaveButtonEnable(boolean z) {
         this.mRoamSaveButton.setChecked(z);
-        this.mBannerText.setVisibility(z ? 0 : 4);
+        this.mBannerText.setVisibility(z ? View.VISIBLE : View.INVISIBLE);
     }
 
     /* access modifiers changed from: private */
@@ -690,7 +692,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
         switch (i) {
             case 0:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this.activity);
-                builder.setIcon(R.drawable.ic_logo).setTitle(2131165290);
+                builder.setIcon(R.drawable.ic_logo).setTitle(R.string.app_name);
                 builder.setMessage(R.string.dynamic_reinvite_audio);
                 builder.setNegativeButton(R.string.dynamic_reinvite_audio_cannel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -711,7 +713,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
                 newInstance.setTargetFragment(this, 1);
                 newInstance.setMessage(getString(R.string.ask_wifi));
                 newInstance.setPositiveButton(getString(R.string.go_to_wifi_setting));
-                newInstance.setNegativeButton(getString(17039360));
+                newInstance.setNegativeButton(getString(android.R.string.cancel));
                 newInstance.setCancelable(false);
                 newInstance.show(this.fragmentManager, "dialog");
                 return;
@@ -722,7 +724,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
 
     /* access modifiers changed from: private */
     public void startPreCallQI() {
-        this.mPreCallQILayout.setVisibility(0);
+        this.mPreCallQILayout.setVisibility(View.VISIBLE);
         if (this.preCallQI != null) {
             this.preCallQI.startChecking();
         }
@@ -731,7 +733,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
     /* access modifiers changed from: private */
     public void stopPreCallQI() {
         this.preCallQI.stopChecking();
-        this.mPreCallQILayout.setVisibility(4);
+        this.mPreCallQILayout.setVisibility(View.INVISIBLE);
     }
 
     /* access modifiers changed from: private */
@@ -758,7 +760,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
         synchronized (this) {
             if (this.mVibrateOn) {
                 if (this.mVibrator == null) {
-                    this.mVibrator = (Vibrator) this.activity.getSystemService("vibrator");
+                    this.mVibrator = (Vibrator) this.activity.getSystemService(Service.VIBRATOR_SERVICE);
                 }
                 this.mVibrator.vibrate(this.mVibratePattern, -1);
             }
@@ -812,10 +814,10 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
 
     public void contTurnOnRS() {
         if (!MobileSipService.getInstance().isNetworkAvailable(this.ctx)) {
-            this.mBannerText.setVisibility(4);
+            this.mBannerText.setVisibility(View.INVISIBLE);
             this.mBannerText.setText("");
             AlertDialog.Builder builder = new AlertDialog.Builder(this.activity);
-            builder.setMessage(this.ctx.getString(R.string.ask_wifi)).setCancelable(false).setNegativeButton(this.ctx.getString(17039360), new DialogInterface.OnClickListener() {
+            builder.setMessage(this.ctx.getString(R.string.ask_wifi)).setCancelable(false).setNegativeButton(this.ctx.getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialogInterface, int i) {
                     DailPadActivity.this.setRoamSaveButtonClickable(true);
                     DailPadActivity.this.setRoamSaveButtonEnable(false);
@@ -829,7 +831,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
             builder.create().show();
             return;
         }
-        this.mBannerText.setVisibility(0);
+        this.mBannerText.setVisibility(View.VISIBLE);
         this.mBannerText.setText(this.ctx.getString(R.string.connecting) + "...");
         on(this.ctx, true);
         MobileSipService.getInstance().shouldRelogin = false;
@@ -950,7 +952,7 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Log.v("KKUI", "DailPadActivity-onCreateView");
-        ActionBar supportActionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
+        ActionBar supportActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         supportActionBar.setDisplayOptions(16, 16);
         supportActionBar.setCustomView((int) R.layout.actionbar_dialer_custom_layout);
         supportActionBar.setHomeButtonEnabled(false);
@@ -1081,19 +1083,19 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
             if (MobileSipService.getInstance().isReLoginRunning()) {
                 setRoamSaveButtonReAutoconnecting();
                 this.mBannerText.setText(getString(R.string.reg_reconnecting));
-                this.mBannerText.setVisibility(0);
-                this.mPreCallQILayout.setVisibility(4);
+                this.mBannerText.setVisibility(View.VISIBLE);
+                this.mPreCallQILayout.setVisibility(View.INVISIBLE);
             } else if (MobileSipService.getInstance().isAutoLoginRunning()) {
                 setRoamSaveButtonReAutoconnecting();
                 this.mBannerText.setText(getString(R.string.reg_autoconnecting));
-                this.mBannerText.setVisibility(0);
-                this.mPreCallQILayout.setVisibility(4);
+                this.mBannerText.setVisibility(View.VISIBLE);
+                this.mPreCallQILayout.setVisibility(View.INVISIBLE);
             } else if (MobileSipService.getInstance().isLoginRunning()) {
                 this.mRoamSaveButton.setChecked(true);
                 setRoamSaveButtonClickable(false);
                 this.mBannerText.setText(getString(R.string.connecting) + "...");
-                this.mBannerText.setVisibility(0);
-                this.mPreCallQILayout.setVisibility(4);
+                this.mBannerText.setVisibility(View.VISIBLE);
+                this.mPreCallQILayout.setVisibility(View.INVISIBLE);
             } else if (MobileSipService.getInstance().isDisconnecting()) {
                 setRoamSaveButtonEnable(false);
                 setRoamSaveButtonClickable(false);
@@ -1111,8 +1113,8 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
                     str = getString(R.string.connecting) + "...";
                 }
                 textView.setText(str);
-                this.mBannerText.setVisibility(0);
-                this.mPreCallQILayout.setVisibility(0);
+                this.mBannerText.setVisibility(View.VISIBLE);
+                this.mPreCallQILayout.setVisibility(View.VISIBLE);
                 resumePreCallQI();
             } else {
                 setRoamSaveButtonEnable(false);
@@ -1135,13 +1137,13 @@ public class DailPadActivity extends Fragment implements View.OnClickListener, V
         intentFilter.addAction(Constants.INTENT_ALERT_RELOGIN_PROCESSING);
         intentFilter.addAction(Constants.INTENT_ALERT_AUTOLOGIN_PROCESSING);
         this.ctx.registerReceiver(this.mConnectionChangeReceiver, intentFilter);
-        runFacebookShareChecking();
+//        runFacebookShareChecking();
     }
 
     /* access modifiers changed from: package-private */
     public void playTone(int i) {
         int ringerMode;
-        if (this.mDTMFToneEnabled && (ringerMode = ((AudioManager) this.ctx.getSystemService("audio")).getRingerMode()) != 0 && ringerMode != 1) {
+        if (this.mDTMFToneEnabled && (ringerMode = ((AudioManager) this.ctx.getSystemService(Service.AUDIO_SERVICE)).getRingerMode()) != 0 && ringerMode != 1) {
             synchronized (this.mToneGeneratorLock) {
                 if (this.mToneGenerator != null) {
                     this.mToneGenerator.startTone(i);

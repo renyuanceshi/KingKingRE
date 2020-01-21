@@ -1,13 +1,18 @@
 package com.pccw.mobile.sip;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import com.facebook.places.model.PlaceFields;
+
 import com.pccw.mobile.sip.util.CryptoServices;
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class ClientStateManager {
     private static final String CLIENT_CSL_PREPAID_TNC_KEY = "CLIENT_CSL_PREPAID_TNC_KEY";
@@ -269,7 +274,7 @@ public class ClientStateManager {
 
     public static boolean isFirstOperatorCSL(Context context) {
         try {
-            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PlaceFields.PHONE);
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             if (telephonyManager == null || telephonyManager.getSimState() != 5) {
                 return false;
             }
@@ -282,7 +287,7 @@ public class ClientStateManager {
 
     public static boolean isFirstOperatorPccw(Context context) {
         try {
-            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PlaceFields.PHONE);
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             if (telephonyManager == null || telephonyManager.getSimState() != 5) {
                 return false;
             }
@@ -363,7 +368,7 @@ public class ClientStateManager {
 
     public static boolean isSecondOperatorCSL(Context context) {
         try {
-            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PlaceFields.PHONE);
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             if (telephonyManager == null || telephonyManager.getSimState() != 5) {
                 return false;
             }
@@ -376,7 +381,7 @@ public class ClientStateManager {
 
     public static boolean isSecondOperatorPccw(Context context) {
         try {
-            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PlaceFields.PHONE);
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             if (telephonyManager == null || telephonyManager.getSimState() != 5) {
                 return false;
             }
@@ -402,9 +407,10 @@ public class ClientStateManager {
         return (mode & 1) == 0;
     }
 
+    @SuppressLint("MissingPermission")
     public static String obtainFirstImsi(Context context) {
         String str;
-        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PlaceFields.PHONE);
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         if (telephonyManager == null) {
             return "";
         }
@@ -430,7 +436,7 @@ public class ClientStateManager {
 
     public static String obtainSecondImsi(Context context) {
         String str;
-        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PlaceFields.PHONE);
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         if (telephonyManager == null) {
             return "";
         }
@@ -459,9 +465,19 @@ public class ClientStateManager {
         if (phone.length() > 0) {
             phone = CryptoServices.aesDecryptByMasterKey(phone);
         }
-        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PlaceFields.PHONE);
+        TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         if (telephonyManager != null) {
             try {
+                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
                 encryptedDeviceId = telephonyManager.getDeviceId();
                 if (encryptedDeviceId != null) {
                     encryptedDeviceId = CryptoServices.aesEncryptedByMasterKey(encryptedDeviceId.trim());

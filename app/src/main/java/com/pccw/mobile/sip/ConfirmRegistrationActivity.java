@@ -1,6 +1,7 @@
 package com.pccw.mobile.sip;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -58,7 +59,7 @@ public class ConfirmRegistrationActivity extends BaseActivity implements View.On
                 return;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage(getApplicationContext().getString(R.string.confirm_registration_first_time_activation_success)).setCancelable(false).setNeutralButton(getApplicationContext().getString(17039370), new DialogInterface.OnClickListener() {
+            builder.setMessage(getApplicationContext().getString(R.string.confirm_registration_first_time_activation_success)).setCancelable(false).setNeutralButton(getApplicationContext().getString(android.R.string.ok), new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialogInterface, int i) {
                     ConfirmRegistrationActivity.this.gotoNextActivity();
                     dialogInterface.cancel();
@@ -72,7 +73,7 @@ public class ConfirmRegistrationActivity extends BaseActivity implements View.On
         runOnUiThread(new Runnable() {
             public void run() {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ConfirmRegistrationActivity.this);
-                builder.setIcon(R.drawable.ic_logo).setTitle(2131165290).setMessage(str);
+                builder.setIcon(R.drawable.ic_logo).setTitle(R.string.app_name).setMessage(str);
                 AlertDialog create = builder.create();
                 ConfirmRegistrationActivity.this.mPassword.setEnabled(true);
                 ConfirmRegistrationActivity.this.mSubmit.setEnabled(true);
@@ -166,9 +167,9 @@ public class ConfirmRegistrationActivity extends BaseActivity implements View.On
         switch (view.getId()) {
             case R.id.confirm_registration_submit_button /*2131624210*/:
                 Log.v(Constants.LOG_TAG_DEV, "Submit btn clicked");
-                ((InputMethodManager) getSystemService("input_method")).hideSoftInputFromWindow(this.mPassword.getWindowToken(), 0);
+                ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(this.mPassword.getWindowToken(), 0);
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle(getString(2131165290));
+                builder.setTitle(getString(R.string.app_name));
                 builder.setIcon(R.drawable.ic_logo);
                 builder.setMessage(getString(R.string.loading));
                 this.loadingDialog = builder.create();
@@ -201,7 +202,7 @@ public class ConfirmRegistrationActivity extends BaseActivity implements View.On
         this.mTextView = (TextView) findViewById(R.id.confirm_registration_notice_textview);
         this.mTextView.setText(replaceAll);
         this.mRemindGetPWTV = (TextView) findViewById(R.id.confirm_registration_get_password_remind);
-        this.mRemindGetPWTV.setVisibility(z ? 8 : 0);
+        this.mRemindGetPWTV.setVisibility(z ? View.GONE : View.VISIBLE);
         this.mPassword = (EditText) findViewById(R.id.confirm_registration_password_edittext);
         this.mSubmit = (Button) findViewById(R.id.confirm_registration_submit_button);
         this.mSubmit.setOnClickListener(this);

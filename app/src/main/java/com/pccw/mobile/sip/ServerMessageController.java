@@ -6,7 +6,7 @@ import android.util.Log;
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip.util.HttpUtils;
 import com.pccw.mobile.sip.util.VersionUtils;
-import com.pccw.mobile.sip02.R;
+
 import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Locale;

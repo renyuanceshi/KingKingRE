@@ -14,12 +14,11 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
-import com.google.android.gms.common.GooglePlayServicesUtil;
+
 import com.pccw.exception.NoNetworkException;
 import com.pccw.mobile.server.response.CheckNumberTypeResponse;
 import com.pccw.mobile.server.response.IMRegistrationResponse;
 import com.pccw.mobile.server.xml.CheckNumberTypeXmlHandler;
-import com.pccw.mobile.sip.ServerMessageController;
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip.util.HttpUtils;
 import com.pccw.mobile.sip.util.VersionUtils;
@@ -28,15 +27,18 @@ import com.pccw.mobile.util.ErrorMsgUtil;
 import com.pccw.mobile.util.PermissionUtils;
 import com.pccw.sms.service.GetMsisdnByImsiService;
 import com.pccw.sms.service.listener.IGetMsisdnByImsiListener;
-import java.io.IOException;
-import java.io.StringReader;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParserFactory;
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 import org.linphone.LinphoneActivity;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
+
+import java.io.IOException;
+import java.io.StringReader;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParserFactory;
 
 public class CheckVersionActivity extends BaseActivity {
     private static final String OS_TYPE = "android_default";
@@ -75,7 +77,7 @@ public class CheckVersionActivity extends BaseActivity {
             if (bool == null || !bool.booleanValue()) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(CheckVersionActivity.this);
                 builder.setIcon(R.drawable.ic_logo);
-                builder.setTitle(2131165290);
+                builder.setTitle(R.string.app_name);
                 builder.setMessage(R.string.ask_wifi);
                 builder.setNeutralButton(CheckVersionActivity.this.getString(R.string.go_to_wifi_setting), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -359,10 +361,10 @@ public class CheckVersionActivity extends BaseActivity {
             } else if (checkVersionResponse != null) {
                 String localErrorMsg = ErrorMsgUtil.getLocalErrorMsg("check_version_error_", checkVersionResponse.resultcode, CheckVersionActivity.this.getApplicationContext());
                 AlertDialog.Builder builder = new AlertDialog.Builder(CheckVersionActivity.this);
-                builder.setTitle(CheckVersionActivity.this.getString(2131165290));
+                builder.setTitle(CheckVersionActivity.this.getString(R.string.app_name));
                 builder.setIcon(R.drawable.ic_logo);
                 builder.setMessage(localErrorMsg);
-                builder.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+                builder.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
                 AlertDialog create = builder.create();
                 create.setOnDismissListener(new DialogInterface.OnDismissListener() {
                     public void onDismiss(DialogInterface dialogInterface) {
@@ -374,36 +376,36 @@ public class CheckVersionActivity extends BaseActivity {
                 create.show();
             } else {
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(CheckVersionActivity.this);
-                builder2.setTitle(CheckVersionActivity.this.getString(2131165290));
+                builder2.setTitle(CheckVersionActivity.this.getString(R.string.app_name));
                 builder2.setIcon(R.drawable.ic_logo);
                 switch (this.errorMessageType) {
                     case 3:
                         builder2.setMessage(R.string.get_number_info_not_allow_RS);
-                        builder2.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+                        builder2.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
                         break;
                     case 4:
                         builder2.setMessage(R.string.get_number_info_prepaid_card_not_active);
-                        builder2.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+                        builder2.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
                         break;
                     case 5:
                         builder2.setMessage(R.string.get_number_info_prepaid_card_expired);
-                        builder2.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+                        builder2.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
                         break;
                     case 6:
                         builder2.setMessage(ErrorMsgUtil.getLocalErrorMsg("get_number_info_not_allow_csl_postpaid", "", CheckVersionActivity.this.getApplicationContext()));
-                        builder2.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+                        builder2.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
                         break;
                     case 7:
                         builder2.setMessage(ErrorMsgUtil.getLocalErrorMsg("get_number_info_not_allow_csl_prepaid", "", CheckVersionActivity.this.getApplicationContext()));
-                        builder2.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+                        builder2.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
                         break;
                     case 8:
                         builder2.setMessage(ErrorMsgUtil.getLocalErrorMsg("get_number_info_brand_invalid", "", CheckVersionActivity.this.getApplicationContext()));
-                        builder2.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+                        builder2.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
                         break;
                     case 10:
                         builder2.setMessage(ErrorMsgUtil.getLocalErrorMsg("get_number_info_error_", Integer.toString(this.errorCodeGetNum), CheckVersionActivity.this.getApplicationContext()));
-                        builder2.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+                        builder2.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
                         break;
                     default:
                         builder2.setMessage(R.string.check_wifi);
@@ -516,9 +518,9 @@ public class CheckVersionActivity extends BaseActivity {
         }
     }
 
-    private static boolean checkPlayServices(Context context) {
-        return GooglePlayServicesUtil.isGooglePlayServicesAvailable(context) == 0;
-    }
+//    private static boolean checkPlayServices(Context context) {
+//        return GooglePlayServicesUtil.isGooglePlayServicesAvailable(context) == 0;
+//    }
 
     public static void clearLastSuccessfulCheckResponse() {
         lastSuccessfulCheckVersionResponse = null;
@@ -530,7 +532,7 @@ public class CheckVersionActivity extends BaseActivity {
             this.splashScreenStartTime = SystemClock.elapsedRealtime();
             if (!MobileSipService.getInstance().isNetworkAvailable(this)) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle(getString(2131165290));
+                builder.setTitle(getString(R.string.app_name));
                 builder.setIcon(R.drawable.ic_logo);
                 builder.setMessage(getString(R.string.ask_wifi));
                 builder.setNeutralButton(getString(R.string.go_to_wifi_setting), new DialogInterface.OnClickListener() {
@@ -630,10 +632,10 @@ public class CheckVersionActivity extends BaseActivity {
 
     private void showCannotGetMsisdnAndQuitAppDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(2131165290));
+        builder.setTitle(getString(R.string.app_name));
         builder.setIcon(R.drawable.ic_logo);
         builder.setMessage("Cannot get nubmer");
-        builder.setNeutralButton(17039370, (DialogInterface.OnClickListener) null);
+        builder.setNeutralButton(android.R.string.ok, (DialogInterface.OnClickListener) null);
         AlertDialog create = builder.create();
         create.setOnDismissListener(new DialogInterface.OnDismissListener() {
             public void onDismiss(DialogInterface dialogInterface) {
@@ -647,7 +649,7 @@ public class CheckVersionActivity extends BaseActivity {
 
     private void showNoWifiAndQuitAppDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(2131165290));
+        builder.setTitle(getString(R.string.app_name));
         builder.setIcon(R.drawable.ic_logo);
         builder.setMessage(getString(R.string.ask_wifi));
         builder.setNeutralButton(getString(R.string.go_to_wifi_setting), new DialogInterface.OnClickListener() {
@@ -696,34 +698,34 @@ public class CheckVersionActivity extends BaseActivity {
     public void onResume() {
         super.onResume();
         setContentView(R.layout.splash_screen);
-        this.wifiManager = (WifiManager) getApplicationContext().getSystemService("wifi");
-        if (!this.wifiManager.isWifiEnabled()) {
-            this.wifiManager.setWifiEnabled(true);
-            this.waitingWifiThr = new Thread(new Runnable() {
-                public void run() {
-                    int i = 0;
-                    boolean unused = CheckVersionActivity.this.isWaitingWifiFinish = false;
-                    while (!CheckVersionActivity.this.isWaitingWifiFinish) {
-                        if (MobileSipService.getInstance().isNetworkAvailable(CheckVersionActivity.this) || i >= 10) {
-                            CheckVersionActivity.this.runOnUiThread(new Runnable() {
-                                public void run() {
-                                    CheckVersionActivity.this.contResume();
-                                }
-                            });
-                            boolean unused2 = CheckVersionActivity.this.isWaitingWifiFinish = true;
-                        }
-                        i++;
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            });
-            this.waitingWifiThr.start();
-            return;
-        }
+//        this.wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+//        if (!this.wifiManager.isWifiEnabled()) {
+//            this.wifiManager.setWifiEnabled(true);
+//            this.waitingWifiThr = new Thread(new Runnable() {
+//                public void run() {
+//                    int i = 0;
+//                    boolean unused = CheckVersionActivity.this.isWaitingWifiFinish = false;
+//                    while (!CheckVersionActivity.this.isWaitingWifiFinish) {
+//                        if (MobileSipService.getInstance().isNetworkAvailable(CheckVersionActivity.this) || i >= 10) {
+//                            CheckVersionActivity.this.runOnUiThread(new Runnable() {
+//                                public void run() {
+//                                    CheckVersionActivity.this.contResume();
+//                                }
+//                            });
+//                            boolean unused2 = CheckVersionActivity.this.isWaitingWifiFinish = true;
+//                        }
+//                        i++;
+//                        try {
+//                            Thread.sleep(1000);
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }
+//            });
+//            this.waitingWifiThr.start();
+//            return;
+//        }
         contResume();
     }
 }

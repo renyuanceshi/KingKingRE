@@ -6,7 +6,7 @@ import android.os.Build;
 
 public class SSIDUtil {
     public static String getCurrentSSID(Context context) {
-        String ssid = ((WifiManager) context.getSystemService("wifi")).getConnectionInfo().getSSID();
+        String ssid = ((WifiManager) context.getSystemService(Context.WIFI_SERVICE)).getConnectionInfo().getSSID();
         return ssid == null ? "" : removeQuotationsInCurrentSSIDForJellyBean(ssid);
     }
 

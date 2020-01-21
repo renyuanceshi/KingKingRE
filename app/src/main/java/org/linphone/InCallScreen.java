@@ -46,7 +46,7 @@ import com.pccw.mobile.sip.Constants;
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip.util.Contact;
 import com.pccw.mobile.sip.util.ContactsUtils;
-import com.pccw.mobile.sip02.R;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -206,7 +206,7 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
                 this.callerLabelTextView.setText("");
             } else {
                 this.callerLabelTextView.setText(InCallScreen.incomingCallerLabel);
-                this.callerLabelTextView.setVisibility(0);
+                this.callerLabelTextView.setVisibility(View.VISIBLE);
             }
             if (InCallScreen.incomingCallerPhoto != null) {
                 this.callerPhoto.setImageDrawable(InCallScreen.incomingCallerPhoto);
@@ -510,7 +510,7 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
                     this.mCallCard.displayMainCallStatus(linphoneCall.getState(), linphoneCall.getDuration(), true);
                 }
                 this.mCallCard.displayMainCallLayout();
-                this.swapCallButton.setVisibility(8);
+                this.swapCallButton.setVisibility(View.GONE);
                 this.holdCallCard.displayMainCallLayout();
                 return;
             }
@@ -543,7 +543,7 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
                 this.holdCallCard.displayCallWaitingHoldCallStatus(linphoneCall2.getState(), linphoneCall2.getDuration());
             }
             this.mCallCard.displayCallWaitingLayout();
-            this.swapCallButton.setVisibility(0);
+            this.swapCallButton.setVisibility(View.VISIBLE);
             this.holdCallCard.displayCallWaitingLayout();
         }
     }
@@ -674,7 +674,7 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
                 linphoneCall2 = this.lLinphoneCore.getCalls()[0];
             }
             if (linphoneCall2.getState() == LinphoneCall.State.IncomingReceived) {
-                this.mIncomingCallWidget.setVisibility(0);
+                this.mIncomingCallWidget.setVisibility(View.VISIBLE);
                 this.inCallDtmfView.setVisibility(4);
                 this.dialButton.setChecked(false);
                 this.inCallButtons.setVisibility(4);
@@ -682,14 +682,14 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
                 this.mIncomingCallWidget.setVisibility(4);
                 this.inCallDtmfView.setVisibility(4);
                 this.dialButton.setChecked(false);
-                this.inCallButtons.setVisibility(0);
+                this.inCallButtons.setVisibility(View.VISIBLE);
                 this.startVideoButton.setEnabled(false);
                 this.startVideoButton.setClickable(false);
             } else {
                 this.mIncomingCallWidget.setVisibility(4);
                 this.inCallDtmfView.setVisibility(4);
                 this.dialButton.setChecked(false);
-                this.inCallButtons.setVisibility(0);
+                this.inCallButtons.setVisibility(View.VISIBLE);
             }
             setupCallCard();
         }
@@ -698,7 +698,7 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
         } else if (state == LinphoneCall.State.IncomingReceived) {
         } else {
             if (state == LinphoneCall.State.Connected) {
-                this.mCallCard.mVideoIcon.setVisibility(8);
+                this.mCallCard.mVideoIcon.setVisibility(View.GONE);
                 this.shouldUpdateQualityIndicator = true;
                 configureQualityIndicator(linphoneCall);
                 enterIncalMode(linphoneCore);
@@ -722,14 +722,14 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
                 }
             } else if (state == LinphoneCall.State.CallEnd) {
                 if (this.lLinphoneCore.getCallsNb() == 0) {
-                    this.mCallCard.mVideoIcon.setVisibility(8);
+                    this.mCallCard.mVideoIcon.setVisibility(View.GONE);
                     this.shouldUpdateQualityIndicator = false;
                     this.qualityIndiTimer.cancel();
                     exitCallMode();
                     this.mHandler.sendEmptyMessageDelayed(5, 2000);
                     this.mIncomingCallWidget.setVisibility(4);
                     this.inCallDtmfView.setVisibility(4);
-                    this.inCallButtons.setVisibility(0);
+                    this.inCallButtons.setVisibility(View.VISIBLE);
                     if (ClientStateManager.isRegisteredPrepaid(this.mContext)) {
                         MobileSipService.getInstance().setNeedPrepaidTopUpReminderCheck(true);
                     }
@@ -839,7 +839,7 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
         } else {
             attributes.flags &= -1025;
             attributes.screenBrightness = -1.0f;
-            this.mMainFrame.setVisibility(0);
+            this.mMainFrame.setVisibility(View.VISIBLE);
             if (Build.VERSION.SDK_INT >= 14) {
                 getWindow().getDecorView().setSystemUiVisibility(0);
             }
@@ -876,16 +876,16 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
             public void onTrigger(View view, int i) {
                 switch (i) {
                     case 1:
-                        InCallScreen.this.inCallButtons.setVisibility(0);
-                        InCallScreen.this.mIncomingCallWidget.setVisibility(8);
+                        InCallScreen.this.inCallButtons.setVisibility(View.VISIBLE);
+                        InCallScreen.this.mIncomingCallWidget.setVisibility(View.GONE);
                         InCallScreen.this.answer();
                         return;
                     case 2:
-                        InCallScreen.this.mIncomingCallWidget.setVisibility(8);
+                        InCallScreen.this.mIncomingCallWidget.setVisibility(View.GONE);
                         InCallScreen.this.reject();
                         return;
                     case 3:
-                        InCallScreen.this.mIncomingCallWidget.setVisibility(8);
+                        InCallScreen.this.mIncomingCallWidget.setVisibility(View.GONE);
                         InCallScreen.this.answerWithVideo();
                         return;
                     default:
@@ -956,7 +956,7 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
                 if (!this.isWaitingConferenceCall && !this.isInConferenceCall) {
                     if (this.lLinphoneCore.getCallsNb() <= 1) {
                         Intent intent = new Intent();
-                        intent.addFlags(268435456);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                         intent.setClass(this, AddCallActivity.class);
                         startActivityForResult(intent, 101);
                     } else {
@@ -1030,7 +1030,7 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
         super.onCreate(bundle);
         requestWindowFeature(1);
         setContentView(R.layout.incall_msip);
-        this.mAudioManager = (AudioManager) getSystemService("audio");
+        this.mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         initInCallScreen();
         this.lLinphoneCore = LinphoneService.instance().getLinphoneCore();
         this.sensorManager = (SensorManager) getSystemService("sensor");
@@ -1165,10 +1165,10 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
         if (state == LinphoneCall.State.OutgoingInit || state == LinphoneCall.State.OutgoingRinging || state == LinphoneCall.State.Connected || state == LinphoneCall.State.StreamsRunning || state == LinphoneCall.State.OutgoingProgress || state == LinphoneCall.State.OutgoingEarlyMedia) {
             this.mIncomingCallWidget.setVisibility(4);
             this.inCallDtmfView.setVisibility(4);
-            this.inCallButtons.setVisibility(0);
+            this.inCallButtons.setVisibility(View.VISIBLE);
             LinphoneActivity.instance().startProxymitySensor();
         } else if (state == LinphoneCall.State.IncomingReceived) {
-            this.mIncomingCallWidget.setVisibility(0);
+            this.mIncomingCallWidget.setVisibility(View.VISIBLE);
             this.inCallDtmfView.setVisibility(4);
             this.inCallButtons.setVisibility(4);
         } else if (state != LinphoneCall.State.Error && state == LinphoneCall.State.CallEnd) {
@@ -1269,8 +1269,8 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
         this.mHandler.post(new Runnable() {
             public void run() {
                 if (LinphoneService.instance().isBluetoothScoConnected) {
-                    InCallScreen.this.audioRoute.setVisibility(0);
-                    InCallScreen.this.speakerButton.setVisibility(8);
+                    InCallScreen.this.audioRoute.setVisibility(View.VISIBLE);
+                    InCallScreen.this.speakerButton.setVisibility(View.GONE);
                     if (!z) {
                         try {
                             Thread.sleep(3000);
@@ -1280,8 +1280,8 @@ public class InCallScreen extends CallScreen implements View.OnClickListener, Se
                     InCallScreen.this.routeAudioToBluetooth();
                     return;
                 }
-                InCallScreen.this.audioRoute.setVisibility(8);
-                InCallScreen.this.speakerButton.setVisibility(0);
+                InCallScreen.this.audioRoute.setVisibility(View.GONE);
+                InCallScreen.this.speakerButton.setVisibility(View.VISIBLE);
                 if (InCallScreen.this.speakerButton.isChecked()) {
                     InCallScreen.this.routeAudioToSpeaker();
                     return;

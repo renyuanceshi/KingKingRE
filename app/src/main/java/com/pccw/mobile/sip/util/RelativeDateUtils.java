@@ -2,7 +2,7 @@ package com.pccw.mobile.sip.util;
 
 import android.content.Context;
 import android.content.res.Resources;
-import com.pccw.mobile.sip02.R;
+
 import java.util.Date;
 import org.apache.commons.lang3.StringUtils;
 

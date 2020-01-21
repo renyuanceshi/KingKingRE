@@ -8,7 +8,6 @@ import android.provider.ContactsContract;
 import android.util.Log;
 import com.pccw.database.entity.UserInfo;
 import com.pccw.database.helper.DBHelper;
-import com.pccw.mobile.sip.ContactFragment;
 import com.pccw.sms.bean.SMSConstants;
 import com.pccw.sms.service.PhoneListService;
 import java.util.ArrayList;

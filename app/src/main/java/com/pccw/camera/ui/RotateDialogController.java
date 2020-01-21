@@ -8,7 +8,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.pccw.mobile.sip02.R;
 
 public class RotateDialogController implements Rotatable {
     private static final long ANIM_DURATION = 150;
@@ -34,12 +33,12 @@ public class RotateDialogController implements Rotatable {
 
     private void fadeInDialog() {
         this.mDialogRootLayout.startAnimation(this.mFadeInAnim);
-        this.mDialogRootLayout.setVisibility(0);
+        this.mDialogRootLayout.setVisibility(View.VISIBLE);
     }
 
     private void fadeOutDialog() {
         this.mDialogRootLayout.startAnimation(this.mFadeOutAnim);
-        this.mDialogRootLayout.setVisibility(8);
+        this.mDialogRootLayout.setVisibility(View.GONE);
     }
 
     private void inflateDialogLayout() {
@@ -69,11 +68,11 @@ public class RotateDialogController implements Rotatable {
 
     public void resetRotateDialog() {
         inflateDialogLayout();
-        this.mRotateDialogTitleLayout.setVisibility(8);
-        this.mRotateDialogSpinner.setVisibility(8);
-        this.mRotateDialogButton1.setVisibility(8);
-        this.mRotateDialogButton2.setVisibility(8);
-        this.mRotateDialogButtonLayout.setVisibility(8);
+        this.mRotateDialogTitleLayout.setVisibility(View.GONE);
+        this.mRotateDialogSpinner.setVisibility(View.GONE);
+        this.mRotateDialogButton1.setVisibility(View.GONE);
+        this.mRotateDialogButton2.setVisibility(View.GONE);
+        this.mRotateDialogButtonLayout.setVisibility(View.GONE);
     }
 
     public void setOrientation(int i) {
@@ -84,11 +83,11 @@ public class RotateDialogController implements Rotatable {
     public void showAlertDialog(String str, String str2, String str3, final Runnable runnable, String str4, final Runnable runnable2) {
         resetRotateDialog();
         this.mRotateDialogTitle.setText(str);
-        this.mRotateDialogTitleLayout.setVisibility(0);
+        this.mRotateDialogTitleLayout.setVisibility(View.VISIBLE);
         this.mRotateDialogText.setText(str2);
         if (str3 != null) {
             this.mRotateDialogButton1.setText(str3);
-            this.mRotateDialogButton1.setVisibility(0);
+            this.mRotateDialogButton1.setVisibility(View.VISIBLE);
             this.mRotateDialogButton1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     if (runnable != null) {
@@ -97,11 +96,11 @@ public class RotateDialogController implements Rotatable {
                     RotateDialogController.this.dismissDialog();
                 }
             });
-            this.mRotateDialogButtonLayout.setVisibility(0);
+            this.mRotateDialogButtonLayout.setVisibility(View.VISIBLE);
         }
         if (str4 != null) {
             this.mRotateDialogButton2.setText(str4);
-            this.mRotateDialogButton2.setVisibility(0);
+            this.mRotateDialogButton2.setVisibility(View.VISIBLE);
             this.mRotateDialogButton2.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     if (runnable2 != null) {
@@ -110,7 +109,7 @@ public class RotateDialogController implements Rotatable {
                     RotateDialogController.this.dismissDialog();
                 }
             });
-            this.mRotateDialogButtonLayout.setVisibility(0);
+            this.mRotateDialogButtonLayout.setVisibility(View.VISIBLE);
         }
         fadeInDialog();
     }
@@ -118,7 +117,7 @@ public class RotateDialogController implements Rotatable {
     public void showWaitingDialog(String str) {
         resetRotateDialog();
         this.mRotateDialogText.setText(str);
-        this.mRotateDialogSpinner.setVisibility(0);
+        this.mRotateDialogSpinner.setVisibility(View.VISIBLE);
         fadeInDialog();
     }
 }

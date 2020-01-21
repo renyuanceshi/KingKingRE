@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import com.pccw.dialog.listener.IKKDialogOnClickListener;
-import com.pccw.mobile.sip02.R;
 
 public abstract class KKDialog {
     Activity activity;
@@ -50,7 +49,7 @@ public abstract class KKDialog {
 
     /* access modifiers changed from: package-private */
     public void setTitle() {
-        this.builder.setTitle(2131165290);
+        this.builder.setTitle(R.string.app_name);
         this.builder.setIcon(R.drawable.ic_logo);
     }
 

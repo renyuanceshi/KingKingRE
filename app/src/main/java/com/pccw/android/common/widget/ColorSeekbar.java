@@ -10,7 +10,7 @@ import android.graphics.drawable.StateListDrawable;
 import android.util.AttributeSet;
 import android.widget.SeekBar;
 
-public class ColorSeekbar extends SeekBar {
+public class ColorSeekbar extends android.support.v7.widget.AppCompatSeekBar {
     ColorFilter cf;
     private Drawable mThumb;
 

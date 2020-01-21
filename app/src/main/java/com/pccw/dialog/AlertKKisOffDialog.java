@@ -12,7 +12,7 @@ public class AlertKKisOffDialog extends KKDialog {
     }
 
     private void setNegativeButton() {
-        this.builder.setNegativeButton(17039360, new DialogInterface.OnClickListener() {
+        this.builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (AlertKKisOffDialog.this.listener != null) {
                     AlertKKisOffDialog.this.listener.onClickKKDialogNegativeButton(AlertKKisOffDialog.this);
@@ -22,7 +22,7 @@ public class AlertKKisOffDialog extends KKDialog {
     }
 
     private void setPositiveButton() {
-        this.builder.setPositiveButton(17039370, new DialogInterface.OnClickListener() {
+        this.builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (AlertKKisOffDialog.this.listener != null) {
                     AlertKKisOffDialog.this.listener.onClickKKDialogPositiveButton(AlertKKisOffDialog.this);

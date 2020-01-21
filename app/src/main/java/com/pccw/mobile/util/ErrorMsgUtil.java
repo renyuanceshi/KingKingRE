@@ -5,7 +5,7 @@ import com.pccw.mobile.server.CheckLocationApi;
 import com.pccw.mobile.server.api.ApiResponse;
 import com.pccw.mobile.server.api.ApiResponseListener;
 import com.pccw.mobile.server.response.CheckLocationResponse;
-import com.pccw.mobile.sip02.R;
+
 import de.timroes.axmlrpc.serializer.SerializerHandler;
 import java.util.concurrent.ExecutionException;
 

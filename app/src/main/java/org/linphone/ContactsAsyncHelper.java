@@ -10,7 +10,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.provider.Contacts;
 import android.widget.ImageView;
-import com.pccw.mobile.sip02.R;
+
 import java.io.InputStream;
 
 public class ContactsAsyncHelper extends Handler {
@@ -107,7 +107,7 @@ public class ContactsAsyncHelper extends Handler {
 
     public static final void updateImageViewWithContactPhotoAsync(CallerInfo callerInfo, int i, OnImageLoadCompleteListener onImageLoadCompleteListener, Object obj, Context context, ImageView imageView, Uri uri, int i2) {
         if (uri == null) {
-            imageView.setVisibility(0);
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(i2);
             return;
         }
@@ -123,7 +123,7 @@ public class ContactsAsyncHelper extends Handler {
         obtainMessage.arg1 = 1;
         obtainMessage.obj = workerArgs;
         if (i2 != -1) {
-            imageView.setVisibility(0);
+            imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(i2);
         } else {
             imageView.setVisibility(4);
@@ -143,14 +143,14 @@ public class ContactsAsyncHelper extends Handler {
                 if (workerArgs.result != null) {
                     workerArgs.view.setScaleType(ImageView.ScaleType.CENTER);
                     workerArgs.view.setBackgroundResource(R.drawable.incall_photo_border);
-                    workerArgs.view.setVisibility(0);
+                    workerArgs.view.setVisibility(View.VISIBLE);
                     workerArgs.view.setImageDrawable((Drawable) workerArgs.result);
                     if (workerArgs.info != null) {
                         workerArgs.info.cachedPhoto = (Drawable) workerArgs.result;
                     }
                     z = true;
                 } else if (workerArgs.defaultResource != -1) {
-                    workerArgs.view.setVisibility(0);
+                    workerArgs.view.setVisibility(View.VISIBLE);
                     workerArgs.view.setImageResource(workerArgs.defaultResource);
                 }
                 if (workerArgs.info != null) {

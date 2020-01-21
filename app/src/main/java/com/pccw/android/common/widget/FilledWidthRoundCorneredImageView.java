@@ -12,9 +12,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
+
 import com.pccw.mobile.sip02.R;
 
-public class FilledWidthRoundCorneredImageView extends ImageView {
+public class FilledWidthRoundCorneredImageView extends android.support.v7.widget.AppCompatImageView {
     private static float radius = 20.0f;
     private boolean isFilled = false;
     private int viewHeight;
@@ -36,8 +37,8 @@ public class FilledWidthRoundCorneredImageView extends ImageView {
 
     private void setRadius(Context context, AttributeSet attributeSet) {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.FilledWidthRoundCorneredImageView);
-        float f = obtainStyledAttributes.getFloat(0, radius);
-        boolean z = obtainStyledAttributes.getBoolean(1, false);
+        float f = obtainStyledAttributes.getFloat(R.styleable.FilledWidthRoundCorneredImageView_radius, radius);
+        boolean z = obtainStyledAttributes.getBoolean(R.styleable.FilledWidthRoundCorneredImageView_isFilled, false);
         obtainStyledAttributes.recycle();
         setScaleType(ImageView.ScaleType.CENTER_CROP);
         radius = Float.valueOf(f).floatValue();

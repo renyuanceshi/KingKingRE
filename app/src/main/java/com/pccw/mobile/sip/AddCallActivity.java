@@ -10,7 +10,8 @@ import android.support.v7.app.ActionBar;
 import android.widget.FrameLayout;
 import com.pccw.android.common.widget.ActionBarUtils;
 import com.pccw.mobile.sip02.R;
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 import org.linphone.DailPadActivityForAddCall;
 import org.linphone.LinphoneService;
 import org.linphone.core.LinphoneCall;

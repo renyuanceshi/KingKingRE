@@ -5,15 +5,14 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
+import android.graphics.PixelFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.ImageView;
-import com.pccw.sms.bean.SMSConstants;
 
-public class ColorIcon extends ImageView {
+public class ColorIcon extends android.support.v7.widget.AppCompatImageView {
     private Bitmap bmp_foreground = null;
     ColorFilter colorFilter;
     private Context context;
@@ -30,7 +29,7 @@ public class ColorIcon extends ImageView {
     public static Bitmap drawableToBitmap(Drawable drawable) {
         int intrinsicWidth = drawable.getIntrinsicWidth();
         int intrinsicHeight = drawable.getIntrinsicHeight();
-        Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, drawable.getOpacity() != -1 ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565);
+        Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(createBitmap);
         drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
         drawable.draw(canvas);
@@ -66,16 +65,16 @@ public class ColorIcon extends ImageView {
     }
 
     private int measureWidth(int i) {
-        return View.MeasureSpec.getMode(i) == 1073741824 ? View.MeasureSpec.getSize(i) : this.viewWidth;
+        return View.MeasureSpec.getMode(i) == MeasureSpec.EXACTLY ? View.MeasureSpec.getSize(i) : this.viewWidth;
     }
 
     /* access modifiers changed from: protected */
     public void onDraw(Canvas canvas) {
         loadBitmap();
-        if (this.bmp_foreground == null || this.colorFilter == SMSConstants.cf_white) {
-            super.onDraw(canvas);
-            return;
-        }
+//        if (this.bmp_foreground == null || this.colorFilter == SMSConstants.cf_white) {
+//            super.onDraw(canvas);
+//            return;
+//        }
         this.paint.setColorFilter(this.colorFilter);
         canvas.drawBitmap(this.bmp_foreground, 0.0f, 0.0f, this.paint);
     }

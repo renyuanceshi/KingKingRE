@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.pccw.mobile.sip02.R;
 
 public class EditTextViewWithNumberCount extends RelativeLayout {
@@ -35,7 +36,7 @@ public class EditTextViewWithNumberCount extends RelativeLayout {
         super(context2, attributeSet);
         if (!isInEditMode()) {
             this.context = context2;
-            this.typeface = Typeface.createFromAsset(context2.getAssets(), "Roboto-Regular.ttf");
+            this.typeface = Typeface.createFromAsset(context2.getAssets(), "font/roboto_regular.ttf");
             if (attributeSet != null) {
                 TypedArray obtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, R.styleable.EditTextViewWithNumberCount);
                 this.maxWordCount = obtainStyledAttributes.getInt(0, this.maxWordCount);

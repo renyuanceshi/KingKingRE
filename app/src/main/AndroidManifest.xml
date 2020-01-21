@@ -223,16 +223,7 @@
             android:launchMode="singleInstance"
             android:screenOrientation="portrait" />
         <activity android:name="com.pccw.mobile.sip.ConfirmRegistrationActivity" />
-        <activity
-            android:name="com.pccw.mobile.sip.ContactDetailsActivity"
-            android:parentActivityName="org.linphone.LinphoneActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme_Contact">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.linphone.LinphoneActivity" />
-        </activity>
-<!--        <activity-->
+        <!--        <activity-->
 <!--            android:name="com.pccw.mobile.sip.AddCallContactDetailsActivity"-->
 <!--            android:parentActivityName="org.linphone.AddCallActivity"-->
 <!--            android:screenOrientation="portrait"-->

@@ -64,7 +64,7 @@ public class MediastreamerAndroidContext {
             Log.i("[Device] hasLowLatencyFeature: " + hasSystemFeature + ", hasProFeature: " + mContext.getPackageManager().hasSystemFeature("android.hardware.audio.pro"));
             MediastreamerAndroidContext instance2 = getInstance();
             if (Build.VERSION.SDK_INT >= 19) {
-                AudioManager audioManager = (AudioManager) mContext.getSystemService("audio");
+                AudioManager audioManager = (AudioManager) mContext.getSystemService(AUDIO_SERVICE);
                 int parseInt = parseInt(audioManager.getProperty("android.media.property.OUTPUT_FRAMES_PER_BUFFER"), 256);
                 int parseInt2 = parseInt(audioManager.getProperty("android.media.property.OUTPUT_SAMPLE_RATE"), 44100);
                 Log.i("[Device] Output frames per buffer: " + parseInt + ", output sample rates: " + parseInt2 + " for OpenSLES MS sound card.");

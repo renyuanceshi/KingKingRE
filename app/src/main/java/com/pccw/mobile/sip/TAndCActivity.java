@@ -20,7 +20,7 @@ import android.widget.Button;
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip.util.HttpUtils;
 import com.pccw.mobile.sip.util.VersionUtils;
-import com.pccw.mobile.sip02.R;
+
 import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -157,7 +157,7 @@ public class TAndCActivity extends BaseActivity {
                     CheckVersionActivity.clearLastSuccessfulCheckResponse();
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(this.activity);
-                builder.setTitle(this.appContext.getString(2131165290));
+                builder.setTitle(this.appContext.getString(R.string.app_name));
                 builder.setIcon(R.drawable.ic_logo);
                 builder.setMessage(this.appContext.getString(R.string.t_and_c_error_message));
                 builder.setNeutralButton(TAndCActivity.this.getString(R.string.go_to_wifi_setting), new DialogInterface.OnClickListener() {
@@ -344,7 +344,7 @@ public class TAndCActivity extends BaseActivity {
                             TAndCActivity.this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://www.pccw-hkt.com/kk")));
                         }
                     });
-                    builder.setNegativeButton(TAndCActivity.this.getString(17039360), (DialogInterface.OnClickListener) null);
+                    builder.setNegativeButton(TAndCActivity.this.getString(android.R.string.cancel), (DialogInterface.OnClickListener) null);
                 } else if (num.intValue() == 2 || num.intValue() == 3 || num.intValue() == 4) {
                     string = TAndCActivity.this.getString(R.string.check_wifi);
                     builder.setNeutralButton(TAndCActivity.this.getString(R.string.go_to_wifi_setting), new DialogInterface.OnClickListener() {
@@ -353,7 +353,7 @@ public class TAndCActivity extends BaseActivity {
                         }
                     });
                 }
-                builder.setTitle(this.appContext.getString(2131165290));
+                builder.setTitle(this.appContext.getString(R.string.app_name));
                 builder.setIcon(R.drawable.ic_logo);
                 builder.setMessage(string);
                 this.errorDialog = builder.create();
@@ -559,7 +559,7 @@ public class TAndCActivity extends BaseActivity {
         this.loadTAndCError = false;
         if (!MobileSipService.getInstance().isNetworkAvailable(this)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(getString(2131165290));
+            builder.setTitle(getString(R.string.app_name));
             builder.setIcon(R.drawable.ic_logo);
             builder.setMessage(getString(R.string.ask_wifi));
             builder.setNeutralButton(getString(R.string.go_to_wifi_setting), new DialogInterface.OnClickListener() {
@@ -579,7 +579,7 @@ public class TAndCActivity extends BaseActivity {
             return;
         }
         AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
-        builder2.setTitle(getString(2131165290));
+        builder2.setTitle(getString(R.string.app_name));
         builder2.setIcon(R.drawable.ic_logo);
         builder2.setMessage(getString(R.string.loading));
         this.loadingDialog = builder2.create();
@@ -643,7 +643,7 @@ public class TAndCActivity extends BaseActivity {
                 if (webView == TAndCActivity.this.tcWebView) {
                     boolean unused2 = TAndCActivity.this.loadTAndCError = true;
                     AlertDialog.Builder builder = new AlertDialog.Builder(TAndCActivity.this);
-                    builder.setTitle(TAndCActivity.this.getString(2131165290));
+                    builder.setTitle(TAndCActivity.this.getString(R.string.app_name));
                     builder.setIcon(R.drawable.ic_logo);
                     builder.setMessage(TAndCActivity.this.getString(R.string.t_and_c_error_message));
                     builder.setNeutralButton(TAndCActivity.this.getString(R.string.go_to_wifi_setting), new DialogInterface.OnClickListener() {
