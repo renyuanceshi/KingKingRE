@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.facebook.share.internal.ShareConstants;
 import com.pccw.mobile.sip.service.MobileSipService;
+import com.pccw.mobile.sip02.R;
 import com.pccw.mobile.util.SSIDUtil;
 import com.pccw.pref.SSIDList;
 import java.util.ArrayList;

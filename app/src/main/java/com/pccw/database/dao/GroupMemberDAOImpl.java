@@ -6,11 +6,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.ContactsContract;
 import android.util.Log;
+
 import com.pccw.database.entity.GroupMember;
 import com.pccw.database.entity.UserInfo;
 import com.pccw.database.helper.DBHelper;
 import com.pccw.sms.bean.SMSConstants;
 import com.pccw.sms.service.PhoneListService;
+
 import java.util.ArrayList;
 
 public class GroupMemberDAOImpl implements GenericDAO<GroupMember, Integer> {

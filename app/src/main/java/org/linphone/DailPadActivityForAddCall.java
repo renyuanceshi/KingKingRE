@@ -37,11 +37,14 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
 import com.pccw.database.helper.DBHelper;
 import com.pccw.mobile.sip.AddCallActivity;
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip.util.NumberMappingUtil;
+import com.pccw.mobile.sip02.R;
 import com.pccw.mobile.ui.dialog.KKAlertDialogFragment;
+
 import org.linphone.core.LinphoneCall;
 import org.linphone.core.LinphoneCore;
 

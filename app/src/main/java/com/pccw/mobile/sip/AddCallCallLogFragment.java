@@ -19,7 +19,7 @@ import android.os.Message;
 import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.telephony.PhoneNumberUtils;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -31,15 +31,18 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
+
 import com.pccw.database.helper.DBHelper;
 import com.pccw.mobile.provider.KingKingContentProvider;
 import com.pccw.mobile.sip.service.MobileSipService;
+import com.pccw.mobile.sip02.R;
+
+import org.linphone.mediastream.Version;
 
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Locale;
-import org.linphone.mediastream.Version;
 
 public class AddCallCallLogFragment extends Fragment {
     static final int CALLER_NAME_COLUMN_INDEX = 5;
@@ -784,7 +787,7 @@ public class AddCallCallLogFragment extends Fragment {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        ActionBar supportActionBar = ((ActionBarActivity) getActivity()).getSupportActionBar();
+        ActionBar supportActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
         supportActionBar.setDisplayOptions(8, 12);
         supportActionBar.setTitle((CharSequence) getString(R.string.actionbar_tab_addcall_title_history));
         supportActionBar.setHomeButtonEnabled(true);

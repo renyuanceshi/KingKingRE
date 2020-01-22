@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.pccw.mobile.sip02.R;
+
 public class RotateDialogController implements Rotatable {
     private static final long ANIM_DURATION = 150;
     private static final String TAG = "RotateDialogController";

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 import android.util.Log;
+
 import com.pccw.asynctask.listener.ISendSMSAsyncTaskListener;
 import com.pccw.asynctask.result.SendSMSAsyncResult;
 import com.pccw.exception.NoNetworkException;
@@ -17,6 +18,7 @@ import com.pccw.sms.service.ChatListService;
 import com.pccw.sms.service.ChatRecordService;
 import com.pccw.sms.service.MessageItemService;
 import com.pccw.sms.util.SMSFormatUtil;
+
 import java.util.ArrayList;
 import java.util.Date;
 

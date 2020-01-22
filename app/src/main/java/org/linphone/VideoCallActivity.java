@@ -35,13 +35,13 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.facebook.internal.ServerProtocol;
 import com.pccw.camera.ui.RotateDialogController;
 import com.pccw.mobile.sip.BaseActivity;
 import com.pccw.mobile.sip.service.MobileSipService;
+import com.pccw.mobile.sip02.R;
 
-import java.util.Timer;
-import java.util.TimerTask;
 import org.linphone.core.AndroidCameraRecordManager;
 import org.linphone.core.LinphoneCall;
 import org.linphone.core.LinphoneCallParams;
@@ -52,6 +52,9 @@ import org.linphone.core.VideoSize;
 import org.linphone.mediastream.Version;
 import org.linphone.mediastream.video.AndroidVideoWindowImpl;
 import org.linphone.mediastream.video.capture.hwconf.AndroidCameraConfiguration;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class VideoCallActivity extends BaseActivity implements View.OnClickListener {
     private static final int capturePreviewLargestDimension = 150;
