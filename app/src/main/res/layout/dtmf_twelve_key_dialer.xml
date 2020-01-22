@@ -1,28 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/top" android:background="@drawable/incall_keypad_gradient" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:layout_width="fill_parent" android:layout_height="4.0dip" />
-    <EditText android:textSize="@dimen/incall_dialer_text_size" android:textColor="@color/corp_blue" android:gravity="center" android:id="@id/digits" android:background="@color/bg_white_semi" android:padding="12.0dip" android:focusableInTouchMode="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:ems="10" android:scrollHorizontally="true" android:freezesText="true" />
-    <View android:background="@color/bg_grey" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
-        <ImageButton android:id="@id/one" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_number1_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
-        <ImageButton android:id="@id/two" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_number2_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
-        <ImageButton android:id="@id/three" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_number3_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/top"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:layout_marginTop="1.0dip"
+    android:background="@drawable/incall_keypad_gradient"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip" />
+
+    <EditText
+        android:id="@id/digits"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white_semi"
+        android:clickable="false"
+        android:ems="10"
+        android:focusableInTouchMode="false"
+        android:freezesText="true"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="12.0dip"
+        android:scrollHorizontally="true"
+        android:textColor="@color/corp_blue"
+        android:textSize="@dimen/incall_dialer_text_size" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:background="@color/bg_grey" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="#ffffffff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@id/one"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_number1_selector" />
+
+        <ImageButton
+            android:id="@id/two"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_number2_selector" />
+
+        <ImageButton
+            android:id="@id/three"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_number3_selector" />
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
-        <ImageButton android:id="@id/four" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_number4_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
-        <ImageButton android:id="@id/five" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_number5_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
-        <ImageButton android:id="@id/six" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_number6_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="#ffffffff"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@id/four"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_number4_selector" />
+
+        <ImageButton
+            android:id="@id/five"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_number5_selector" />
+
+        <ImageButton
+            android:id="@id/six"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_number6_selector" />
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
-        <ImageButton android:id="@id/seven" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_number7_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
-        <ImageButton android:id="@id/eight" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_number8_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
-        <ImageButton android:id="@id/nine" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_number9_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="#ffffffff"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@id/seven"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_number7_selector" />
+
+        <ImageButton
+            android:id="@id/eight"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_number8_selector" />
+
+        <ImageButton
+            android:id="@id/nine"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_number9_selector" />
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
-        <ImageButton android:id="@id/star" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_star_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
-        <ImageButton android:id="@id/zero" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_number0_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
-        <ImageButton android:id="@id/pound" android:background="@drawable/incall_keypad_number_background_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/keypad_sharp_selector" android:layout_weight="1.0" style="@style/InCallKeypadButtonStyle" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:background="#ffffffff"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@id/star"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_star_selector" />
+
+        <ImageButton
+            android:id="@id/zero"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_number0_selector" />
+
+        <ImageButton
+            android:id="@id/pound"
+            style="@style/InCallKeypadButtonStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/incall_keypad_number_background_selector"
+            android:src="@drawable/keypad_sharp_selector" />
     </LinearLayout>
-    <View android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip"
+        android:background="@android:color/transparent" />
 </LinearLayout>

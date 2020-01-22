@@ -9,7 +9,7 @@ import com.pccw.mobile.sip.Constants;
 import com.pccw.mobile.sip.service.MobileSipService;
 import com.pccw.mobile.sip.util.HttpUtils;
 import com.pccw.mobile.sip.util.NetworkException;
-import org.apache.commons.lang3.StringUtils
+import org.apache.commons.lang3.StringUtils;
 
 public class CheckPrepaidBalanceApi extends ApiServerConnection {
     private Context context;

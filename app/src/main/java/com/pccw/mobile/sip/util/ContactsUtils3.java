@@ -11,7 +11,7 @@ import android.provider.Contacts;
 import com.pccw.database.helper.DBHelper;
 import com.pccw.mobile.sip.service.MobileSipService;
 import java.io.InputStream;
-import org.apache.commons.lang3.StringUtils
+import org.apache.commons.lang3.StringUtils;
 
 public class ContactsUtils3 extends ContactsUtils {
     public Contact queryByPhoneNumber(Context context, String str) {

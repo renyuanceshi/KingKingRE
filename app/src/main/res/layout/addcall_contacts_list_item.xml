@@ -23,8 +23,7 @@
             android:layout_marginTop="8.0dip"
             android:layout_marginBottom="8.0dip"
             android:scaleType="fitCenter"
-            android:src="@drawable/default_profile_pic"
-            font:borderWidth="1.0dip" />
+            android:src="@drawable/default_profile_pic" />
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -44,7 +43,7 @@
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@color/corp_blue"
                 android:textSize="18.0sp"
-                font:typeface="Roboto-Bold.ttf" />
+                android:fontFamily="roboto_bold.ttf" />
 
             <ImageView
                 android:id="@id/addcall_IMUserLogo"

@@ -1,20 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:font="http://schemas.android.com/apk/res-auto">
-    <RelativeLayout android:id="@id/mainCallCard" android:background="@color/bg_white" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@id/mainCallCard"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
             <include layout="@layout/call_card_person_info" />
+
             <include layout="@layout/call_card_person_info_call_waiting_main" />
         </LinearLayout>
-        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_alignParentTop="true">
-            <RelativeLayout android:id="@id/quality_indi_layout" android:paddingLeft="10.0dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
-                <ImageView android:id="@id/quality_indi_status_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_call_quality_good" android:scaleType="fitCenter" android:layout_centerVertical="true" />
-                <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="18.0sp" android:textColor="#ffffffff" android:id="@id/quality_indi_label" android:paddingLeft="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/quality_indi_label" android:singleLine="true" android:layout_toRightOf="@id/quality_indi_status_img" android:layout_alignTop="@id/quality_indi_status_img" />
-                <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceSmall" android:textSize="16.0sp" android:textColor="#ffffffff" android:id="@id/quality_indi_status" android:paddingLeft="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/quality_status_description_bad" android:singleLine="true" android:layout_below="@id/quality_indi_label" android:layout_alignLeft="@id/quality_indi_label" font:typeface="RobotoCondensed-Light.ttf" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8.0dip"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@id/quality_indi_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:paddingLeft="10.0dip"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@id/quality_indi_status_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_call_quality_good" />
+
+                <TextView
+                    android:id="@id/quality_indi_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/quality_indi_status_img"
+                    android:layout_toRightOf="@id/quality_indi_status_img"
+                    android:paddingLeft="4.0dip"
+                    android:singleLine="true"
+                    android:text="@string/quality_indi_label"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="#ffffffff"
+                    android:textSize="18.0sp" />
+
+                <com.pccw.android.common.widget.TypefacedTextView
+                    android:id="@id/quality_indi_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/quality_indi_label"
+                    android:layout_alignLeft="@id/quality_indi_label"
+                    android:paddingLeft="4.0dip"
+                    android:singleLine="true"
+                    android:text="@string/quality_status_description_bad"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="#ffffffff"
+                    android:textSize="16.0sp"
+                    android:fontFamily="robotocondensed_light.ttf" />
             </RelativeLayout>
-            <ImageView android:id="@id/upperTitleIcon" android:layout_width="@dimen/incall_logo_size" android:layout_height="@dimen/incall_logo_size" android:layout_marginRight="10.0dip" android:src="@drawable/incall_kk_logo" android:layout_weight="0.0" />
+
+            <ImageView
+                android:id="@id/upperTitleIcon"
+                android:layout_width="@dimen/incall_logo_size"
+                android:layout_height="@dimen/incall_logo_size"
+                android:layout_marginRight="10.0dip"
+                android:layout_weight="0.0"
+                android:src="@drawable/incall_kk_logo" />
         </LinearLayout>
-        <com.pccw.android.common.widget.TypefacedTextView android:textAppearance="?android:textAppearanceLarge" android:textSize="@dimen/upper_title_text_size" android:textColor="@color/bg_white" android:id="@id/upperTitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/slider_margin" android:layout_marginTop="4.0dip" android:text="@string/card_title_incoming_call" android:singleLine="false" android:fontFamily="roboto_regular.ttf" />
-        <ImageView android:id="@id/iconVideo" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/icon_margin" android:src="@drawable/indicator_video_call" android:layout_below="@id/upperTitle" />
+
+        <com.pccw.android.common.widget.TypefacedTextView
+            android:id="@id/upperTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/slider_margin"
+            android:layout_marginTop="4.0dip"
+            android:fontFamily="roboto_regular.ttf"
+            android:singleLine="false"
+            android:text="@string/card_title_incoming_call"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/bg_white"
+            android:textSize="@dimen/upper_title_text_size" />
+
+        <ImageView
+            android:id="@id/iconVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/upperTitle"
+            android:layout_marginLeft="@dimen/icon_margin"
+            android:src="@drawable/indicator_video_call"
+            android:visibility="gone" />
     </RelativeLayout>
 </LinearLayout>

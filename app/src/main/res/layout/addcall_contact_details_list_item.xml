@@ -35,7 +35,7 @@
                     android:textAllCaps="true"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/corp_blue"
-                    android:fontFamily="@font/robotocondensed_bold.ttf" />
+                    android:fontFamily="@font/robotocondensed_bold" />
 
                 <com.pccw.android.common.widget.TypefacedTextView
                     android:id="@id/addcall_contact_detail_item_phone_number"

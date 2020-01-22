@@ -14,7 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.pccw.mobile.sip.service.MobileSipService;
 
-import org.apache.commons.lang3.StringUtils
+import org.apache.commons.lang3.StringUtils;
 import org.linphone.core.LinphoneCall;
 
 public class CallCard extends FrameLayout implements CallerInfoAsyncQuery.OnQueryCompleteListener, ContactsAsyncHelper.OnImageLoadCompleteListener {

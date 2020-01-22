@@ -116,81 +116,81 @@
 <!--        <item name="android:layout_marginRight">2.0dip</item>-->
 <!--        <item name="android:layout_marginBottom">1.0dip</item>-->
 <!--    </style>-->
-<!--    <style name="CallToggleAudioButton">-->
-<!--        <item name="android:textSize">14.0sp</item>-->
-<!--        <item name="android:textColor">@color/bg_white</item>-->
-<!--        <item name="android:gravity">center</item>-->
-<!--        <item name="android:background">@drawable/incall_toggle_audio_button</item>-->
-<!--        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:layout_marginLeft">2.0dip</item>-->
-<!--        <item name="android:layout_marginTop">2.0dip</item>-->
-<!--        <item name="android:layout_marginBottom">1.0dip</item>-->
-<!--    </style>-->
-<!--    <style name="CallToggleKeypadButton">-->
-<!--        <item name="android:textSize">14.0sp</item>-->
-<!--        <item name="android:textColor">@color/bg_white</item>-->
-<!--        <item name="android:gravity">center</item>-->
-<!--        <item name="android:background">@drawable/incall_toggle_keypad_button</item>-->
-<!--        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:layout_marginTop">2.0dip</item>-->
-<!--        <item name="android:layout_marginBottom">1.0dip</item>-->
-<!--    </style>-->
-<!--    <style name="CallToggleMergeAddButton">-->
-<!--        <item name="android:textSize">14.0sp</item>-->
-<!--        <item name="android:textColor">@color/bg_white</item>-->
-<!--        <item name="android:gravity">center</item>-->
-<!--        <item name="android:background">@drawable/incall_toggle_mergeadd_button</item>-->
-<!--        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:layout_marginLeft">2.0dip</item>-->
-<!--        <item name="android:layout_marginTop">2.0dip</item>-->
-<!--        <item name="android:layout_marginBottom">1.0dip</item>-->
-<!--    </style>-->
-<!--    <style name="CallToggleMuteButton">-->
-<!--        <item name="android:textSize">14.0sp</item>-->
-<!--        <item name="android:textColor">@color/bg_white</item>-->
-<!--        <item name="android:gravity">center</item>-->
-<!--        <item name="android:background">@drawable/incall_toggle_mute_button</item>-->
-<!--        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:layout_marginTop">2.0dip</item>-->
-<!--        <item name="android:layout_marginRight">1.0dip</item>-->
-<!--        <item name="android:layout_marginBottom">1.0dip</item>-->
-<!--    </style>-->
-<!--    <style name="CallToggleRoutesButton">-->
-<!--        <item name="android:textAppearance">?android:textAppearanceSmall</item>-->
-<!--        <item name="android:textColor">@color/bg_white</item>-->
-<!--        <item name="android:gravity">center</item>-->
-<!--        <item name="android:background">@drawable/incall_toggle_routesbutton</item>-->
-<!--        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:layout_marginTop">2.0dip</item>-->
-<!--        <item name="android:layout_marginBottom">1.0dip</item>-->
-<!--    </style>-->
-<!--    <style name="CallToggleVideoButton">-->
-<!--        <item name="android:textSize">14.0sp</item>-->
-<!--        <item name="android:textColor">@color/bg_white</item>-->
-<!--        <item name="android:gravity">center</item>-->
-<!--        <item name="android:background">@drawable/incall_toggle_video_button</item>-->
-<!--        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>-->
-<!--        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>-->
-<!--        <item name="android:layout_marginTop">2.0dip</item>-->
-<!--        <item name="android:layout_marginBottom">1.0dip</item>-->
-<!--    </style>-->
+    <style name="CallToggleAudioButton">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/bg_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/incall_toggle_audio_button</item>
+        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:layout_marginLeft">2.0dip</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+        <item name="android:layout_marginBottom">1.0dip</item>
+    </style>
+    <style name="CallToggleKeypadButton">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/bg_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/incall_toggle_keypad_button</item>
+        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+        <item name="android:layout_marginBottom">1.0dip</item>
+    </style>
+    <style name="CallToggleMergeAddButton">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/bg_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/incall_toggle_mergeadd_button</item>
+        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:layout_marginLeft">2.0dip</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+        <item name="android:layout_marginBottom">1.0dip</item>
+    </style>
+    <style name="CallToggleMuteButton">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/bg_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/incall_toggle_mute_button</item>
+        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+        <item name="android:layout_marginRight">1.0dip</item>
+        <item name="android:layout_marginBottom">1.0dip</item>
+    </style>
+    <style name="CallToggleRoutesButton">
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textColor">@color/bg_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/incall_toggle_routesbutton</item>
+        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+        <item name="android:layout_marginBottom">1.0dip</item>
+    </style>
+    <style name="CallToggleVideoButton">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/bg_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/incall_toggle_video_button</item>
+        <item name="android:paddingLeft">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/callcard_button_horizontal_padding</item>
+        <item name="android:paddingBottom">@dimen/callcard_button_vertical_padding</item>
+        <item name="android:layout_marginTop">2.0dip</item>
+        <item name="android:layout_marginBottom">1.0dip</item>
+    </style>
     <style name="CustomDialog" parent="@style/Theme.AppCompat.Light">
         <item name="android:windowBackground">@null</item>
         <item name="android:windowIsFloating">true</item>
@@ -283,11 +283,11 @@
 <!--        <item name="android:textSelectHandle">@drawable/abc_text_select_handle_middle_mtrl_light</item>-->
 <!--    </style>-->
 <!--    <style name="Platform.Widget.AppCompat.Spinner" parent="@android:style/Widget.Spinner" />-->
-<!--    <style name="PopupTitleSeperator">-->
-<!--        <item name="android:background">@color/popup_title_color</item>-->
-<!--        <item name="android:layout_width">fill_parent</item>-->
-<!--        <item name="android:layout_height">2.0dip</item>-->
-<!--    </style>-->
+    <style name="PopupTitleSeperator">
+        <item name="android:background">@color/popup_title_color</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">2.0dip</item>
+    </style>
 <!--    <style name="Theme.AppCompat.Light.NoActionBar" parent="@style/Theme.AppCompat.Light.DarkActionBar">-->
 <!--        <item name="android:windowNoTitle">true</item>-->
 <!--    </style>-->
@@ -1236,20 +1236,20 @@
 <!--        <item name="android:textColor">@color/bg_black</item>-->
 <!--        <item name="android:background">@color/bg_white</item>-->
 <!--    </style>-->
-<!--    <style name="InCallKeypadButtonStyle">-->
-<!--        <item name="android:paddingTop">@dimen/incall_dialer_key_vertical_padding</item>-->
-<!--        <item name="android:paddingBottom">@dimen/incall_dialer_key_vertical_padding</item>-->
-<!--        <item name="android:scaleType">center</item>-->
-<!--    </style>-->
-<!--    <style name="KKSubItemText">-->
-<!--        <item name="android:textSize">14.0dip</item>-->
-<!--        <item name="android:textColor">@color/bg_darkgrey</item>-->
-<!--        <item name="android:padding">10.0dip</item>-->
-<!--    </style>-->
-<!--    <style name="KKSubItemTextBar">-->
-<!--        <item name="android:textColor">@color/bg_darkgrey</item>-->
-<!--        <item name="android:background">@color/bg_grey</item>-->
-<!--    </style>-->
+    <style name="InCallKeypadButtonStyle">
+        <item name="android:paddingTop">@dimen/incall_dialer_key_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/incall_dialer_key_vertical_padding</item>
+        <item name="android:scaleType">center</item>
+    </style>
+    <style name="KKSubItemText">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">@color/bg_darkgrey</item>
+        <item name="android:padding">10.0dip</item>
+    </style>
+    <style name="KKSubItemTextBar">
+        <item name="android:textColor">@color/bg_darkgrey</item>
+        <item name="android:background">@color/bg_grey</item>
+    </style>
 <!--    <style name="MessengerButton">-->
 <!--        <item name="android:clickable">true</item>-->
 <!--    </style>-->
@@ -1392,14 +1392,14 @@
 <!--    <style name="ThemeOverlay.AppCompat.Dialog" parent="@style/Base.ThemeOverlay.AppCompat.Dialog" />-->
 <!--    <style name="ThemeOverlay.AppCompat.Dialog.Alert" parent="@style/Base.ThemeOverlay.AppCompat.Dialog.Alert" />-->
 <!--    <style name="ThemeOverlay.AppCompat.Light" parent="@style/Base.ThemeOverlay.AppCompat.Light" />-->
-<!--    <style name="VideoCallButtonStyle">-->
-<!--        <item name="android:paddingLeft">8.0dip</item>-->
-<!--        <item name="android:paddingTop">4.0dip</item>-->
-<!--        <item name="android:paddingRight">8.0dip</item>-->
-<!--        <item name="android:paddingBottom">4.0dip</item>-->
-<!--        <item name="android:scaleType">center</item>-->
-<!--        <item name="android:adjustViewBounds">true</item>-->
-<!--    </style>-->
+    <style name="VideoCallButtonStyle">
+        <item name="android:paddingLeft">8.0dip</item>
+        <item name="android:paddingTop">4.0dip</item>
+        <item name="android:paddingRight">8.0dip</item>
+        <item name="android:paddingBottom">4.0dip</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
 <!--    <style name="Widget.AppCompat.ActionBar" parent="@style/Base.Widget.AppCompat.ActionBar" />-->
 <!--    <style name="Widget.AppCompat.ActionBar.Solid" parent="@style/Base.Widget.AppCompat.ActionBar.Solid" />-->
 <!--    <style name="Widget.AppCompat.ActionBar.TabBar" parent="@style/Base.Widget.AppCompat.ActionBar.TabBar" />-->
